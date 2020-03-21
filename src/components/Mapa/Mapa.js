@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import ReactMapGL, { Source, Layer } from 'react-map-gl'
-import { dataLayer } from './map-style.js';
+import { dataLayer } from './mapStyle.js'
 import data from '../../geojsons/chile/comunas.json'
 
 const mapboxToken = 'pk.eyJ1IjoiYWxlNjE1IiwiYSI6ImNqbDZ5eGt3ZDAxcGszdm83Z3piZ3YwdTcifQ.0dSxbx5BR0aoOsarUYmArQ'
@@ -22,17 +22,28 @@ const Mapa = () => {
     })
   }
 
+  const datos = useMemo(() => (
+    {
+      ...data,
+      features: data.features.map(f => ({
+        ...f,
+        properties: {
+          ...f.properties,
+          valor: Math.random()
+        }
+      }))
+    }
+  ), data)
+
   return (
     <ReactMapGL
       {...viewport}
       onViewportChange={cambioEnElViewport}
       mapboxApiAccessToken={mapboxToken}
     >
-      {data &&
-        <Source id="test" type="geojson" data={data}>
-          <Layer {...dataLayer} />
-        </Source>
-      }
+      <Source id="test" type="geojson" data={datos}>
+        <Layer {...dataLayer} />
+      </Source>
     </ReactMapGL>
   )
 }
