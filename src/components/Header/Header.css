@@ -1,0 +1,10 @@
+.Header {
+  background-color: #2E1A47;
+  color: white;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+}

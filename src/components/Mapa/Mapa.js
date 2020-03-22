@@ -3,6 +3,7 @@ import ReactMapGL, { Source, Layer } from 'react-map-gl'
 import { dataLayer } from './mapStyle.js'
 import geoJSONComunasChile from '../../geojsons/chile/comunas.json'
 import geoJSONDepartamentosArgentina from '../../geojsons/argentina/departamentos.json'
+import geoJSONMunicipiosColombia from '../../geojsons/colombia/municipios.json'
 
 const mapboxToken = 'pk.eyJ1IjoiYWxlNjE1IiwiYSI6ImNqbDZ5eGt3ZDAxcGszdm83Z3piZ3YwdTcifQ.0dSxbx5BR0aoOsarUYmArQ'
 
@@ -17,7 +18,11 @@ const Mapa = () => {
 
   const datos = useMemo(() => ({
     type: "FeatureCollection",
-    features: [...geoJSONComunasChile.features, ...geoJSONDepartamentosArgentina.features].map(feature => ({
+    features: [
+      ...geoJSONComunasChile.features,
+      ...geoJSONDepartamentosArgentina.features,
+      ...geoJSONMunicipiosColombia.features,
+    ].map(feature => ({
       ...feature,
       properties: {
         ...feature.properties,
