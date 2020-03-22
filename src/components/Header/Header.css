@@ -1,10 +1,12 @@
 .Header {
-  background-color: #2E1A47;
+  background: linear-gradient(#37474F, #34424a);
   color: white;
-  height: 42px;
+  height: 48px;
   display: flex;
   align-items: center;
-  padding-left: 16px;
+  padding-left: 20px;
   font-family: 'Source Sans Pro', sans-serif;
   text-transform: uppercase;
+  font-size: 1.1em;
+  letter-spacing: .5px;
 }

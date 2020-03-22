@@ -2,3 +2,8 @@
   display: flex;
   flex-direction: column;
 }
+
+.App__contenedor {
+  display: flex;
+  flex-direction: row;
+}
