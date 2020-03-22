@@ -4,7 +4,7 @@ import './SeccionIzquierda.css'
 const SeccionIzquierda = () => {
   return (
     <div className="SeccionIzquierda">
-      lala
+      Menú o algo
     </div>
   )
 }

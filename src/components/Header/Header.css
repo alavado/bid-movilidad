@@ -1,12 +1,32 @@
 .Header {
-  background: linear-gradient(#37474F, #34424a);
+  align-items: center;
   color: white;
+  display: flex;
+  flex-direction: row;
   height: 48px;
+  z-index: 3;
+}
+
+.Header__titulo {
+  min-width: 240px;
+  padding-left: 20px;
+  background-color: #37474F;
+  border-right: 1px solid #2a373d;
+  border-bottom: 1px solid #2a373d;
+  height: 100%;
   display: flex;
   align-items: center;
-  padding-left: 20px;
+}
+
+.Header__titulo > h1 {
   font-family: 'Source Sans Pro', sans-serif;
-  text-transform: uppercase;
   font-size: 1.1em;
   letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.Header__barra {
+  background: linear-gradient(#37474F, #34424a);
+  flex: 1;
+  height: 100%;
 }
