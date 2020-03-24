@@ -10,7 +10,6 @@ const SelectorFecha = () => {
 
   return (
     <div className="SelectorFecha">
-      selectors
       {dia}
       <input type="range" step="1" min="0" max="10" onChange={e => {
         setDia(e.target.value)

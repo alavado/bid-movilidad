@@ -1,4 +1,8 @@
 .SelectorFecha {
   height: 40px;
-  background-color: white;
+  background-color: #37474F;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
