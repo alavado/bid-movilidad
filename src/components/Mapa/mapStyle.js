@@ -1,9 +1,9 @@
-export const dataLayer = {
+export const obtenerDataLayer = dia => ({
   id: 'data',
   type: 'fill',
   paint: {
     'fill-color': {
-      property: 'valor',
+      property: dia % 2 === 0 ? 'valor1' : 'valor2',
       stops: [
         [0, '#3288bd'],
         [.1, '#66c2a5'],
@@ -18,4 +18,4 @@ export const dataLayer = {
     },
     'fill-opacity': 0.3
   }
-}
+})

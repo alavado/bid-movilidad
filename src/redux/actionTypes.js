@@ -1,0 +1,1 @@
+export const FIJAR_DIA = 'FIJAR_DIA'

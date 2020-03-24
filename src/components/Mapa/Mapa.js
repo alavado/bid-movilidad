@@ -1,9 +1,10 @@
 import React, { useState, useMemo } from 'react'
 import ReactMapGL, { Source, Layer } from 'react-map-gl'
-import { dataLayer } from './mapStyle.js'
+import { obtenerDataLayer } from './mapStyle.js'
 import geoJSONComunasChile from '../../geojsons/chile/comunas.json'
 import geoJSONDepartamentosArgentina from '../../geojsons/argentina/departamentos.json'
 import geoJSONMunicipiosBrasil from '../../geojsons/brasil/municipios.json'
+import { useSelector } from 'react-redux'
 
 const mapboxToken = 'pk.eyJ1IjoiYWxlNjE1IiwiYSI6ImNqbDZ5eGt3ZDAxcGszdm83Z3piZ3YwdTcifQ.0dSxbx5BR0aoOsarUYmArQ'
 
@@ -26,10 +27,13 @@ const Mapa = () => {
       ...feature,
       properties: {
         ...feature.properties,
-        valor: Math.random()
+        valor1: Math.random(),
+        valor2: Math.random()
       }
     }))
   }), [])
+
+  const { dia } = useSelector(state => state.mapa)
 
   const cambioEnElViewport = vp => {
     setViewport({
@@ -46,7 +50,7 @@ const Mapa = () => {
       mapboxApiAccessToken={mapboxToken}
     >
       <Source id="test" type="geojson" data={datos}>
-        <Layer {...dataLayer} />
+        <Layer {...obtenerDataLayer(dia)} />
       </Source>
     </ReactMapGL>
   )
