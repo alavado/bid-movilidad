@@ -4,7 +4,7 @@ import './SeccionIzquierda.css'
 const SeccionIzquierda = () => {
   return (
     <div className="SeccionIzquierda">
-      Menú o algo
+      Filtro de paises
     </div>
   )
 }
