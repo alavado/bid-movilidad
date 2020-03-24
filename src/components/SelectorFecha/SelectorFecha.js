@@ -1,19 +1,26 @@
-import React, { useState } from 'react'
-import './SelectorFecha.css'
-import { useDispatch } from 'react-redux'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { fijarDia } from '../../redux/actions'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faChevronLeft as iconoAnterior,
+  faChevronRight as iconoSiguiente
+} from '@fortawesome/free-solid-svg-icons'
+import './SelectorFecha.css'
+import './range.css'
 
 const SelectorFecha = () => {
 
-  const [dia, setDia] = useState(0)
+  const { dia } = useSelector(state => state.mapa)
   const dispatch = useDispatch()
 
   return (
     <div className="SelectorFecha">
-      <input type="range" step="1" min="0" max="180" onChange={e => {
-        setDia(e.target.value)
-        dispatch(fijarDia(e.target.value))
-      }} />
+      <input type="range" step="1" min="0" max="180" value={dia} onChange={e => dispatch(fijarDia(e.target.value))} />
+      <div className="SelectorFecha__acciones">
+        <FontAwesomeIcon title="Día anterior" className="SelectorFecha__accion" icon={iconoAnterior} onClick={() => dispatch(fijarDia(dia - 1))} />
+        <FontAwesomeIcon title="Día siguiente" className="SelectorFecha__accion" icon={iconoSiguiente} onClick={() => dispatch(fijarDia(dia + 1))} />
+      </div>
     </div>
   )
 }
