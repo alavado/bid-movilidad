@@ -10,7 +10,7 @@ const mapboxToken = 'pk.eyJ1IjoiYWxlNjE1IiwiYSI6ImNqbDZ5eGt3ZDAxcGszdm83Z3piZ3Yw
 const Mapa = () => {
   const [viewport, setViewport] = useState({
     width: '100%',
-    height: 'calc(100vh - 48px)',
+    height: 'calc(100vh - 88px)',
     latitude: -33.447487,
     longitude: -70.673676,
     zoom: 8
@@ -35,7 +35,7 @@ const Mapa = () => {
     setViewport({
       ...vp,
       width: '100%',
-      height: 'calc(100vh - 48px)'
+      height: 'calc(100vh - 88px)'
     })
   }
 
