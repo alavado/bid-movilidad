@@ -72,6 +72,7 @@ const Mapa = () => {
       <div style={{position: 'absolute', right: 16, top: 16}}>
         <NavigationControl />
       </div>
+      <div className="Mapa__codigo_color" />
       {popup.mostrando &&
         <Popup
           latitude={popup.latitude}
