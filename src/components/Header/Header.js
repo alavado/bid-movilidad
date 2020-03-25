@@ -5,7 +5,6 @@ import moment from 'moment/min/moment-with-locales'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faChevronLeft as iconoAnterior,
-  faCalendarAlt as iconoCalendario,
   faChevronRight as iconoSiguiente
 } from '@fortawesome/free-solid-svg-icons'
 import { fijarDia } from '../../redux/actions'
