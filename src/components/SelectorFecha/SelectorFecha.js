@@ -17,10 +17,27 @@ const SelectorFecha = () => {
   return (
     <div className="SelectorFecha">
       <div className="SelectorFecha__acciones">
-        <FontAwesomeIcon title="Día anterior" className="SelectorFecha__accion" icon={iconoAnterior} onClick={() => dispatch(fijarDia(dia - 1))} />
-        <FontAwesomeIcon title="Día siguiente" className="SelectorFecha__accion" icon={iconoSiguiente} onClick={() => dispatch(fijarDia(dia + 1))} />
+        <FontAwesomeIcon
+          title="Día anterior"
+          className="SelectorFecha__accion"
+          icon={iconoAnterior}
+          onClick={() => dispatch(fijarDia(dia - 1))}
+        />
+        <FontAwesomeIcon
+          title="Día siguiente"
+          className="SelectorFecha__accion"
+          icon={iconoSiguiente}
+          onClick={() => dispatch(fijarDia(dia + 1))}
+        />
       </div>
-      <input type="range" step="1" min="0" max="180" value={dia} onChange={e => dispatch(fijarDia(parseInt(e.target.value)))} />
+      <input
+        type="range"
+        step="1"
+        min="0"
+        max="180"
+        value={dia}
+        onChange={e => dispatch(fijarDia(parseInt(e.target.value)))}
+      />
     </div>
   )
 }
