@@ -53,10 +53,10 @@ const Mapa = () => {
     setPopup({...popup, mostrando: false})
     setTimeout(() => {
       setPopup({
-        mostrando: true,
+        mostrando: e.features.length > 0,
         latitude: e.lngLat[1],
         longitude: e.lngLat[0],
-        titulo: e.features[0].properties.NOM_COM
+        titulo: e.features.length > 0 ? (pais === 'CL' ? e.features[0].properties.NOM_COM : e.features[0].properties.nam) : ''
       })
     }, 25)
   }
