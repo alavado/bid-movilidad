@@ -7,8 +7,6 @@ import geoJSONMunicipiosBrasil from '../../geojsons/brasil/municipios.json'
 import { useSelector } from 'react-redux'
 import style from './style.json'
 
-const mapboxToken = 'pk.eyJ1IjoiYWxlNjE1IiwiYSI6ImNqbDZ5eGt3ZDAxcGszdm83Z3piZ3YwdTcifQ.0dSxbx5BR0aoOsarUYmArQ'
-
 const Mapa = () => {
   const [viewport, setViewport] = useState({
     width: '100%',

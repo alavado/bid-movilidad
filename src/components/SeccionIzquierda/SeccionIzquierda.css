@@ -1,9 +1,35 @@
 .SeccionIzquierda {
   background-color: #263238;
   box-shadow: 2px 0px 2px rgba(0, 0, 0, .15);
-  color: white;
   font-family: 'Source Sans Pro', sans-serif;
-  padding: 20px;
+  padding: 24px;
   min-width: 240px;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.SeccionIzquierda__label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .8em;
+  margin-bottom: 8px;
+}
+
+.SeccionIzquierda__selector-pais {
+  color: white;
+}
+
+.SeccionIzquierda .flag-select__btn {
+  color: white;
+}
+
+.SeccionIzquierda .flag-select__options {
+  background-color: #263238;
+  border-color: #90A4AE;
+}
+
+.SeccionIzquierda .flag-select__option:hover {
+  background-color: #455A64;
 }
