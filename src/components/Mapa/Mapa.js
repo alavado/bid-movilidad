@@ -14,9 +14,12 @@ const Mapa = () => {
   const [viewport, setViewport] = useState({
     width: '100%',
     height: 'calc(100vh - 88px)',
-    latitude: -33.447487,
-    longitude: -70.673676,
-    zoom: 8
+    latitude: -44.24312271012774,
+    longitude: -70.09995738380601,
+    zoom: 4,
+    bearing: 57.09354525600582,
+    pitch: 45.608390459566344,
+    altitude: 1.5
   })
 
   const obtenerFeatures = pais => {
@@ -36,13 +39,13 @@ const Mapa = () => {
       ...feature,
       properties: {
         ...feature.properties,
-        valor1: Math.random(),
-        valor2: Math.random()
+        ...Array.from(Array(180).keys()).reduce((prev, n) => ({...prev, [`valor${n}`]: Math.random() }), {})
       }
     }))
   }), [pais])
 
   const cambioEnElViewport = vp => {
+    console.log(vp)
     setViewport({
       ...vp,
       width: '100%',
@@ -55,7 +58,6 @@ const Mapa = () => {
       {...viewport}
       onViewportChange={cambioEnElViewport}
       mapStyle={style}
-      // mapboxApiAccessToken={mapboxToken}
     >
       <Source id="test" type="geojson" data={datos}>
         <Layer {...obtenerDataLayer(dia)} />

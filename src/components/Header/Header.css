@@ -29,4 +29,7 @@
   background: linear-gradient(#37474F, #34424a);
   flex: 1;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
