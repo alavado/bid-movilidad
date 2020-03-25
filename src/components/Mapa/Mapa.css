@@ -1,0 +1,18 @@
+.PopupComuna {
+  animation: aparece-popup .25s ease-in-out both;
+}
+
+.PopupComuna__titulo {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+@keyframes aparece-popup {
+  0% {
+    margin-top: 10px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0px;
+    opacity: 1;
+  }
+}

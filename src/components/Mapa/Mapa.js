@@ -1,16 +1,16 @@
 import React, { useState, useMemo } from 'react'
 import ReactMapGL, { Source, Layer, NavigationControl, Popup } from 'react-map-gl'
 import { obtenerDataLayer } from './mapStyle.js'
-import geoJSONComunasChile from '../../geojsons/chile/comunas.json'
-import geoJSONDepartamentosArgentina from '../../geojsons/argentina/departamentos.json'
-import geoJSONMunicipiosBrasil from '../../geojsons/brasil/municipios.json'
 import { useSelector } from 'react-redux'
 import style from './style.json'
 import './Mapa.css'
+import { obtenerFeaturesPais } from './helpers.js'
+import GraficoComuna from '../GraficoComuna/index.js'
 
 const Mapa = () => {
 
   const { dia, pais } = useSelector(state => state.mapa)
+
   const [popup, setPopup] = useState({
     activo: false,
     latitude: 0,
@@ -21,28 +21,17 @@ const Mapa = () => {
   const [viewport, setViewport] = useState({
     width: '100%',
     height: 'calc(100vh - 88px)',
-    latitude: -44.24312271012774,
-    longitude: -70.09995738380601,
+    latitude: -44.24,
+    longitude: -70.01,
     zoom: 4,
-    bearing: 57.09354525600582,
-    pitch: 45.608390459566344,
+    bearing: 57.09,
+    pitch: 45.61,
     altitude: 1.5
   })
 
-  const obtenerFeatures = pais => {
-    switch(pais) {
-      case 'AR':
-        return geoJSONDepartamentosArgentina.features
-      case 'BR':
-        return geoJSONMunicipiosBrasil.features
-      default:
-        return geoJSONComunasChile.features
-    }
-  }
-
   const datos = useMemo(() => ({
     type: "FeatureCollection",
-    features: obtenerFeatures(pais).map(feature => ({
+    features: obtenerFeaturesPais(pais).map(feature => ({
       ...feature,
       properties: {
         ...feature.properties,
@@ -61,12 +50,15 @@ const Mapa = () => {
 
   const mostrarPopup = e => {
     console.log(e)
-    setPopup({
-      mostrando: true,
-      latitude: e.lngLat[1],
-      longitude: e.lngLat[0],
-      titulo: e.features[0].properties.NOM_COM
-    })
+    setPopup({...popup, mostrando: false})
+    setTimeout(() => {
+      setPopup({
+        mostrando: true,
+        latitude: e.lngLat[1],
+        longitude: e.lngLat[0],
+        titulo: e.features[0].properties.NOM_COM
+      })
+    }, 25)
   }
 
   return (
@@ -86,8 +78,10 @@ const Mapa = () => {
           longitude={popup.longitude}
           closeButton={true}
           onClose={e => setPopup({...popup, mostrando: false})}
+          className="PopupComuna"
         >
-          <div>{popup.titulo}</div>
+          <h1 className="PopupComuna__titulo">{popup.titulo}</h1>
+          <GraficoComuna />
         </Popup>
       }
       <Source id="test" type="geojson" data={datos}>
