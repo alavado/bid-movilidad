@@ -1,7 +1,8 @@
-import { FIJAR_DIA } from "../actionTypes"
+import { FIJAR_DIA, FIJAR_PAIS } from "../actionTypes"
 
 const initialState = {
-  dia: 0
+  dia: 0,
+  pais: 'CL'
 }
 
 export default function(state = initialState, action) {
@@ -10,6 +11,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         dia: action.payload
+      }
+    }
+    case FIJAR_PAIS: {
+      return {
+        ...state,
+        pais: action.payload
       }
     }
     default:

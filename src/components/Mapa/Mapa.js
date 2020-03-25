@@ -8,6 +8,9 @@ import { useSelector } from 'react-redux'
 import style from './style.json'
 
 const Mapa = () => {
+
+  const { dia, pais } = useSelector(state => state.mapa)
+
   const [viewport, setViewport] = useState({
     width: '100%',
     height: 'calc(100vh - 88px)',
@@ -16,13 +19,20 @@ const Mapa = () => {
     zoom: 8
   })
 
+  const obtenerFeatures = pais => {
+    switch(pais) {
+      case 'AR':
+        return geoJSONDepartamentosArgentina.features
+      case 'BR':
+        return geoJSONMunicipiosBrasil.features
+      default:
+        return geoJSONComunasChile.features
+    }
+  }
+
   const datos = useMemo(() => ({
     type: "FeatureCollection",
-    features: [
-      ...geoJSONComunasChile.features,
-      ...geoJSONDepartamentosArgentina.features,
-      ...geoJSONMunicipiosBrasil.features,
-    ].map(feature => ({
+    features: obtenerFeatures(pais).map(feature => ({
       ...feature,
       properties: {
         ...feature.properties,
@@ -30,9 +40,7 @@ const Mapa = () => {
         valor2: Math.random()
       }
     }))
-  }), [])
-
-  const { dia } = useSelector(state => state.mapa)
+  }), [pais])
 
   const cambioEnElViewport = vp => {
     setViewport({

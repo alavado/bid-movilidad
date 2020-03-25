@@ -23,6 +23,7 @@
 
 .SeccionIzquierda .flag-select__btn {
   color: white;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .SeccionIzquierda .flag-select__options {
