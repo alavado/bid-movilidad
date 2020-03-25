@@ -6,8 +6,7 @@ import * as serviceWorker from './serviceWorker'
 
 import { Provider } from 'react-redux'
 import store from './redux/store'
-
-import moment from 'moment'
+import moment from 'moment/min/moment-with-locales'
 
 moment.locale('es')
 

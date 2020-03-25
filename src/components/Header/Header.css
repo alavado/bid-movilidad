@@ -26,10 +26,35 @@
 }
 
 .Header__barra {
+  font-family: 'Source Sans Pro', sans-serif;
   background: linear-gradient(#37474F, #34424a);
   flex: 1;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 16px;
+}
+
+.Header__acciones {
+  margin-right: 16px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 24px;
+  grid-template-columns: auto auto;
+}
+
+.Header__accion {
+  color: #26C6DA;
+  cursor: pointer;
+}
+
+.Header__fecha {
+  user-select: none;
+  font-size: 1.15em;
+}
+
+.Header__fecha::first-letter {
+  text-transform: uppercase;
 }
