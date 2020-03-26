@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux'
 import style from './style.json'
 import './Mapa.css'
 import { obtenerFeaturesPais } from './helpers.js'
-import GraficoComuna from '../GraficoComuna/index.js'
+import CodigoColor from './CodigoColor'
+import GraficoComuna from '../GraficoComuna'
 
 const Mapa = () => {
 
@@ -51,12 +52,16 @@ const Mapa = () => {
   const mostrarPopup = e => {
     console.log(e)
     setPopup({...popup, mostrando: false})
+    const feats = e.features
+    if (feats.length === 0 || feats[0].source !== 'capa-datos-movilidad') {
+      return
+    }
     setTimeout(() => {
       setPopup({
-        mostrando: e.features.length > 0,
+        mostrando: true,
         latitude: e.lngLat[1],
         longitude: e.lngLat[0],
-        titulo: e.features.length > 0 ? (pais === 'CL' ? e.features[0].properties.NOM_COM : e.features[0].properties.nam) : ''
+        titulo: pais === 'CL' ? feats[0].properties.NOM_COM : feats[0].properties.nam
       })
     }, 25)
   }
@@ -72,7 +77,7 @@ const Mapa = () => {
       <div style={{position: 'absolute', right: 16, top: 16}}>
         <NavigationControl />
       </div>
-      <div className="Mapa__codigo_color" />
+      <CodigoColor />
       {popup.mostrando &&
         <Popup
           latitude={popup.latitude}
@@ -85,7 +90,7 @@ const Mapa = () => {
           <GraficoComuna />
         </Popup>
       }
-      <Source id="test" type="geojson" data={datos}>
+      <Source id="capa-datos-movilidad" type="geojson" data={datos}>
         <Layer {...obtenerDataLayer(dia)} />
       </Source>
     </ReactMapGL>

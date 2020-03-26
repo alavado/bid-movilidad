@@ -15,7 +15,7 @@ const Header = () => {
   const dispatch = useDispatch()
 
   return (
-    <div className="Header">
+    <header className="Header">
       <div className="Header__titulo">
         <h1 className="Header__texto-titulo">BID Movilidad</h1>
       </div>
@@ -38,7 +38,7 @@ const Header = () => {
           {moment('2020-01-01').add(dia, 'days').format('dddd, D [de] MMMM [de] YYYY')}
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 

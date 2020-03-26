@@ -10,7 +10,7 @@ const SeccionIzquierda = () => {
   const dispatch = useDispatch()
 
   return (
-    <div className="SeccionIzquierda">
+    <aside className="SeccionIzquierda">
       <label htmlFor="selector-pais" className="SeccionIzquierda__label">País</label>
       <ReactFlagsSelect
         id="selector-pais"
@@ -19,7 +19,7 @@ const SeccionIzquierda = () => {
         countries={['AR', 'BR', 'CL']}
         onSelect={codigo => dispatch(fijarPais(codigo))}
       />
-    </div>
+    </aside>
   )
 }
 

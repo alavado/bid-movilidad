@@ -9,13 +9,13 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <div className="App__contenedor">
+      <main className="App__contenedor">
         <SeccionIzquierda />
-        <div className="App__mapa">
+        <section className="App__mapa">
           <Mapa />
           <SelectorFecha />
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   )
 }
