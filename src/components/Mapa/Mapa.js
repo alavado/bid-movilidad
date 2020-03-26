@@ -13,7 +13,14 @@ const Mapa = () => {
   const { dia, pais } = useSelector(state => state.mapa)
 
   const [popup, setPopup] = useState({
-    activo: false,
+    mostrando: false,
+    latitude: 0,
+    longitude: 0,
+    titulo: ''
+  })
+
+  const [popupChico, setPopupChico] = useState({
+    mostrando: false,
     latitude: 0,
     longitude: 0,
     titulo: ''
@@ -29,6 +36,8 @@ const Mapa = () => {
     pitch: 45.61,
     altitude: 1.5
   })
+
+  const [cursor, setCursor] = useState('default')
 
   const datos = useMemo(() => ({
     type: "FeatureCollection",
@@ -50,20 +59,40 @@ const Mapa = () => {
   }
 
   const mostrarPopup = e => {
-    console.log(e)
-    setPopup({...popup, mostrando: false})
-    const feats = e.features
-    if (feats.length === 0 || feats[0].source !== 'capa-datos-movilidad') {
+    if (popup.mostrando) {
+      setPopup({...popup, mostrando: false})
+      setPopupChico({...popup, mostrando: true})
       return
     }
-    setTimeout(() => {
-      setPopup({
-        mostrando: true,
-        latitude: e.lngLat[1],
-        longitude: e.lngLat[0],
-        titulo: pais === 'CL' ? feats[0].properties.NOM_COM : feats[0].properties.nam
+    const feats = e.features
+    if (!feats || feats.length === 0 || feats[0].source !== 'capa-datos-movilidad') {
+      return
+    }
+    setPopupChico({...popup, mostrando: false})
+    setPopup({
+      mostrando: true,
+      latitude: e.lngLat[1],
+      longitude: e.lngLat[0],
+      titulo: pais === 'CL' ? feats[0].properties.NOM_COM : feats[0].properties.nam
+    })
+  }
+
+  const actualizarPopupChico = e => {
+    console.log(e)
+    const feats = e.features
+    if (!feats || feats.length === 0 || feats[0].source !== 'capa-datos-movilidad' || popup.mostrando) {
+      setPopupChico({
+        ...popupChico,
+        mostrando: false
       })
-    }, 25)
+      return
+    }
+    setPopupChico({
+      mostrando: true,
+      latitude: e.lngLat[1],
+      longitude: e.lngLat[0],
+      titulo: pais === 'CL' ? feats[0].properties.NOM_COM : feats[0].properties.nam
+    })
   }
 
   return (
@@ -72,7 +101,10 @@ const Mapa = () => {
       onViewportChange={cambioEnElViewport}
       mapStyle={style}
       className="Mapa"
+      getCursor={() => cursor}
       onClick={mostrarPopup}
+      onHover={actualizarPopupChico}
+      onMouseLeave={() => setPopupChico({...popupChico, mostrando: false})}
     >
       <div style={{position: 'absolute', right: 16, top: 16}}>
         <NavigationControl />
@@ -88,6 +120,16 @@ const Mapa = () => {
         >
           <h1 className="PopupComuna__titulo">{popup.titulo}</h1>
           <GraficoComuna />
+        </Popup>
+      }
+      {popupChico.mostrando &&
+        <Popup
+          latitude={popupChico.latitude}
+          longitude={popupChico.longitude}
+          closeButton={false}
+          className="PopupChico"
+        >
+          <h1 className="PopupChico__titulo">{popupChico.titulo}</h1>
         </Popup>
       }
       <Source id="capa-datos-movilidad" type="geojson" data={datos}>

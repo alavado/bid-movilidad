@@ -6,6 +6,12 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.PopupChico {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: .75em;
+  opacity: .85;
+}
+
 @keyframes aparece-popup {
   0% {
     margin-top: 10px;
