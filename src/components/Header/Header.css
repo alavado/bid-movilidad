@@ -18,10 +18,15 @@
   align-items: center;
 }
 
+.Header__logo_bid {
+  width: 68px;
+  margin-right: 8px;
+}
+
 .Header__texto-titulo {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1.1em;
-  letter-spacing: .5px;
+  font-size: .65em;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 

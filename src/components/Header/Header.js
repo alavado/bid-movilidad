@@ -8,6 +8,7 @@ import {
   faChevronRight as iconoSiguiente
 } from '@fortawesome/free-solid-svg-icons'
 import { fijarDia } from '../../redux/actions'
+import logoBID from '../../assets/logo_bid.svg'
 
 const Header = () => {
 
@@ -17,7 +18,8 @@ const Header = () => {
   return (
     <header className="Header">
       <div className="Header__titulo">
-        <h1 className="Header__texto-titulo">BID Movilidad</h1>
+        <img className="Header__logo_bid" src={logoBID} />
+        <h1 className="Header__texto-titulo">Movilidad<br />COVID-19</h1>
       </div>
       <div className="Header__barra">
         <div className="Header__acciones">

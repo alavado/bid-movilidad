@@ -45,7 +45,7 @@ const Mapa = () => {
       ...feature,
       properties: {
         ...feature.properties,
-        ...Array.from(Array(180).keys()).reduce((prev, n) => ({...prev, [`v${n}`]: Math.random() }), {})
+        ...Array.from(Array(90).keys()).reduce((prev, n) => ({...prev, [`v${n}`]: Math.random() }), {})
       }
     }))
   }), [pais])
@@ -107,7 +107,7 @@ const Mapa = () => {
       onMouseLeave={() => setPopupChico({...popupChico, mostrando: false})}
     >
       <div style={{position: 'absolute', right: 16, top: 16}}>
-        <NavigationControl />
+        <NavigationControl showCompass={false} className="Mapa__controles_navegacion" />
       </div>
       <CodigoColor />
       {popup.mostrando &&
