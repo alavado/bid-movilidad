@@ -1,16 +1,18 @@
-import React, { useState, useMemo } from 'react'
-import ReactMapGL, { Source, Layer, NavigationControl, Popup } from 'react-map-gl'
+import React, { useState, useMemo, useEffect } from 'react'
+import ReactMapGL, { Source, Layer, NavigationControl, Popup, FlyToInterpolator } from 'react-map-gl'
 import { obtenerDataLayer } from './mapStyle.js'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import style from './style.json'
 import './Mapa.css'
 import { obtenerFeaturesPais } from './helpers.js'
 import CodigoColor from './CodigoColor'
 import GraficoComuna from '../GraficoComuna'
+import { fijarDestino } from '../../redux/actions.js'
 
 const Mapa = () => {
 
-  const { dia, pais } = useSelector(state => state.mapa)
+  const { dia, pais, destino } = useSelector(state => state.mapa)
+  const dispatch = useDispatch()
 
   const [popup, setPopup] = useState({
     mostrando: false,
@@ -50,7 +52,22 @@ const Mapa = () => {
     }))
   }), [pais])
 
+  useEffect(() => {
+    if (destino) {
+      setViewport(v => ({
+        ...v,
+        zoom: Number(destino.zoom),
+        latitude: Number(destino.lat),
+        longitude: Number(destino.lng),
+        transitionInterpolator: new FlyToInterpolator({ speed: 1.5 }),
+        transitionDuration: 'auto'
+      }))
+      dispatch(fijarDestino(null))
+    }
+  }, [destino])
+
   const cambioEnElViewport = vp => {
+    console.log({vp})
     setViewport({
       ...vp,
       width: '100%',

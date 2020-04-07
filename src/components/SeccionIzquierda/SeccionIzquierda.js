@@ -3,7 +3,7 @@ import ReactFlagsSelect from 'react-flags-select'
 import 'react-flags-select/css/react-flags-select.css'
 import './SeccionIzquierda.css'
 import { useDispatch } from 'react-redux'
-import { fijarPais } from '../../redux/actions'
+import { fijarPais, fijarDestino } from '../../redux/actions'
 
 const SeccionIzquierda = () => {
 
@@ -17,7 +17,10 @@ const SeccionIzquierda = () => {
         className="SeccionIzquierda__selector-pais"
         defaultCountry="CL"
         countries={['AR', 'CL', 'EC']}
-        onSelect={codigo => dispatch(fijarPais(codigo))}
+        onSelect={codigo => {
+          dispatch(fijarPais(codigo))
+          dispatch(fijarDestino(codigo))
+        }}
       />
     </aside>
   )
