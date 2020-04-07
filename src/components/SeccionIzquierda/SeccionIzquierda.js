@@ -16,7 +16,7 @@ const SeccionIzquierda = () => {
         id="selector-pais"
         className="SeccionIzquierda__selector-pais"
         defaultCountry="CL"
-        countries={['AR', 'CL']}
+        countries={['AR', 'CL', 'EC']}
         onSelect={codigo => dispatch(fijarPais(codigo))}
       />
     </aside>

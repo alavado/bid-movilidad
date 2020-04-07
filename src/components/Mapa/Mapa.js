@@ -73,12 +73,11 @@ const Mapa = () => {
       mostrando: true,
       latitude: e.lngLat[1],
       longitude: e.lngLat[0],
-      titulo: pais === 'CL' ? feats[0].properties.NOM_COM : feats[0].properties.nam
+      titulo: pais === 'CL' ? feats[0].properties.NOM_REG : (pais === 'AR' ?  feats[0].properties.nam : feats[0].properties.dpa_despro)
     })
   }
 
   const actualizarPopupChico = e => {
-    console.log(e)
     const feats = e.features
     if (!feats || feats.length === 0 || feats[0].source !== 'capa-datos-movilidad' || popup.mostrando) {
       setPopupChico({
@@ -91,7 +90,7 @@ const Mapa = () => {
       mostrando: true,
       latitude: e.lngLat[1],
       longitude: e.lngLat[0],
-      titulo: pais === 'CL' ? feats[0].properties.NOM_COM : feats[0].properties.nam
+      titulo: pais === 'CL' ? feats[0].properties.NOM_REG : (pais === 'AR' ?  feats[0].properties.nam : feats[0].properties.dpa_despro)
     })
   }
 

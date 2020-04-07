@@ -8,7 +8,7 @@
 }
 
 .Header__titulo {
-  min-width: 240px;
+  min-width: 220px;
   padding-left: 20px;
   background-color: #37474F;
   border-right: 1px solid #2a373d;
@@ -19,7 +19,7 @@
 }
 
 .Header__logo_bid {
-  width: 68px;
+  width: 65px;
   margin-right: 8px;
 }
 
@@ -27,7 +27,6 @@
   font-family: 'Source Sans Pro', sans-serif;
   font-size: .65em;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .Header__barra {
@@ -57,7 +56,7 @@
 
 .Header__fecha {
   user-select: none;
-  font-size: 1.15em;
+  font-size: 1.1em;
 }
 
 .Header__fecha::first-letter {

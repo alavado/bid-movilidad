@@ -4,6 +4,7 @@
 
 .PopupComuna__titulo {
   font-family: 'Source Sans Pro', sans-serif;
+  text-transform: capitalize;
 }
 
 .PopupChico {
