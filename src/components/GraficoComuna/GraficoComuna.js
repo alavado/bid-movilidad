@@ -3,13 +3,14 @@ import { Line } from 'react-chartjs-2'
 import { useSelector } from 'react-redux'
 import moment from 'moment/min/moment-with-locales'
 import './GraficoComuna.css'
+import { fechaInicio } from '../../config/fecha'
 
 const GraficoComuna = () => {
 
   const { datos } = useSelector(state => state.mapa)
   const [chartData, setChartData] = useState({
     labels: Object.keys(datos).filter(k => k.match(/v[0-9]+/g)).map(k => {
-      return moment('2020-03-03').add(Number(k.substring(1)) - 3, 'days').format('D MMM')
+      return moment(fechaInicio).add(Number(k.substring(1)) - 3, 'days').format('D MMM')
     }),
     datasets: [
       {

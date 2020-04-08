@@ -4,15 +4,25 @@
   animation: aparece-popup .25s ease-in-out both;
 }
 
+/* .PopupComuna .mapboxgl-popup-content {
+  background-color: transparent;
+} */
+
 .PopupComuna__titulo {
   font-family: 'Source Sans Pro', sans-serif;
   text-transform: capitalize;
   margin: .5em .5em 1em .5em;
+  opacity: .8;
+  text-transform: uppercase;
+  font-size: .85em;
+  letter-spacing: 1px;
 }
 
 .PopupChico {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: .75em;
+  font-size: .7em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   opacity: .85;
 }
 

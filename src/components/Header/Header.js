@@ -9,6 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { fijarDia } from '../../redux/actions'
 import logoBID from '../../assets/logo_bid.svg'
+import { fechaInicio } from '../../config/fecha'
 
 const Header = () => {
 
@@ -37,7 +38,7 @@ const Header = () => {
           />
         </div>
         <div className="Header__fecha">
-          {moment('2020-03-03').add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
+          {moment(fechaInicio).add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
         </div>
       </div>
     </header>

@@ -9,6 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import './SelectorFecha.css'
 import './range.css'
+import { fechaInicio } from '../../config/fecha'
 
 const SelectorFecha = () => {
 
@@ -18,7 +19,7 @@ const SelectorFecha = () => {
   return (
     <div className="SelectorFecha">
       <div className="SelectorFecha__fecha_cercana">
-        {moment('2020-03-03').add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
+        {moment(fechaInicio).add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
       </div>
       <div className="SelectorFecha__acciones">
         <FontAwesomeIcon

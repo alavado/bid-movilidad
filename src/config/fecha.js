@@ -1,0 +1,1 @@
+export const fechaInicio = '2020-03-03'
