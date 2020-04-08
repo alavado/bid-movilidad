@@ -22,3 +22,22 @@
   color: #26C6DA;
   cursor: pointer;
 }
+
+.SelectorFecha__fecha_cercana {
+  display: none;
+}
+
+@media(orientation: portrait) {
+  .SelectorFecha {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  .SelectorFecha__fecha_cercana {
+    position: absolute;
+    display: flex;
+    margin-top: -3em;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+  }
+}

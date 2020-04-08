@@ -38,6 +38,10 @@
 
 @media(max-width: 768px) {
   .SeccionIzquierda {
-    height: 5em;
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: none;
   }
 }

@@ -64,3 +64,12 @@
 .Header__fecha::first-letter {
   text-transform: uppercase;
 }
+
+@media (orientation: portrait) {
+  .Header__titulo {
+    width: 100%;
+  }
+  .Header__barra {
+    display: none;
+  }
+}

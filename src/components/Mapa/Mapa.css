@@ -26,3 +26,9 @@
     opacity: 1;
   }
 }
+
+@media (orientation: portrait) {
+  .PopupComuna {
+    max-width: 90vw;
+  }
+}
