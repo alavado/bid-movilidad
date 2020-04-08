@@ -7,7 +7,7 @@ import './Mapa.css'
 import { obtenerFeaturesPais } from './helpers.js'
 import CodigoColor from './CodigoColor'
 import GraficoComuna from '../GraficoComuna'
-import { fijarDestino } from '../../redux/actions.js'
+import { fijarDestino, fijarDatosRegion } from '../../redux/actions.js'
 
 const Mapa = () => {
 
@@ -102,6 +102,10 @@ const Mapa = () => {
       longitude: e.lngLat[0],
       titulo: pais === 'CL' ? feats[0].properties.NOM_REG : (pais === 'AR' ?  feats[0].properties.nam : feats[0].properties.dpa_despro)
     })
+    const feature = e.features.find(f => f.source === 'capa-datos-movilidad')
+    if (feature) {
+      dispatch(fijarDatosRegion(feature.properties))
+    }
   }
 
   return (
@@ -158,7 +162,7 @@ const Mapa = () => {
                 [1.05, '#d53e4f']
               ]
             },
-            'fill-opacity': 0.4,
+            'fill-opacity': .5,
             'fill-color-transition': {
               'duration': 300,
               'delay': 0
