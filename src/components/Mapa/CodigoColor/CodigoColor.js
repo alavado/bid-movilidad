@@ -7,7 +7,7 @@ const CodigoColor = () => {
       <div>Movilidad</div>
       <div className="CodigoColor__espectro" />
       <div className="CodigoColor__limites">
-        <div>Nula</div>
+        <div>Baja</div>
         <div>Habitual</div>
       </div>
     </div>

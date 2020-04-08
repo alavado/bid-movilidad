@@ -147,17 +147,15 @@ const Mapa = () => {
           type="fill"
           paint={{
             'fill-color': {
-              property: `v${dia}`,
+              property: `v${dia + 2}`,
               stops: [
-                [0, '#3288bd'],
-                [.1, '#66c2a5'],
-                [.2, '#abdda4'],
+                [.15, '#abdda4'],
                 [.3, '#e6f598'],
-                [.4, '#ffffbf'],
-                [.5, '#fee08b'],
-                [.6, '#fdae61'],
-                [.7, '#f46d43'],
-                [.8, '#d53e4f']
+                [.45, '#ffffbf'],
+                [.6, '#fee08b'],
+                [.75, '#fdae61'],
+                [.9, '#f46d43'],
+                [1.05, '#d53e4f']
               ]
             },
             'fill-opacity': 0.4,

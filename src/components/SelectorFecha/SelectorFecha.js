@@ -33,8 +33,8 @@ const SelectorFecha = () => {
       <input
         type="range"
         step="1"
-        min="3"
-        max="25"
+        min="1"
+        max="23"
         value={dia}
         onChange={e => dispatch(fijarDia(parseInt(e.target.value)))}
       />

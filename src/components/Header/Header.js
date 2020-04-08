@@ -37,7 +37,7 @@ const Header = () => {
           />
         </div>
         <div className="Header__fecha">
-          {moment('2020-03-01').add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
+          {moment('2020-03-03').add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
         </div>
       </div>
     </header>
