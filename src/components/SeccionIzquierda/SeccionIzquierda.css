@@ -1,9 +1,9 @@
 .SeccionIzquierda {
   background-color: #263238;
-  box-shadow: 2px 0px 2px rgba(0, 0, 0, .15);
+  box-shadow: .1em 0px .1em rgba(0, 0, 0, .15);
   font-family: 'Source Sans Pro', sans-serif;
-  padding: 24px;
-  min-width: 220px;
+  padding: 1.5em;
+  min-width: 13em;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: .8em;
-  margin-bottom: 8px;
+  margin-bottom: .5em;
 }
 
 .SeccionIzquierda__selector-pais {

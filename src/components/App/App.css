@@ -1,6 +1,7 @@
 .App {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .App__contenedor {
