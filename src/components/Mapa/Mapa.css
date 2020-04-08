@@ -1,10 +1,13 @@
 .PopupComuna {
+  width: 24em;
+  transition: opacity .25s ease-in-out;
   animation: aparece-popup .25s ease-in-out both;
 }
 
 .PopupComuna__titulo {
   font-family: 'Source Sans Pro', sans-serif;
   text-transform: capitalize;
+  margin: .5em .5em 1em .5em;
 }
 
 .PopupChico {

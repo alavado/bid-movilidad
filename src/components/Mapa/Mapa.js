@@ -1,6 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import ReactMapGL, { Source, Layer, NavigationControl, Popup, FlyToInterpolator } from 'react-map-gl'
-import { obtenerDataLayer } from './mapStyle.js'
 import { useSelector, useDispatch } from 'react-redux'
 import style from './style.json'
 import './Mapa.css'

@@ -35,3 +35,9 @@
 .SeccionIzquierda .flag-select__option:hover {
   background-color: #455A64;
 }
+
+@media(max-width: 768px) {
+  .SeccionIzquierda {
+    height: 5em;
+  }
+}

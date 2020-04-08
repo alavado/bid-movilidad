@@ -12,3 +12,9 @@
 .App__mapa {
   flex: 1;
 }
+
+@media(orientation: portrait) {
+  .App__contenedor {
+    flex-direction: column;
+  }
+}
