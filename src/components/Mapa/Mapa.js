@@ -42,14 +42,8 @@ const Mapa = () => {
   const [cursor, setCursor] = useState('default')
 
   const datos = useMemo(() => ({
-    type: "FeatureCollection",
-    features: obtenerFeaturesPais(pais).map(feature => ({
-      ...feature,
-      properties: {
-        ...feature.properties,
-        ...Array.from(Array(90).keys()).reduce((prev, n) => ({...prev, [`v${n}`]: Math.random() }), {})
-      }
-    }))
+    type: 'FeatureCollection',
+    features: obtenerFeaturesPais(pais)
   }), [pais])
 
   useEffect(() => {
@@ -67,7 +61,6 @@ const Mapa = () => {
   }, [destino])
 
   const cambioEnElViewport = vp => {
-    console.log({vp})
     setViewport({
       ...vp,
       width: '100%',
