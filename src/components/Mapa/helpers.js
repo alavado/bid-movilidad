@@ -1,4 +1,4 @@
-import geoJSONComunasChile from '../../geojsons/chile/regiones.json'
+import geoJSONComunasChile from '../../geojsons/chile/regiones_con_movilidad.json'
 import geoJSONDepartamentosArgentina from '../../geojsons/argentina/provincias.json'
 import geoJSONProvinciasEcuador from '../../geojsons/ecuador/provincias_con_movilidad.json'
 
@@ -15,13 +15,7 @@ export const obtenerFeaturesPais = pais => {
     case 'EC':
       return geoJSONProvinciasEcuador.features
     default:
-      return geoJSONComunasChile.features.map(feature => ({
-        ...feature,
-        properties: {
-          ...feature.properties,
-          ...Array.from(Array(90).keys()).reduce((prev, n) => ({...prev, [`v${n}`]: Math.random() }), {})
-        }
-      }))
+      return geoJSONComunasChile.features
   }
 }
 

@@ -1,32 +1,72 @@
 const csv = require('csv-parser')
 const fs = require('fs')
-const provincias = require('../geojsons/ecuador/provincias.json')
+const provinciasEcuador = require('../geojsons/ecuador/provincias.json')
+const regionesChile = require('../geojsons/chile/regiones.json')
 
-let movilidad = []
 
-fs.createReadStream('src/data/movilidad/df_ecuador_dia_region.csv')
-  .pipe(csv())
-  .on('data', row => {
-    movilidad.push(row)
-  })
-  .on('end', () => {
-    const provinciasConMovilidad = JSON.stringify({
-      ...provincias,
-      features: provincias.features.map(prov => {
-        const id = prov.properties.cartodb_id
-        return {
-          ...prov,
-          properties: {
-            ...prov.properties,
-            ...movilidad
-              .filter(m => Number(m.codigo_region) === Number(id))
-              .reduce((prev, v) => ({
-                ...prev,
-                [`v${v.dia}`]: Number(v.mediana_distancia_recorrida)
-              }), {})
-          }
-        }
-      })
+const mergeEcuador = () => {
+  let movilidad = []
+  fs.createReadStream('src/data/movilidad_ecuador.csv')
+    .pipe(csv())
+    .on('data', row => {
+      movilidad.push(row)
     })
-    fs.writeFile('./test.json', provinciasConMovilidad, err => console.log(err))
-  })
+    .on('end', () => {
+      const provinciasConMovilidad = JSON.stringify({
+        ...provinciasEcuador,
+        features: provinciasEcuador.features.map(prov => {
+          const id = prov.properties.cartodb_id
+          const movilidadProvincia = movilidad.find(m => Number(m.codigo_region) === Number(id))
+          const dias = Object.keys(movilidadProvincia)
+          return {
+            ...prov,
+            properties: {
+              ...prov.properties,
+              ...dias.reduce((prev, dia) => ({
+                  ...prev,
+                  [`v${dia}`]: Number(movilidadProvincia[dia])
+                }), {})
+            }
+          }
+        })
+      })
+      fs.writeFile('./test.json', provinciasConMovilidad, err => console.log(err))
+    }
+  )
+}
+
+const mergeChile = () => {
+  let movilidad = []
+  fs.createReadStream('src/data/movilidad_chile_2.csv')
+    .pipe(csv())
+    .on('data', row => {
+      movilidad.push(row)
+    })
+    .on('end', () => {
+      const regionesConMovilidad = JSON.stringify({
+        ...regionesChile,
+        features: regionesChile.features.map(prov => {
+          const id = prov.properties.COD_REGI
+          const movilidadRegion = movilidad.find(m => Number(m.s) === Number(id))
+          if (!movilidadRegion) {
+            return {}
+          }
+          const dias = Object.keys(movilidadRegion)
+          return {
+            ...prov,
+            properties: {
+              ...prov.properties,
+              ...dias.reduce((prev, dia) => ({
+                  ...prev,
+                  [`v${dia}`]: Number(movilidadRegion[dia])
+                }), {})
+            }
+          }
+        })
+      })
+      fs.writeFile('./test.json', regionesConMovilidad, err => console.log(err))
+    }
+  )
+}
+
+mergeChile()

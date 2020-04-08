@@ -16,6 +16,10 @@ export const obtenerDataLayer = dia => ({
         [.8, '#d53e4f']
       ]
     },
-    'fill-opacity': 0.4
-  }
+    'fill-opacity': 0.4,
+    "fill-color-transition": {
+      "duration": 300,
+      "delay": 0
+    }
+  },
 })
