@@ -38,7 +38,7 @@ const Mapa = () => {
     altitude: 1.5
   })
 
-  const [cursor, setCursor] = useState('default')
+  const [cursor] = useState('default')
 
   const datos = useMemo(() => ({
     type: 'FeatureCollection',
@@ -57,7 +57,7 @@ const Mapa = () => {
       }))
       dispatch(fijarDestino(null))
     }
-  }, [destino])
+  }, [dispatch, destino])
 
   const cambioEnElViewport = vp => {
     setViewport({

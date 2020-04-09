@@ -37,7 +37,7 @@ const GraficoComuna = () => {
     legend: {
       display: false
     }
-  }), [dia])
+  }), [])
   
   const [chartData, setChartData] = useState({
     labels: Object.keys(datos).filter(k => k.match(/v[0-9]+/g)).map(k => {

@@ -51,8 +51,8 @@
 
 @keyframes avanza-fecha1 {
   0% {
-    transform: translateX(-1em);
-    opacity: 0.5;
+    transform: translateX(3em);
+    opacity: 0.8;
   }
   100% {
     opacity: 1;
@@ -62,8 +62,30 @@
 
 @keyframes avanza-fecha2 {
   0% {
-    transform: translateX(-1em);
-    opacity: 0.5;
+    transform: translateX(3em);
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes retrocede-fecha1 {
+  0% {
+    transform: translateX(-3em);
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes retrocede-fecha2 {
+  0% {
+    transform: translateX(-3em);
+    opacity: 0.8;
   }
   100% {
     opacity: 1;
