@@ -1,0 +1,72 @@
+.ControlFechaSuperior {
+  display: flex;
+}
+
+.ControlFechaSuperior__accion {
+  width: 3em;
+  color: #26C6DA;
+  cursor: pointer;
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  font-size: .9em;
+  transition: background-color ease-in-out .15s;
+  outline: none;
+}
+
+.ControlFechaSuperior__accion:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ControlFechaSuperior__fecha {
+  user-select: none;
+  font-size: .9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  min-width: 20em;
+  justify-content: center;
+}
+
+.ControlFechaSuperior__fecha--retrocede1 {
+  animation: retrocede-fecha1 .1s ease-in-out both;
+}
+
+.ControlFechaSuperior__fecha--retrocede2 {
+  animation: retrocede-fecha2 .1s ease-in-out both;
+}
+
+.ControlFechaSuperior__fecha--avanza1 {
+  animation: avanza-fecha1 .1s ease-in-out both;
+}
+
+.ControlFechaSuperior__fecha--avanza2 {
+  animation: avanza-fecha2 .1s ease-in-out both;
+}
+
+.ControlFechaSuperior__fecha::first-letter {
+  text-transform: uppercase;
+}
+
+@keyframes avanza-fecha1 {
+  0% {
+    transform: translateX(-1em);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes avanza-fecha2 {
+  0% {
+    transform: translateX(-1em);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

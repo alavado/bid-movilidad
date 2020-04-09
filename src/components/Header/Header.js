@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Header.css'
-import { useSelector, useDispatch } from 'react-redux'
-import moment from 'moment/min/moment-with-locales'
+import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faChevronLeft as iconoAnterior,
@@ -11,6 +10,7 @@ import {
 import { fijarDia } from '../../redux/actions'
 import logoBID from '../../assets/logo_bid.svg'
 import { fechaInicio } from '../../config/fecha'
+import ControlFechaSuperior from './ControlFechaSuperior'
 
 const pantallaCompletaHabilitada = () => {
   const { innerWidth, innerHeight, screen } = window
@@ -20,7 +20,6 @@ const pantallaCompletaHabilitada = () => {
 const Header = () => {
 
   const { dia: diaRedux } = useSelector(state => state.mapa)
-  const dispatch = useDispatch()
   const [pantallaCompleta, setPantallaCompleta] = useState(false)
   const [dia, setDia] = useState(diaRedux)
   const [movimientoDia, setMovimientoDia] = useState(0)
@@ -57,36 +56,14 @@ const Header = () => {
           Mapa de Distanciamiento Social
         </div>
         <div className="Header__relleno" />
-        <div className="Header__acciones">
-          <button
-            className="Header__accion"
-            onClick={() => dispatch(fijarDia(dia - 1))}
-            title="Día anterior"
-          >
-            <FontAwesomeIcon
-              className="Header__icono_accion"
-              icon={iconoAnterior}
-            />
-          </button>
-          <div
-            className={`Header__fecha${` Header__fecha--${movimientoDia > 0 ? 'avanza' : 'retrocede'}${vecesFechaAnimada % 2 + 1}`}`}
-          >
-            {moment(fechaInicio).add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
-          </div>
-          <button
-            className="Header__accion"
-            onClick={() => dispatch(fijarDia(dia + 1))}
-            title="Día siguiente"
-          >
-            <FontAwesomeIcon
-              className="Header__icono_accion"
-              icon={iconoSiguiente}
-            />
-          </button>
-        </div>
+        <ControlFechaSuperior />
         <div className="Header__relleno_doble" />
         <div className="Header__acciones_secundarias">
-          <button className="Header__accion" onClick={fijarPantallaCompleta}>
+          <button
+            title={pantallaCompleta ? 'Salir de pantalla completa' : 'Pantalla completa'}
+            className="Header__accion"
+            onClick={fijarPantallaCompleta}
+          >
             <FontAwesomeIcon icon={pantallaCompleta ? faCompress : faExpand} />
           </button>
         </div>
