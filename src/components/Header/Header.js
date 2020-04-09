@@ -12,20 +12,25 @@ import { fijarDia } from '../../redux/actions'
 import logoBID from '../../assets/logo_bid.svg'
 import { fechaInicio } from '../../config/fecha'
 
+const pantallaCompletaHabilitada = () => {
+  const { innerWidth, innerHeight, screen } = window
+  return innerWidth === screen.width && innerHeight === screen.height
+}
+
 const Header = () => {
 
   const { dia } = useSelector(state => state.mapa)
-  const [pantallaCompleta, setPantallaCompleta] = useState(window.fullscreen)
-  const dispatch = useDispatch() 
+  const dispatch = useDispatch()
+  const [pantallaCompleta, setPantallaCompleta] = useState(false)
 
-  const fijarPantallaCompleta = estado => () => {
-    if (estado) {
-      document.getElementById("root").requestFullscreen()
-    }
-    else {
+  const fijarPantallaCompleta = () => {
+    setPantallaCompleta(prev => !pantallaCompletaHabilitada())
+    if (pantallaCompletaHabilitada()) {
       document.exitFullscreen()
     }
-    setPantallaCompleta(prev => !prev)
+    else {
+      document.getElementById("root").requestFullscreen()
+    }
   }
 
   return (
@@ -62,7 +67,7 @@ const Header = () => {
         </div>
         <div className="Header__relleno" />
         <div className="Header__acciones_secundarias">
-          <button className="Header__accion" onClick={fijarPantallaCompleta(!pantallaCompleta)}>
+          <button className="Header__accion" onClick={fijarPantallaCompleta}>
             <FontAwesomeIcon icon={pantallaCompleta ? faCompress : faExpand} />
           </button>
         </div>

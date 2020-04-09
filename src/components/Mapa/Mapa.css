@@ -42,3 +42,7 @@
     max-width: 90vw;
   }
 }
+
+.mapboxgl-popup-close-button {
+  outline: none;
+}

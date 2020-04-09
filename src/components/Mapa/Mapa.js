@@ -13,14 +13,14 @@ const Mapa = () => {
   const { dia, pais, destino } = useSelector(state => state.mapa)
   const dispatch = useDispatch()
 
-  const [popup, setPopup] = useState({
+  const [popupChico, setPopupChico] = useState({
     mostrando: false,
     latitude: 0,
     longitude: 0,
     titulo: ''
   })
 
-  const [popupChico, setPopupChico] = useState({
+  const [popup, setPopup] = useState({
     mostrando: false,
     latitude: 0,
     longitude: 0,
