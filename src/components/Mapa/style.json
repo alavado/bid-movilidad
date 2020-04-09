@@ -1,6 +1,7 @@
 {
   "version": 8,
   "name": "Dark Matter",
+  "language": "ES",
   "metadata": {
     "mapbox:autocomposite": false,
     "mapbox:groups": {
@@ -134,7 +135,7 @@
       "layout": {
         "symbol-placement": "line",
         "symbol-spacing": 500,
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:es}\n{name:nonlatin}",
         "text-font": ["Metropolis Medium Italic", "Noto Sans Italic"],
         "text-rotation-alignment": "map",
         "text-size": 12
@@ -634,7 +635,7 @@
       "layout": {
         "symbol-placement": "line",
         "symbol-spacing": 350,
-        "text-field": "{name:latin} {name:nonlatin}",
+        "text-field": "{name:es} {name:nonlatin}",
         "text-font": ["Metropolis Regular", "Noto Sans Regular"],
         "text-max-angle": 30,
         "text-pitch-alignment": "viewport",
@@ -740,7 +741,7 @@
       ],
       "layout": {
         "text-anchor": "center",
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:es}\n{name:nonlatin}",
         "text-font": ["Metropolis Regular", "Noto Sans Regular"],
         "text-justify": "center",
         "text-offset": [0.5, 0],
@@ -765,7 +766,7 @@
       "filter": ["all", ["==", "$type", "Point"], ["==", "class", "suburb"]],
       "layout": {
         "text-anchor": "center",
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:es}\n{name:nonlatin}",
         "text-font": ["Metropolis Regular", "Noto Sans Regular"],
         "text-justify": "center",
         "text-offset": [0.5, 0],
@@ -791,7 +792,7 @@
       "layout": {
         "icon-size": 0.4,
         "text-anchor": "left",
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:es}\n{name:nonlatin}",
         "text-font": ["Metropolis Regular", "Noto Sans Regular"],
         "text-justify": "left",
         "text-offset": [0.5, 0.2],
@@ -819,7 +820,7 @@
         "icon-image": {"base": 1, "stops": [[0, "circle-11"], [9, ""]]},
         "icon-size": 0.4,
         "text-anchor": {"base": 1, "stops": [[0, "left"], [8, "center"]]},
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:nonlatin}",
         "text-font": ["Metropolis Regular", "Noto Sans Regular"],
         "text-justify": "left",
         "text-offset": [0.5, 0.2],
@@ -852,7 +853,7 @@
         "icon-image": {"base": 1, "stops": [[0, "circle-11"], [9, ""]]},
         "icon-size": 0.4,
         "text-anchor": {"base": 1, "stops": [[0, "left"], [8, "center"]]},
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:es}\n{name:nonlatin}",
         "text-font": ["Metropolis Regular", "Noto Sans Regular"],
         "text-justify": "left",
         "text-offset": [0.5, 0.2],
@@ -885,7 +886,7 @@
         "icon-image": {"base": 1, "stops": [[0, "circle-11"], [9, ""]]},
         "icon-size": 0.4,
         "text-anchor": {"base": 1, "stops": [[0, "left"], [8, "center"]]},
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:es}\n{name:nonlatin}",
         "text-font": ["Metropolis Regular", "Noto Sans Regular"],
         "text-justify": "left",
         "text-offset": [0.5, 0.2],
@@ -910,7 +911,7 @@
       "maxzoom": 12,
       "filter": ["all", ["==", "$type", "Point"], ["==", "class", "state"]],
       "layout": {
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:es}\n{name:nonlatin}",
         "text-font": ["Metropolis Regular", "Noto Sans Regular"],
         "text-size": 10,
         "text-transform": "uppercase",
@@ -937,7 +938,7 @@
         ["!has", "iso_a2"]
       ],
       "layout": {
-        "text-field": "{name:latin}",
+        "text-field": "{name:es}",
         "text-font": ["Metropolis Light Italic", "Noto Sans Italic"],
         "text-size": {"base": 1, "stops": [[0, 9], [1, 11]]},
         "text-transform": "uppercase",
@@ -964,7 +965,7 @@
         ["has", "iso_a2"]
       ],
       "layout": {
-        "text-field": "{name:latin}",
+        "text-field": "{name:es}",
         "text-font": ["Metropolis Regular", "Noto Sans Regular"],
         "text-size": {"base": 1, "stops": [[0, 10], [6, 12]]},
         "text-transform": "uppercase",
@@ -992,7 +993,7 @@
       ],
       "layout": {
         "text-anchor": "center",
-        "text-field": "{name:latin}",
+        "text-field": "{name:es}",
         "text-font": ["Metropolis Regular", "Noto Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[0, 10], [3, 12], [4, 14]]},
         "text-transform": "uppercase",

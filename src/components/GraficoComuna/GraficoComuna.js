@@ -32,7 +32,7 @@ const GraficoComuna = () => {
           autoSkip: false,
           callback: (val, i) => {
             const fecha = moment(fechaInicio).add(Number(val) - 3, 'days')
-            return fecha.weekday() === 0 ? fecha.format('D MMM') : null
+            return fecha.weekday() === 0 ? fecha.format('D MMM') : ((dia + 2) === Number(val) ? '' : null)
           },
         },
         fontFamily: 'Source Sans Pro'
@@ -55,7 +55,7 @@ const GraficoComuna = () => {
         }
       }
     }
-  }), [])
+  }), [dia])
   
   const [chartData, setChartData] = useState({
     labels: Object.keys(datos).filter(k => k.match(/v[0-9]+/g)).map(k => {
