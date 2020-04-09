@@ -37,14 +37,25 @@
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
+  width: 100%;
 }
 
 .Header__acciones {
-  width: 4.5em;
   display: flex;
 }
 
+.Header__relleno {
+  flex: 1;
+}
+
+.Header__acciones_secundarias {
+  font-size: 1.25em;
+  display: flex;
+  margin-right: .5em;
+}
+
 .Header__accion {
+  width: 2.2em;
   color: #26C6DA;
   cursor: pointer;
   flex: 1;
