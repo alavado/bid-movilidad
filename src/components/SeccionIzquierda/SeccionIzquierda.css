@@ -45,3 +45,11 @@
     border-bottom: none;
   }
 }
+
+.flag-select__option, .flag-select__btn, .flag-select  {
+  outline: none;
+}
+
+.flag-select__options {
+  border-color: #37474F;
+}

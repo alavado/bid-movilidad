@@ -13,6 +13,7 @@ const SeccionIzquierda = () => {
     <aside className="SeccionIzquierda">
       <label htmlFor="selector-pais" className="SeccionIzquierda__label">País</label>
       <ReactFlagsSelect
+        style={{ outline: 'none' }}
         id="selector-pais"
         className="SeccionIzquierda__selector-pais"
         defaultCountry="CL"
