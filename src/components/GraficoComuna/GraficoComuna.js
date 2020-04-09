@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 import moment from 'moment/min/moment-with-locales'
 import './GraficoComuna.css'
 import { fechaInicio } from '../../config/fecha'
-import 'chartjs-plugin-annotation'
 
 const GraficoComuna = () => {
 
@@ -37,26 +36,7 @@ const GraficoComuna = () => {
     },
     legend: {
       display: false
-    },
-    // annotation: {
-    //   drawTime: 'beforeDatasetsDraw',
-    //   events: ['click'],
-    //   dblClickSpeed: 350,
-    //   // annotations: [{
-    //   //   id: 'vline',
-    //   //   type: 'line',
-    //   //   mode: 'vertical',
-    //   //   scaleID: 'x-axis-0',
-    //   //   value: dia,
-    //   //   borderColor: 'grey',
-    //   //   borderWidth: 2,
-    //   //   label: {
-    //   //     backgroundColor: 'grey',
-    //   //     content: '2019',
-    //   //     enabled: true
-    //   //   }
-    //   // }]
-    // }
+    }
   }), [dia])
   
   const [chartData, setChartData] = useState({
@@ -80,7 +60,10 @@ const GraficoComuna = () => {
   })
 
   useEffect(() => {
-    const canvas = document.getElementById('x')
+    const canvas = document.getElementById('GraficoComuna')
+    if (!canvas) {
+      return
+    }
     const ctx = canvas.getContext("2d");
     const gradientStroke = ctx.createLinearGradient(0, 100, 0, 0);
     gradientStroke.addColorStop(0.1, '#abdda4');
@@ -106,12 +89,17 @@ const GraficoComuna = () => {
 
   return (
     <div style={{ padding: '.5em' }}>
-      <Line
-        id="x"
-        data={chartData}
-        className="GraficoComuna"
-        options={options}
-      />
+      {Number(datos['v3']) === 0 ?
+        <div className="GraficoComuna__sin_datos">
+          No hay datos para esta región.
+        </div> :
+        <Line
+          id="GraficoComuna"
+          data={chartData}
+          className="GraficoComuna"
+          options={options}
+        />
+      }
     </div>
   )
 }

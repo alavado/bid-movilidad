@@ -1,3 +1,8 @@
 .GraficoComuna {
   padding: .5em;
 }
+
+.GraficoComuna__sin_datos {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: .9em;
+}
