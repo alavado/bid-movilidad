@@ -15,24 +15,24 @@ import { fechaInicio } from '../../config/fecha'
 const Header = () => {
 
   const { dia } = useSelector(state => state.mapa)
-  const [pantallaCompleta, setPantallaCompleta] = useState(false)
-  const dispatch = useDispatch()
+  const [pantallaCompleta, setPantallaCompleta] = useState(window.fullscreen)
+  const dispatch = useDispatch() 
 
   const fijarPantallaCompleta = estado => () => {
-    setPantallaCompleta(estado)
     if (estado) {
       document.getElementById("root").requestFullscreen()
     }
     else {
       document.exitFullscreen()
     }
+    setPantallaCompleta(prev => !prev)
   }
 
   return (
     <header className="Header">
       <div className="Header__titulo">
         <img className="Header__logo_bid" src={logoBID} />
-        <h1 className="Header__texto-titulo">Movilidad<br />COVID-19</h1>
+        <h1 className="Header__texto-titulo">Mapa de<br />distanciamiento social</h1>
       </div>
       <div className="Header__barra">
         <div className="Header__acciones">

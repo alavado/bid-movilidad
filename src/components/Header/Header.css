@@ -14,19 +14,19 @@
   border-right: 1px solid #2a373d;
   border-bottom: 1px solid #2a373d;
   height: 100%;
-  display: flex;
   align-items: center;
+  display: none;
 }
 
 .Header__logo_bid {
   width: 4em;
-  margin-right: .6em;
+  margin-right: .4em;
 }
 
 .Header__texto-titulo {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: .6em;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
 }
 
 .Header__barra {
@@ -94,5 +94,11 @@
   }
   .Header__barra {
     display: none;
+  }
+}
+
+@media (display-mode: fullscreen) {
+  .Header__titulo {
+    display: flex;
   }
 }
