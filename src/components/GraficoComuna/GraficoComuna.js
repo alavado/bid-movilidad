@@ -29,23 +29,41 @@ const GraficoComuna = () => {
       }],
       xAxes: [{
         ticks: {
-          maxTicksLimit: 5
+          autoSkip: false,
+          callback: (val, i) => {
+            const fecha = moment(fechaInicio).add(Number(val) - 3, 'days')
+            return fecha.weekday() === 0 ? fecha.format('D MMM') : null
+          },
         },
         fontFamily: 'Source Sans Pro'
       }]
     },
     legend: {
       display: false
+    },
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {
+          const etiqueta = data.datasets[tooltipItem.datasetIndex].label
+          const valor = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]
+          return `${etiqueta}: ${Math.round(valor * 100) / 100.0}`
+        },
+        title: (tooltipItem, data) => {
+          return moment(fechaInicio)
+            .add(Number(tooltipItem[0].label) - 3, 'days')
+            .format('dddd, D [de] MMMM [de] YYYY')
+        }
+      }
     }
   }), [])
   
   const [chartData, setChartData] = useState({
     labels: Object.keys(datos).filter(k => k.match(/v[0-9]+/g)).map(k => {
-      return moment(fechaInicio).add(Number(k.substring(1)) - 3, 'days').format('D MMM')
+      return k.substring(1)//
     }),
     datasets: [
       {
-        label: 'Movilidad',
+        label: 'Índice de movilidad',
         fillColor: 'rgba(220,220,220,0.2)',
         strokeColor: 'rgba(220,220,220,1)',
         pointColor: 'rgba(220,220,220,1)',
