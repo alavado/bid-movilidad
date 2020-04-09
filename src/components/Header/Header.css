@@ -18,6 +18,18 @@
   display: none;
 }
 
+.Header__titulo_landscape {
+  min-width: 13em;
+  padding-left: 1em;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  font-size: .9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: .6em;
+}
+
 .Header__logo_bid {
   width: 4em;
   margin-right: .4em;
@@ -36,7 +48,7 @@
   height: 100%;
   display: flex;
   align-items: stretch;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -46,6 +58,10 @@
 
 .Header__relleno {
   flex: 1;
+}
+
+.Header__relleno_doble {
+  flex: 2;
 }
 
 .Header__acciones_secundarias {
@@ -79,26 +95,100 @@
   font-size: .9em;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-left: .75em;
   display: flex;
   align-items: center;
+  min-width: 20em;
+  justify-content: center;
+}
+
+.Header__fecha--retrocede1 {
+  animation: retrocede-fecha1 .1s ease-in-out both;
+}
+
+.Header__fecha--retrocede2 {
+  animation: retrocede-fecha2 .1s ease-in-out both;
+}
+
+.Header__fecha--avanza1 {
+  animation: avanza-fecha1 .1s ease-in-out both;
+}
+
+.Header__fecha--avanza2 {
+  animation: avanza-fecha2 .1s ease-in-out both;
 }
 
 .Header__fecha::first-letter {
   text-transform: uppercase;
 }
 
+@keyframes avanza-fecha1 {
+  0% {
+    transform: translateX(-1em);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes avanza-fecha2 {
+  0% {
+    transform: translateX(-1em);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes retrocede-fecha1 {
+  0% {
+    transform: translateX(1em);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes retrocede-fecha2 {
+  0% {
+    transform: translateX(1em);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @media (orientation: portrait) {
   .Header__titulo {
+    display: none;
     width: 100%;
   }
-  .Header__barra {
+  .Header__titulo_landscape {
     display: none;
+  }
+  .Header__acciones_secundarias {
+    display: none;
+  }
+  .Header__relleno_doble {
+    flex: 1;
   }
 }
 
 @media (display-mode: fullscreen) {
   .Header__titulo {
     display: flex;
+  }
+  .Header__titulo_landscape {
+    display: none;
+  }
+  .Header__relleno_doble {
+    flex: 1;
   }
 }

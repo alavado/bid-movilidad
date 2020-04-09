@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Header.css'
 import { useSelector, useDispatch } from 'react-redux'
 import moment from 'moment/min/moment-with-locales'
@@ -19,9 +19,12 @@ const pantallaCompletaHabilitada = () => {
 
 const Header = () => {
 
-  const { dia } = useSelector(state => state.mapa)
+  const { dia: diaRedux } = useSelector(state => state.mapa)
   const dispatch = useDispatch()
   const [pantallaCompleta, setPantallaCompleta] = useState(false)
+  const [dia, setDia] = useState(diaRedux)
+  const [movimientoDia, setMovimientoDia] = useState(0)
+  const [vecesFechaAnimada, setVecesFechaAnimada] = useState(0)
 
   const fijarPantallaCompleta = () => {
     setPantallaCompleta(prev => !pantallaCompletaHabilitada())
@@ -33,6 +36,16 @@ const Header = () => {
     }
   }
 
+  useEffect(() => {
+    setDia(prev => {
+      if (prev !== diaRedux) {
+        setMovimientoDia(prev < diaRedux ? 1 : -1)
+        setVecesFechaAnimada(vecesFechaAnimada + 1)
+      }
+      return diaRedux
+    })
+  }, [diaRedux])
+
   return (
     <header className="Header">
       <div className="Header__titulo">
@@ -40,6 +53,10 @@ const Header = () => {
         <h1 className="Header__texto-titulo">Mapa de<br />distanciamiento social</h1>
       </div>
       <div className="Header__barra">
+        <div className="Header__titulo_landscape">
+          Mapa de Distanciamiento Social
+        </div>
+        <div className="Header__relleno" />
         <div className="Header__acciones">
           <button
             className="Header__accion"
@@ -51,6 +68,11 @@ const Header = () => {
               icon={iconoAnterior}
             />
           </button>
+          <div
+            className={`Header__fecha${` Header__fecha--${movimientoDia > 0 ? 'avanza' : 'retrocede'}${vecesFechaAnimada % 2 + 1}`}`}
+          >
+            {moment(fechaInicio).add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
+          </div>
           <button
             className="Header__accion"
             onClick={() => dispatch(fijarDia(dia + 1))}
@@ -62,10 +84,7 @@ const Header = () => {
             />
           </button>
         </div>
-        <div className="Header__fecha">
-          {moment(fechaInicio).add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
-        </div>
-        <div className="Header__relleno" />
+        <div className="Header__relleno_doble" />
         <div className="Header__acciones_secundarias">
           <button className="Header__accion" onClick={fijarPantallaCompleta}>
             <FontAwesomeIcon icon={pantallaCompleta ? faCompress : faExpand} />
