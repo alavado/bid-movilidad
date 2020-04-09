@@ -1,0 +1,9 @@
+.Bandeja {
+  background-color: #c5d2d8;
+  transition: all .4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}

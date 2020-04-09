@@ -1,4 +1,4 @@
-import { FIJAR_DIA, FIJAR_PAIS, FIJAR_DESTINO, FIJAR_DATOS_REGION } from './actionTypes'
+import { FIJAR_DIA, FIJAR_PAIS, FIJAR_DESTINO, FIJAR_DATOS_REGION, ABRIR_BANDEJA, CERRAR_BANDEJA } from './actionTypes'
 import { obtenerCentroPais } from '../components/Mapa/helpers'
 import { numeroDias } from '../config/fecha'
 
@@ -21,3 +21,12 @@ export const fijarDatosRegion = datos => ({
   type: FIJAR_DATOS_REGION,
   payload: datos
 })
+
+export const abrirBandeja = () => ({
+  type: ABRIR_BANDEJA
+})
+
+export const cerrarBandeja = () => ({
+  type: CERRAR_BANDEJA
+})
+

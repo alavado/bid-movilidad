@@ -13,6 +13,11 @@
   flex: 1;
 }
 
+.App__contenedor_central {
+  display: flex;
+  flex: 1;
+}
+
 @media(orientation: portrait) {
   .App__contenedor {
     flex-direction: column;

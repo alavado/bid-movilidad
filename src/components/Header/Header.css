@@ -24,9 +24,9 @@
   display: flex;
   align-items: center;
   user-select: none;
-  font-size: 1em;
+  font-size: 1.2em;
   letter-spacing: 1px;
-  margin-left: .6em;
+  margin-left: .2em;
 }
 
 .Header__logo_bid {
