@@ -24,18 +24,26 @@ const Header = () => {
       </div>
       <div className="Header__barra">
         <div className="Header__acciones">
-          <FontAwesomeIcon
-            title="Día anterior"
+          <button
             className="Header__accion"
-            icon={iconoAnterior}
             onClick={() => dispatch(fijarDia(dia - 1))}
-          />
-          <FontAwesomeIcon
-            title="Día siguiente"
+            title="Día anterior"
+          >
+            <FontAwesomeIcon
+              className="Header__icono_accion"
+              icon={iconoAnterior}
+            />
+          </button>
+          <button
             className="Header__accion"
-            icon={iconoSiguiente}
             onClick={() => dispatch(fijarDia(dia + 1))}
-          />
+            title="Día siguiente"
+          >
+            <FontAwesomeIcon
+              className="Header__icono_accion"
+              icon={iconoSiguiente}
+            />
+          </button>
         </div>
         <div className="Header__fecha">
           {moment(fechaInicio).add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}

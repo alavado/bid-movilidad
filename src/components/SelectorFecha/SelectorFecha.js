@@ -22,20 +22,29 @@ const SelectorFecha = () => {
         {moment(fechaInicio).add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
       </div>
       <div className="SelectorFecha__acciones">
-        <FontAwesomeIcon
-          title="Día anterior"
+        <button
           className="SelectorFecha__accion"
-          icon={iconoAnterior}
           onClick={() => dispatch(fijarDia(dia - 1))}
-        />
-        <FontAwesomeIcon
-          title="Día siguiente"
+          title="Día anterior"
+        >
+          <FontAwesomeIcon
+            className="SelectorFecha__icono_accion"
+            icon={iconoAnterior}
+          />
+        </button>
+        <button
           className="SelectorFecha__accion"
-          icon={iconoSiguiente}
           onClick={() => dispatch(fijarDia(dia + 1))}
-        />
+          title="Día siguiente"
+        >
+          <FontAwesomeIcon
+            className="SelectorFecha__icono_accion"
+            icon={iconoSiguiente}
+          />
+        </button>
       </div>
       <input
+        title="Arrastra para moverte en el tiempo"
         type="range"
         step="1"
         min="1"

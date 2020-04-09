@@ -35,23 +35,32 @@
   flex: 1;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: flex-start;
-  padding-left: 1em;
 }
 
 .Header__acciones {
-  margin-right: 1.3em;
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  gap: 1.5em;
-  grid-template-columns: auto auto;
+  width: 4.5em;
+  display: flex;
 }
 
 .Header__accion {
   color: #26C6DA;
   cursor: pointer;
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  font-size: 1em;
+  transition: background-color ease-in-out .15s;
+  outline: none;
+}
+
+.Header__accion:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.Header__icono_accion {
+  flex: 1;
 }
 
 .Header__fecha {
@@ -59,6 +68,9 @@
   font-size: .9em;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-left: .75em;
+  display: flex;
+  align-items: center;
 }
 
 .Header__fecha::first-letter {
