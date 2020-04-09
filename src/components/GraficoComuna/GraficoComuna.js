@@ -1,13 +1,64 @@
-import React, { useState, useEffect } from 'react'
-import { Line } from 'react-chartjs-2'
+import React, { useState, useEffect, useMemo } from 'react'
+import { Chart, Line } from 'react-chartjs-2'
 import { useSelector } from 'react-redux'
 import moment from 'moment/min/moment-with-locales'
 import './GraficoComuna.css'
 import { fechaInicio } from '../../config/fecha'
+import 'chartjs-plugin-annotation'
 
 const GraficoComuna = () => {
 
-  const { datos } = useSelector(state => state.mapa)
+  const { datos, dia } = useSelector(state => state.mapa)
+  Chart.defaults.global.defaultFontColor = '#263238'
+
+  const options = useMemo(() => ({
+    scales: {
+      yAxes: [{
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: 'Índice de movilidad'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 6,
+          suggestedMin: 0,
+          suggestedMax: 1.2
+        }
+      }],
+      xAxes: [{
+        ticks: {
+          maxTicksLimit: 5
+        },
+        fontFamily: 'Source Sans Pro'
+      }]
+    },
+    legend: {
+      display: false
+    },
+    // annotation: {
+    //   drawTime: 'beforeDatasetsDraw',
+    //   events: ['click'],
+    //   dblClickSpeed: 350,
+    //   // annotations: [{
+    //   //   id: 'vline',
+    //   //   type: 'line',
+    //   //   mode: 'vertical',
+    //   //   scaleID: 'x-axis-0',
+    //   //   value: dia,
+    //   //   borderColor: 'grey',
+    //   //   borderWidth: 2,
+    //   //   label: {
+    //   //     backgroundColor: 'grey',
+    //   //     content: '2019',
+    //   //     enabled: true
+    //   //   }
+    //   // }]
+    // }
+  }), [dia])
+  
   const [chartData, setChartData] = useState({
     labels: Object.keys(datos).filter(k => k.match(/v[0-9]+/g)).map(k => {
       return moment(fechaInicio).add(Number(k.substring(1)) - 3, 'days').format('D MMM')
@@ -51,7 +102,6 @@ const GraficoComuna = () => {
         }
       ]
     })
-    console.log({chartData})
   }, [])
 
   return (
@@ -60,21 +110,7 @@ const GraficoComuna = () => {
         id="x"
         data={chartData}
         className="GraficoComuna"
-        options={{
-          scales: {
-            yAxes: [{
-              display: true,
-              gridLines: {
-                display: false,
-                drawTicks: false
-              },
-            }]
-          },
-          legend: {
-            display: false
-          },
-          
-        }}
+        options={options}
       />
     </div>
   )
