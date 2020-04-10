@@ -2,6 +2,7 @@ const csv = require('csv-parser')
 const fs = require('fs')
 const provinciasEcuador = require('../geojsons/ecuador/provincias.json')
 const regionesChile = require('../geojsons/chile/regiones.json')
+const provinciasArgentina = require('../geojsons/argentina/provincias.json')
 
 const mergeEcuador = () => {
   let movilidad = []
@@ -67,4 +68,36 @@ const mergeChile = () => {
   )
 }
 
-mergeEcuador()
+const mergeArgentina = () => {
+  let movilidad = []
+  fs.createReadStream('src/data/movilidad_argentina_provincias.csv')
+    .pipe(csv({ separator: ';' }))
+    .on('data', row => movilidad.push(row))
+    .on('end', () => {
+      const provinciasConMovilidad = JSON.stringify({
+        ...provinciasArgentina,
+        features: provinciasArgentina.features.map(prov => {
+          const id = prov.properties.gid
+          const movilidadRegion = movilidad.find(m => Number(m.codigo_region) === Number(id))
+          if (!movilidadRegion) {
+            return {}
+          }
+          const dias = Object.keys(movilidadRegion)
+          return {
+            ...prov,
+            properties: {
+              ...prov.properties,
+              ...dias.reduce((prev, dia) => ({
+                  ...prev,
+                  [`v${dia}`]: Number(movilidadRegion[dia])
+                }), {})
+            }
+          }
+        })
+      })
+      fs.writeFile('./test.json', provinciasConMovilidad, err => console.log(err))
+    }
+  )
+}
+
+mergeArgentina()
