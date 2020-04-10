@@ -4,6 +4,7 @@ import 'react-flags-select/css/react-flags-select.css'
 import './SeccionIzquierda.css'
 import { useDispatch } from 'react-redux'
 import { fijarPais, fijarDestino, abrirBandeja } from '../../redux/actions'
+import { Link } from 'react-router-dom'
 
 const SeccionIzquierda = () => {
 
@@ -26,10 +27,10 @@ const SeccionIzquierda = () => {
         />
       </div>
       <ul className="SeccionIzquierda__links">
-        <li>Methodology</li>
-        <li onClick={() => dispatch(abrirBandeja())}>About us</li>
-        <li>Blog</li>
-        <li>Contact us</li>
+        <Link className="SeccionIzquierda__link" to="/methodology">Metodología</Link>
+        <Link className="SeccionIzquierda__link" to="/about">Equipo</Link>
+        <a className="SeccionIzquierda__link" href="https://google.com">Blog</a>
+        <Link className="SeccionIzquierda__link" to="/about">Contacto</Link>
       </ul>
     </aside>
   )
