@@ -42,8 +42,12 @@ const SeccionIzquierda = () => {
         <div className="SeccionIzquierda__stickers">
           <h2 className="SeccionIzquierda__stickers_titulo">Con la colaboración de</h2>
           <div className="SeccionIzquierda__contenedor_stickers">
-            <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--iiep" src={logoIIEP} alt="Logo IIEP" />
-            <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--ciae" src={logoCIAE} alt="Logo CIAE" />
+            <a href="http://iiep-baires.econ.uba.ar/" target="_blank">
+              <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--iiep" src={logoIIEP} alt="Logo IIEP" />
+            </a>
+            <a href="http://ciae.uchile.cl/" target="_blank">
+              <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--ciae" src={logoCIAE} alt="Logo CIAE" />
+            </a>
           </div>
         </div>
       </div>
