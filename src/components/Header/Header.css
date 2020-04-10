@@ -91,7 +91,9 @@
     width: 100%;
   }
   .Header__titulo_landscape {
-    display: none;
+    justify-content: center;
+    width: 100%;
+    padding-left: 0;
   }
   .Header__acciones_secundarias {
     display: none;

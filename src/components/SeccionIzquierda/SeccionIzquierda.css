@@ -111,12 +111,13 @@
 }
 
 @media (orientation: portrait) {
-  .SeccionIzquierda__contenedor_campo {
-    flex-direction: row;
-    height: 3em;
-    display: flex;
+  .SeccionIzquierda {
     align-items: center;
-    border-bottom: none;
+  }
+
+  .SeccionIzquierda__contenedor_campo {
+    padding: 1em 0em;
+    align-items: center;
   }
 
   .SeccionIzquierda__inferior {

@@ -93,3 +93,9 @@
     transform: translateX(0);
   }
 }
+
+@media (orientation: portrait) {
+  .ControlFechaSuperior {
+    display: none;
+  }
+}
