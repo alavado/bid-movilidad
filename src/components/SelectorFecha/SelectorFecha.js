@@ -51,7 +51,7 @@ const SelectorFecha = () => {
         max="23"
         value={dia}
         onChange={e => {
-          dispatch(playFecha(!playing))
+          dispatch(playFecha(false))
           dispatch(fijarDia(parseInt(e.target.value)))
         }}
       />

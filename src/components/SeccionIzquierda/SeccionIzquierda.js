@@ -4,7 +4,7 @@ import 'react-flags-select/css/react-flags-select.css'
 import './SeccionIzquierda.css'
 import { useDispatch } from 'react-redux'
 import { fijarPais, fijarDestino, abrirBandeja } from '../../redux/actions'
-import { Link } from 'react-router-dom'
+import { NavLink as Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -29,9 +29,9 @@ const SeccionIzquierda = () => {
         />
       </div>
       <ul className="SeccionIzquierda__links">
-        <Link className="SeccionIzquierda__link" to="/methodology">Metodología</Link>
-        <Link className="SeccionIzquierda__link" to="/about">Equipo</Link>
-        <Link className="SeccionIzquierda__link" to="/contact">Contacto</Link>
+        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link>
+        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/about">Equipo</Link>
+        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/contact">Contacto</Link>
         <a className="SeccionIzquierda__link" target="_blank" href="https://google.com">
           Blog <FontAwesomeIcon size="sm" className="SeccionIzquierda__icono_link_externo" icon={faExternalLinkAlt} />
         </a>
