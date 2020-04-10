@@ -3,8 +3,8 @@ import './Contacto.css'
 
 const Contacto = () => {
   return (
-    <div>
-      contacto
+    <div className="Contacto">
+      <h1 className="Contacto__titulo">Contacto</h1>
     </div>
   )
 }

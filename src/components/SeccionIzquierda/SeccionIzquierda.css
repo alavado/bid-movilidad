@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: white;
+  color: rgba(255, 255, 255, .9);
   user-select: none;
 }
 
@@ -19,7 +19,7 @@
 
 .SeccionIzquierda__label {
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-size: .8em;
   margin-bottom: .5em;
 }
@@ -31,14 +31,21 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: .8em;
+  margin-bottom: 2em;
+}
+
+.SeccionIzquierda__link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, .9);
+  padding: .25em 1.5em;
 }
 
 .SeccionIzquierda__selector-pais {
-  color: white;
+  color: rgba(255, 255, 255, .9);
 }
 
 .SeccionIzquierda .flag-select__btn {
-  color: white;
+  color: rgba(255, 255, 255, .9);
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -49,6 +56,10 @@
 
 .SeccionIzquierda .flag-select__option:hover {
   background-color: #455A64;
+}
+
+.SeccionIzquierda__icono_link_externo {
+  margin-left: .25em;
 }
 
 @media (orientation: portrait) {
@@ -67,6 +78,7 @@
 
 .flag-select__option, .flag-select__btn, .flag-select  {
   outline: none;
+  cursor: pointer;
 }
 
 .flag-select__options {

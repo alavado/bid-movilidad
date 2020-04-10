@@ -4,7 +4,7 @@
   left: 1.5em;
   bottom: 1.5em;
   width: 25em;
-  color: white;
+  color: rgba(255, 255, 255, .9);
   opacity: .8;
   font-size: .6em;
   display: grid;

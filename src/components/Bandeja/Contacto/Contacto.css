@@ -1,0 +1,13 @@
+.Contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+.Contacto__titulo {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

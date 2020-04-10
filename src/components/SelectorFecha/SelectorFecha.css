@@ -1,7 +1,7 @@
 .SelectorFecha {
   height: 2.5em;
   background: linear-gradient(#37474F, #34424a);
-  color: white;
+  color: rgba(255, 255, 255, .9);
   display: flex;
   justify-content: center;
   padding-right: 16px;

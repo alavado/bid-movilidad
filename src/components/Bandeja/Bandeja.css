@@ -1,9 +1,19 @@
 .Bandeja {
   background-color: #c5d2d8;
-  transition: all .4s ease-in-out;
+  transition: all .3s ease-in-out;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+}
+
+.Bandeja__contenido {
+  flex: 1;
+}
+
+.Bandeja__cerrar {
+  background-color: rgba(0, 0, 0, .2);
+  width: 1.3em;
+  display: flex;
   align-items: center;
-  box-sizing: border-box;
+  justify-content: center;
+  transition: all .4s ease-in-out;
+  color: rgba(255, 255, 255, .9);
 }
