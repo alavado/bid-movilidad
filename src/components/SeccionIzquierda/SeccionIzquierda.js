@@ -7,6 +7,7 @@ import { fijarPais, fijarDestino, abrirBandeja } from '../../redux/actions'
 import { NavLink as Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
+import logoIIEP from '../../assets/logo_iiep.png'
 
 const SeccionIzquierda = () => {
 
@@ -28,14 +29,19 @@ const SeccionIzquierda = () => {
           }}
         />
       </div>
-      <ul className="SeccionIzquierda__links">
-        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link>
-        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/about">Equipo</Link>
-        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/contact">Contacto</Link>
-        <a className="SeccionIzquierda__link" target="_blank" href="https://google.com">
-          Blog <FontAwesomeIcon size="sm" className="SeccionIzquierda__icono_link_externo" icon={faExternalLinkAlt} />
-        </a>
-      </ul>
+      <div className="SeccionIzquierda__inferior">
+        <ul className="SeccionIzquierda__links">
+          <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link>
+          <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/about">Equipo</Link>
+          <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/contact">Contacto</Link>
+          <a className="SeccionIzquierda__link" target="_blank" href="https://google.com">
+            Blog <FontAwesomeIcon size="sm" className="SeccionIzquierda__icono_link_externo" icon={faExternalLinkAlt} />
+          </a>
+        </ul>
+        <div className="SeccionIzquierda__stickers">
+          <img className="SeccionIzquierda__sticker" src={logoIIEP} alt="Logo IIEP" />
+        </div>
+      </div>
     </aside>
   )
 }

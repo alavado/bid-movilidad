@@ -14,7 +14,12 @@
 .SeccionIzquierda__contenedor_campo {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   padding: 1.5em;
+}
+
+.flag-select__btn:after {
+  border-top-color: #26C6DA;
 }
 
 .SeccionIzquierda__label {
@@ -28,7 +33,7 @@
   display: grid;
   font-family: 'Source Sans Pro', sans-serif;
   text-transform: uppercase;
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
 }
 
 .SeccionIzquierda__link {
@@ -37,16 +42,23 @@
   padding: 1.25em 1.75em;
   font-size: .85em;
   letter-spacing: 1.5px;
-  transition: all .25s ease-in-out;
+  transition: all .15s ease-in-out;
 }
 
-.SeccionIzquierda__link--activo {
+.SeccionIzquierda__link:hover {
+  background-color: rgba(255, 255, 255, .15);
+}
+
+.SeccionIzquierda__link--activo, .SeccionIzquierda__link--activo:hover {
   background-color: #C5D2D8;
   color: rgba(0, 0, 0, .95);
 }
 
 .SeccionIzquierda__selector-pais {
   color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: 0 .1em .25em rgba(0, 0, 0, .15);
+  border-radius: .25em;
 }
 
 .SeccionIzquierda .flag-select__btn {
@@ -67,6 +79,17 @@
   margin-left: .25em;
 }
 
+.SeccionIzquierda__stickers {
+  display: flex;
+  margin: 1em 0;
+  justify-content: center;
+}
+
+.SeccionIzquierda__sticker {
+  width: 9em;
+  filter: invert(100%) sepia();
+}
+
 @media (orientation: portrait) {
   .SeccionIzquierda__contenedor_campo {
     flex-direction: row;
@@ -76,7 +99,7 @@
     border-bottom: none;
   }
 
-  .SeccionIzquierda__links {
+  .SeccionIzquierda__inferior {
     display: none;
   }
 }
