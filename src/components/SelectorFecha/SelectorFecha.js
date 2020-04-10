@@ -1,20 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fijarDia } from '../../redux/actions'
+import { fijarDia, playFecha } from '../../redux/actions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import moment from 'moment/min/moment-with-locales'
-import {
-  faChevronLeft as iconoAnterior,
-  faChevronRight as iconoSiguiente
-} from '@fortawesome/free-solid-svg-icons'
+import { faPlay as iconoPlay } from '@fortawesome/free-solid-svg-icons'
+import { faPause as iconoPause } from '@fortawesome/free-solid-svg-icons'
 import './SelectorFecha.css'
 import './range.css'
 import { fechaInicio } from '../../config/fecha'
 
 const SelectorFecha = () => {
 
-  const { dia } = useSelector(state => state.mapa)
+  const { playing, dia } = useSelector(state => state.mapa)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    let timeoutPlay
+    if (playing) {
+      timeoutPlay = setTimeout(() => dispatch(fijarDia(dia + 1)), 2000)
+    }
+    return () => {
+      if (timeoutPlay) {
+        clearTimeout(timeoutPlay)
+      }
+    }
+  }, [dia, playing])
 
   return (
     <div className="SelectorFecha">
@@ -24,22 +34,12 @@ const SelectorFecha = () => {
       <div className="SelectorFecha__acciones">
         <button
           className="SelectorFecha__accion"
-          onClick={() => dispatch(fijarDia(dia - 1))}
-          title="Día anterior"
+          onClick={() => dispatch(playFecha(!playing))}
+          title={playing ? 'Detener avance automático' : 'Avance automático'}
         >
           <FontAwesomeIcon
             className="SelectorFecha__icono_accion"
-            icon={iconoAnterior}
-          />
-        </button>
-        <button
-          className="SelectorFecha__accion"
-          onClick={() => dispatch(fijarDia(dia + 1))}
-          title="Día siguiente"
-        >
-          <FontAwesomeIcon
-            className="SelectorFecha__icono_accion"
-            icon={iconoSiguiente}
+            icon={playing ? iconoPause : iconoPlay}
           />
         </button>
       </div>
@@ -50,7 +50,10 @@ const SelectorFecha = () => {
         min="1"
         max="23"
         value={dia}
-        onChange={e => dispatch(fijarDia(parseInt(e.target.value)))}
+        onChange={e => {
+          dispatch(playFecha(!playing))
+          dispatch(fijarDia(parseInt(e.target.value)))
+        }}
       />
     </div>
   )

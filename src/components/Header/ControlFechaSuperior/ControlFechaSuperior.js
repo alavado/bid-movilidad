@@ -6,14 +6,14 @@ import {
   faChevronLeft as iconoAnterior,
   faChevronRight as iconoSiguiente
 } from '@fortawesome/free-solid-svg-icons'
-import { fijarDia } from '../../../redux/actions'
+import { fijarDia, playFecha } from '../../../redux/actions'
 import { fechaInicio } from '../../../config/fecha'
 import './ControlFechaSuperior.css'
 
 const ControlFechaSuperior = () => {
   
   const dispatch = useDispatch()
-  const { dia: diaRedux } = useSelector(state => state.mapa)
+  const { dia: diaRedux, playing } = useSelector(state => state.mapa)
   const [dia, setDia] = useState(diaRedux)
   const [movimientoDia, setMovimientoDia] = useState(0)
   const [vecesFechaAnimada, setVecesFechaAnimada] = useState(0)
@@ -32,7 +32,10 @@ const ControlFechaSuperior = () => {
     <div className="ControlFechaSuperior">
       <button
         className="ControlFechaSuperior__accion"
-        onClick={() => dispatch(fijarDia(dia - 1))}
+        onClick={() => {
+          dispatch(playFecha(false))
+          dispatch(fijarDia(dia - 1))
+        }}
         title="Día anterior"
       >
         <FontAwesomeIcon
@@ -47,7 +50,10 @@ const ControlFechaSuperior = () => {
       </div>
       <button
         className="ControlFechaSuperior__accion"
-        onClick={() => dispatch(fijarDia(dia + 1))}
+        onClick={() => {
+          dispatch(fijarDia(dia + 1))
+          dispatch(playFecha(false))
+        }}
         title="Día siguiente"
       >
         <FontAwesomeIcon

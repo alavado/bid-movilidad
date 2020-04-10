@@ -32,7 +32,7 @@ const SeccionIzquierda = () => {
         <Link className="SeccionIzquierda__link" to="/methodology">Metodología</Link>
         <Link className="SeccionIzquierda__link" to="/about">Equipo</Link>
         <Link className="SeccionIzquierda__link" to="/contact">Contacto</Link>
-        <a className="SeccionIzquierda__link" href="https://google.com">
+        <a className="SeccionIzquierda__link" target="_blank" href="https://google.com">
           Blog <FontAwesomeIcon size="sm" className="SeccionIzquierda__icono_link_externo" icon={faExternalLinkAlt} />
         </a>
       </ul>

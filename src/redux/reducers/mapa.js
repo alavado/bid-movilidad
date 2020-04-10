@@ -1,10 +1,11 @@
-import { FIJAR_DIA, FIJAR_PAIS, FIJAR_DESTINO, FIJAR_DATOS_REGION } from "../actionTypes"
+import { FIJAR_DIA, FIJAR_PAIS, FIJAR_DESTINO, FIJAR_DATOS_REGION, PLAY } from "../actionTypes"
 
 const initialState = {
   dia: 1,
   pais: 'CL',
   destino: null,
-  datos: []
+  datos: [],
+  playing: true
 }
 
 export default function(state = initialState, action) {
@@ -31,6 +32,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         datos: action.payload
+      }
+    }
+    case PLAY: {
+      return {
+        ...state,
+        playing: action.payload
       }
     }
     default:

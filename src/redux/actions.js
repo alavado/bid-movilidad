@@ -1,4 +1,4 @@
-import { FIJAR_DIA, FIJAR_PAIS, FIJAR_DESTINO, FIJAR_DATOS_REGION, ABRIR_BANDEJA, CERRAR_BANDEJA } from './actionTypes'
+import { FIJAR_DIA, FIJAR_PAIS, FIJAR_DESTINO, FIJAR_DATOS_REGION, ABRIR_BANDEJA, CERRAR_BANDEJA, PLAY } from './actionTypes'
 import { obtenerCentroPais } from '../components/Mapa/helpers'
 import { numeroDias } from '../config/fecha'
 
@@ -28,5 +28,10 @@ export const abrirBandeja = () => ({
 
 export const cerrarBandeja = () => ({
   type: CERRAR_BANDEJA
+})
+
+export const playFecha = estado => ({
+  type: PLAY,
+  payload: estado
 })
 
