@@ -80,14 +80,34 @@
 }
 
 .SeccionIzquierda__stickers {
-  display: flex;
-  margin: 1em 0;
-  justify-content: center;
+  margin: 1.5em;
+}
+
+.SeccionIzquierda__stickers_titulo {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgba(255, 255, 255, .7);
+  font-size: .6em;
+  margin-bottom: .75em;
+  text-align: center;
+}
+
+.SeccionIzquierda__contenedor_stickers {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1.5em;
+  overflow: hidden;
+  align-items: center;
+  justify-items: center;
 }
 
 .SeccionIzquierda__sticker {
-  width: 9em;
-  filter: invert(100%) sepia();
+  height: 1.4em;
+  filter: invert(100%) sepia() saturate(0);
+  opacity: .8;
+}
+
+.SeccionIzquierda__sticker--ciae {
+  height: 1.8em;
 }
 
 @media (orientation: portrait) {

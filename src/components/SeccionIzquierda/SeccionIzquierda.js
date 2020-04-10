@@ -8,6 +8,7 @@ import { NavLink as Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import logoIIEP from '../../assets/logo_iiep.png'
+import logoCIAE from '../../assets/logo_ciae_nuevo.png'
 
 const SeccionIzquierda = () => {
 
@@ -39,7 +40,11 @@ const SeccionIzquierda = () => {
           </a>
         </ul>
         <div className="SeccionIzquierda__stickers">
-          <img className="SeccionIzquierda__sticker" src={logoIIEP} alt="Logo IIEP" />
+          <h2 className="SeccionIzquierda__stickers_titulo">Con la colaboración de</h2>
+          <div className="SeccionIzquierda__contenedor_stickers">
+            <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--iiep" src={logoIIEP} alt="Logo IIEP" />
+            <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--ciae" src={logoCIAE} alt="Logo CIAE" />
+          </div>
         </div>
       </div>
     </aside>
