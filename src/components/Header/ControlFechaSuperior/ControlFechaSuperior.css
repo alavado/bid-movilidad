@@ -3,12 +3,17 @@
 }
 
 .ControlFechaSuperior__accion {
-  width: 3em;
+  width: 2.3em;
+  height: 2.3em;
+  margin-right: .4em;
+  align-self: center;
   color: #26C6DA;
   cursor: pointer;
   flex: 1;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 .1em .2em rgba(0, 0, 0, 0.05);
   border: none;
+  border-radius: 100%;
   font-size: .9em;
   transition: background-color ease-in-out .15s;
   outline: none;
@@ -16,6 +21,7 @@
 
 .ControlFechaSuperior__accion:hover {
   background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 .1em .3em rgba(0, 0, 0, 0.05);
 }
 
 .ControlFechaSuperior__fecha {

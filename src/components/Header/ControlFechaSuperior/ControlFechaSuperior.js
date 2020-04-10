@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import moment from 'moment/min/moment-with-locales'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faChevronLeft as iconoAnterior,
-  faChevronRight as iconoSiguiente
+  faStepBackward as iconoAnterior,
+  faStepForward as iconoSiguiente
 } from '@fortawesome/free-solid-svg-icons'
 import { fijarDia, playFecha } from '../../../redux/actions'
 import { fechaInicio } from '../../../config/fecha'
