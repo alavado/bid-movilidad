@@ -45,7 +45,7 @@ const mergeChile = () => {
       const regionesConMovilidad = JSON.stringify({
         ...regionesChile,
         features: regionesChile.features.map(prov => {
-          const id = prov.properties.COD_REGI
+          const id = prov.properties.codregion
           const movilidadRegion = movilidad.find(m => Number(m.s) === Number(id))
           if (!movilidadRegion) {
             return {}
@@ -100,4 +100,4 @@ const mergeArgentina = () => {
   )
 }
 
-mergeArgentina()
+mergeChile()

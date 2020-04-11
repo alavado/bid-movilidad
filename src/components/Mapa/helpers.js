@@ -5,7 +5,7 @@ import geoJSONProvinciasEcuador from '../../geojsons/ecuador/provincias_con_movi
 export const obtenerFeaturesPais = pais => {
   switch(pais) {
     case 'AR':
-      return geoJSONProvinciasArgentina.features
+      return [...geoJSONProvinciasArgentina.features,...geoJSONProvinciasEcuador.features,... geoJSONComunasChile.features]
     case 'EC':
       return geoJSONProvinciasEcuador.features
     default:

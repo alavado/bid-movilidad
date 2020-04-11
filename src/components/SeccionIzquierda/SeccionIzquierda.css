@@ -33,7 +33,6 @@
   display: grid;
   font-family: 'Source Sans Pro', sans-serif;
   text-transform: uppercase;
-  margin-bottom: 1.5em;
 }
 
 .SeccionIzquierda__link {
@@ -46,12 +45,12 @@
 }
 
 .SeccionIzquierda__link:hover {
-  background-color: rgba(255, 255, 255, .15);
+  background-color: rgba(255, 255, 255, .1);
 }
 
 .SeccionIzquierda__link--activo, .SeccionIzquierda__link--activo:hover {
-  background-color: #C5D2D8;
-  color: rgba(0, 0, 0, .95);
+  background-color: #35444C;
+  
 }
 
 .SeccionIzquierda__selector-pais {
@@ -87,13 +86,13 @@
   font-family: 'Source Sans Pro', sans-serif;
   color: rgba(255, 255, 255, .7);
   font-size: .6em;
-  margin-bottom: .75em;
+  margin-bottom: 1.5em;
   text-align: center;
 }
 
 .SeccionIzquierda__contenedor_stickers {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   gap: 1.5em;
   overflow: hidden;
   align-items: center;
@@ -101,13 +100,13 @@
 }
 
 .SeccionIzquierda__sticker {
-  height: 1.5em;
+  height: 2em;
   filter: invert(100%) sepia() saturate(0);
   opacity: .8;
 }
 
 .SeccionIzquierda__sticker--ciae {
-  height: 1.8em;
+  height: 2.2em;
 }
 
 @media (orientation: portrait) {

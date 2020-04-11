@@ -82,7 +82,7 @@ const Mapa = () => {
       mostrando: true,
       latitude: e.lngLat[1],
       longitude: e.lngLat[0],
-      titulo: pais === 'CL' ? feats[0].properties.NOM_REG : (pais === 'AR' ?  feats[0].properties.nam : feats[0].properties.dpa_despro)
+      titulo: pais === 'CL' ? feats[0].properties.Region : (pais === 'AR' ?  feats[0].properties.nam : feats[0].properties.dpa_despro)
     })
   }
 
@@ -99,7 +99,7 @@ const Mapa = () => {
       mostrando: true,
       latitude: e.lngLat[1],
       longitude: e.lngLat[0],
-      titulo: pais === 'CL' ? feats[0].properties.NOM_REG : (pais === 'AR' ?  feats[0].properties.nam : feats[0].properties.dpa_despro)
+      titulo: pais === 'CL' ? feats[0].properties.Region : (pais === 'AR' ?  feats[0].properties.nam : feats[0].properties.dpa_despro)
     })
     const feature = e.features.find(f => f.source === 'capa-datos-movilidad')
     if (feature) {

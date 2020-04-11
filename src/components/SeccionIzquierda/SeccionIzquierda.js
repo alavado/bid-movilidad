@@ -30,23 +30,23 @@ const SeccionIzquierda = () => {
           }}
         />
       </div>
+      <ul className="SeccionIzquierda__links">
+        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link>
+        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/about">Equipo</Link>
+        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/contact">Contacto</Link>
+        <a className="SeccionIzquierda__link" target="_blank" href="https://google.com">
+          Blog <FontAwesomeIcon size="sm" className="SeccionIzquierda__icono_link_externo" icon={faExternalLinkAlt} />
+        </a>
+      </ul>
       <div className="SeccionIzquierda__inferior">
-        <ul className="SeccionIzquierda__links">
-          <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link>
-          <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/about">Equipo</Link>
-          <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/contact">Contacto</Link>
-          <a className="SeccionIzquierda__link" target="_blank" href="https://google.com">
-            Blog <FontAwesomeIcon size="sm" className="SeccionIzquierda__icono_link_externo" icon={faExternalLinkAlt} />
-          </a>
-        </ul>
         <div className="SeccionIzquierda__stickers">
           <h2 className="SeccionIzquierda__stickers_titulo">Con la colaboración de</h2>
           <div className="SeccionIzquierda__contenedor_stickers">
-            <a href="http://iiep-baires.econ.uba.ar/" target="_blank">
-              <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--iiep" src={logoIIEP} alt="Logo IIEP" />
-            </a>
             <a href="http://ciae.uchile.cl/" target="_blank">
               <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--ciae" src={logoCIAE} alt="Logo CIAE" />
+            </a>
+            <a href="http://iiep-baires.econ.uba.ar/" target="_blank">
+              <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--iiep" src={logoIIEP} alt="Logo IIEP" />
             </a>
           </div>
         </div>
