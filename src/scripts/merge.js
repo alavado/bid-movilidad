@@ -4,6 +4,8 @@ const provinciasEcuador = require('../geojsons/ecuador/provincias.json')
 const regionesChile = require('../geojsons/chile/regiones.json')
 const provinciasArgentina = require('../geojsons/argentina/provincias.json')
 
+const dirGeoJsons = './src/geojsons/'
+
 const mergeEcuador = () => {
   let movilidad = []
   fs.createReadStream('src/data/movilidad_ecuador_2.csv')
@@ -31,7 +33,7 @@ const mergeEcuador = () => {
           }
         })
       })
-      fs.writeFile('./test.json', provinciasConMovilidad, err => console.log(err))
+      fs.writeFile(`${dirGeoJsons}/ecuador/provincias_con_movilidad.json`, provinciasConMovilidad, err => console.log(err))
     }
   )
 }
@@ -63,7 +65,7 @@ const mergeChile = () => {
           }
         })
       })
-      fs.writeFile('./test.json', regionesConMovilidad, err => console.log(err))
+      fs.writeFile(`${dirGeoJsons}/chile/regiones_con_movilidad.json`, regionesConMovilidad, err => console.log(err))
     }
   )
 }
@@ -95,9 +97,11 @@ const mergeArgentina = () => {
           }
         })
       })
-      fs.writeFile('./test.json', provinciasConMovilidad, err => console.log(err))
+      fs.writeFile(`${dirGeoJsons}/argentina/provincias_con_movilidad.json`, provinciasConMovilidad, err => console.log(err))
     }
   )
 }
 
+mergeEcuador()
 mergeChile()
+mergeArgentina()
