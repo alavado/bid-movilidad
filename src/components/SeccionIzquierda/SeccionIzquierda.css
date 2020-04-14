@@ -122,6 +122,10 @@
   .SeccionIzquierda__inferior {
     display: none;
   }
+
+  .SeccionIzquierda__links {
+    display: none;
+  }
 }
 
 .flag-select__option, .flag-select__btn, .flag-select  {
