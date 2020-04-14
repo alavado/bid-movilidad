@@ -32,7 +32,7 @@ const SeccionIzquierda = () => {
       </div>
       <ul className="SeccionIzquierda__links">
         <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link>
-        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/about">Equipo</Link>
+        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/about">Acerca de</Link>
         <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/contact">Contacto</Link>
         <a className="SeccionIzquierda__link" target="_blank" href="https://google.com">
           Blog <FontAwesomeIcon size="sm" className="SeccionIzquierda__icono_link_externo" icon={faExternalLinkAlt} />

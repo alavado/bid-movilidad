@@ -3,11 +3,42 @@
   flex-direction: column;
   align-items: center;
   padding: 1em;
+  max-height: calc(100vh - 3em);
+  overflow-y: scroll;
 }
 
 .AcercaDe__titulo {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1em;
+  font-size: 1.1em;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.AcercaDe__contenido {
+  font-family: 'Source Sans Pro', sans-serif;
+  flex: 1;
+  padding: 1em;
+  line-height: 1.5;
+}
+
+.AcercaDe__subtitulo {
+  font-size: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.AcercaDe__parrafo {
+  font-size: 0.9em;
+  margin-bottom: 1em;
+}
+
+
+.AcercaDe__subtitulo2 {
+  font-size: 0.9em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-weight: bold;
 }
