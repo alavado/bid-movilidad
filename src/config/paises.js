@@ -3,12 +3,13 @@ const paises = [
     codigo: 'CL',
     nombre: 'Chile',
     geojson: {
-      claveIDRegion: 'codregion'
+      claveIDRegion: 'codregion',
+      claveNombreRegion: 'Region'
     },
     mapa: {
       centro: {
-        lat: -44.24,
-        lng: -70.01,
+        latitude: -44.24,
+        longitude: -70.01,
         zoom: 4
       }
     }
@@ -17,12 +18,13 @@ const paises = [
     codigo: 'AR',
     nombre: 'Argentina',
     geojson: {
-      claveIDRegion: 'gid'
+      claveIDRegion: 'gid',
+      claveNombreRegion: 'nam'
     },
     mapa: {
       centro: {
-        lat: -44.27,
-        lng: -66.47,
+        latitude: -44.27,
+        longitude: -66.47,
         zoom: 4
       }
     }
@@ -31,12 +33,13 @@ const paises = [
     codigo: 'EC',
     nombre: 'Ecuador',
     geojson: {
-      claveIDRegion: 'cartodb_id'
+      claveIDRegion: 'cartodb_id',
+      claveNombreRegion: 'dpa_despro'
     },
     mapa: {
       centro: {
-        lat: -2.06,
-        lng: -79.18,
+        latitude: -2.06,
+        longitude: -79.18,
         zoom: 6.06
       }
     }
@@ -45,13 +48,14 @@ const paises = [
     codigo: 'BO',
     nombre: 'Bolivia',
     geojson: {
-      claveIDRegion: 'ID_1'
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
     },
     mapa: {
       centro: {
-        lat: -2.06,
-        lng: -79.18,
-        zoom: 6.06
+        latitude: -17.94106013645256,
+        longitude: -66.39180523850452,
+        zoom: 5.350577937314907
       }
     }
   },
@@ -59,13 +63,14 @@ const paises = [
     codigo: 'PE',
     nombre: 'Perú',
     geojson: {
-      claveIDRegion: 'ID_1'
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
     },
     mapa: {
       centro: {
-        lat: -2.06,
-        lng: -79.18,
-        zoom: 6.06
+        latitude: -9.961515344799992,
+        longitude: -74.61853867623519,
+        zoom: 5.1052852762631025
       }
     }
   },
@@ -73,13 +78,14 @@ const paises = [
     codigo: 'TT',
     nombre: 'Trinidad y Tobago',
     geojson: {
-      claveIDRegion: 'ID_1'
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
     },
     mapa: {
       centro: {
-        lat: -2.06,
-        lng: -79.18,
-        zoom: 6.06
+        latitude: 10.341232912152451,
+        longitude: -61.33951272277002,
+        zoom: 8.285971150593195
       }
     }
   }

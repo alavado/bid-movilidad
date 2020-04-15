@@ -8,3 +8,8 @@ export const obtenerCentroPais = pais => {
   const configPais = configPaises.find(({ codigo }) => codigo === pais)
   return configPais ? configPais.mapa.centro : null
 }
+
+export const obtenerClaveNombreRegion = pais => {
+  const configPais = configPaises.find(({ codigo }) => codigo === pais)
+  return configPais ? configPais.geojson.claveNombreRegion : null
+}

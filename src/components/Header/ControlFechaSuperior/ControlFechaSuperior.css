@@ -20,7 +20,7 @@
 }
 
 .ControlFechaSuperior__accion:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 .1em .3em rgba(0, 0, 0, 0.05);
 }
 

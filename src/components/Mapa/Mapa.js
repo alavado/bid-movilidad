@@ -3,7 +3,7 @@ import ReactMapGL, { Source, Layer, NavigationControl, Popup, FlyToInterpolator 
 import { useSelector, useDispatch } from 'react-redux'
 import style from './style.json'
 import './Mapa.css'
-import { obtenerFeaturesPais } from './helpers.js'
+import { obtenerFeaturesPais, obtenerClaveNombreRegion } from './helpers.js'
 import CodigoColor from './CodigoColor'
 import GraficoComuna from '../GraficoComuna'
 import { fijarDestino, fijarDatosRegion } from '../../redux/actions.js'
@@ -50,8 +50,8 @@ const Mapa = () => {
       setViewport(v => ({
         ...v,
         zoom: Number(destino.zoom),
-        latitude: Number(destino.lat),
-        longitude: Number(destino.lng),
+        latitude: Number(destino.latitude),
+        longitude: Number(destino.longitude),
         transitionInterpolator: new FlyToInterpolator({ speed: 1.5 }),
         transitionDuration: 'auto'
       }))
@@ -68,6 +68,7 @@ const Mapa = () => {
   }
 
   const mostrarPopup = e => {
+    if (window.location.href.includes('3000')) console.log({viewport})
     if (popup.mostrando) {
       setPopup({...popup, mostrando: false})
       setPopupChico({...popup, mostrando: true})
@@ -82,7 +83,7 @@ const Mapa = () => {
       mostrando: true,
       latitude: e.lngLat[1],
       longitude: e.lngLat[0],
-      titulo: pais === 'CL' ? feats[0].properties.Region : (pais === 'AR' ?  feats[0].properties.nam : feats[0].properties.dpa_despro)
+      titulo: feats[0].properties[obtenerClaveNombreRegion(pais)]
     })
   }
 
@@ -99,7 +100,7 @@ const Mapa = () => {
       mostrando: true,
       latitude: e.lngLat[1],
       longitude: e.lngLat[0],
-      titulo: pais === 'CL' ? feats[0].properties.Region : (pais === 'AR' ?  feats[0].properties.nam : feats[0].properties.dpa_despro)
+      titulo: feats[0].properties[obtenerClaveNombreRegion(pais)]
     })
     const feature = e.features.find(f => f.source === 'capa-datos-movilidad')
     if (feature) {
