@@ -1,6 +1,6 @@
-import geoJSONComunasChile from '../../geojsons/chile/regiones_con_movilidad.json'
-import geoJSONProvinciasArgentina from '../../geojsons/argentina/provincias_con_movilidad.json'
-import geoJSONProvinciasEcuador from '../../geojsons/ecuador/provincias_con_movilidad.json'
+import geoJSONCRegionesChile from '../../data/geojson/CL/merge.json'
+import geoJSONProvinciasArgentina from '../../data/geojson/AR/merge.json'
+import geoJSONProvinciasEcuador from '../../data/geojson/EC/merge.json'
 
 export const obtenerFeaturesPais = pais => {
   switch(pais) {
@@ -9,7 +9,7 @@ export const obtenerFeaturesPais = pais => {
     case 'EC':
       return geoJSONProvinciasEcuador.features
     default:
-      return geoJSONComunasChile.features
+      return geoJSONCRegionesChile.features
   }
 }
 

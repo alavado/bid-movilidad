@@ -34,7 +34,7 @@ const SeccionIzquierda = () => {
         <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link>
         <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/about">Acerca de</Link>
         <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/contact">Contacto</Link>
-        <a className="SeccionIzquierda__link" target="_blank" href="https://google.com">
+        <a className="SeccionIzquierda__link" target="_blank" href="https://google.com" rel="noopener noreferrer">
           Blog <FontAwesomeIcon size="sm" className="SeccionIzquierda__icono_link_externo" icon={faExternalLinkAlt} />
         </a>
       </ul>
@@ -42,10 +42,10 @@ const SeccionIzquierda = () => {
         <div className="SeccionIzquierda__stickers">
           <h2 className="SeccionIzquierda__stickers_titulo">Con la colaboración de</h2>
           <div className="SeccionIzquierda__contenedor_stickers">
-            <a href="http://ciae.uchile.cl/" target="_blank">
+            <a href="http://ciae.uchile.cl/" target="_blank" rel="noopener noreferrer">
               <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--ciae" src={logoCIAE} alt="Logo CIAE" />
             </a>
-            <a href="http://iiep-baires.econ.uba.ar/" target="_blank">
+            <a href="http://iiep-baires.econ.uba.ar/" target="_blank" rel="noopener noreferrer">
               <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--iiep" src={logoIIEP} alt="Logo IIEP" />
             </a>
           </div>

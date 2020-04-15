@@ -35,7 +35,7 @@ const AcercaDe = () => {
         <p className="AcercaDe__parrafo">Xiomara Pulido (BID)</p>
         <p className="AcercaDe__parrafo">Julieth Santamaría (University of Minnesota)</p>
 
-        <p className="AcercaDe__subtitulo2">Ingeniero de visualización</p>
+        <p className="AcercaDe__subtitulo2">Visualización</p>
         <p className="AcercaDe__parrafo">Alejandro Lavado</p>
         
         <h3 className="AcercaDe__subtitulo2">Colaboradores</h3>

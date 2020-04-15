@@ -1,62 +1,43 @@
 const csv = require('csv-parser')
 const fs = require('fs')
-const provinciasEcuador = require('../geojsons/ecuador/provincias.json')
-const regionesChile = require('../geojsons/chile/regiones.json')
-const provinciasArgentina = require('../geojsons/argentina/provincias.json')
+const path = require('path')
+const bomstrip = require('bomstrip')
 
-const dirGeoJsons = './src/geojsons/'
-
-const mergeEcuador = () => {
-  let movilidad = []
-  fs.createReadStream('src/data/movilidad_ecuador_2.csv')
-    .pipe(csv())
-    .on('data', row => movilidad.push(row))
-    .on('end', () => {
-      const provinciasConMovilidad = JSON.stringify({
-        ...provinciasEcuador,
-        features: provinciasEcuador.features.map(prov => {
-          const id = prov.properties.cartodb_id
-          const movilidadProvincia = movilidad.find(m => Number(m.s) === Number(id))
-          if (!movilidadProvincia) {
-            return {}
-          }
-          const dias = Object.keys(movilidadProvincia)
-          return {
-            ...prov,
-            properties: {
-              ...prov.properties,
-              ...dias.reduce((prev, dia) => ({
-                  ...prev,
-                  [`v${dia}`]: Number(movilidadProvincia[dia])
-                }), {})
-            }
-          }
-        })
-      })
-      fs.writeFile(`${dirGeoJsons}/ecuador/provincias_con_movilidad.json`, provinciasConMovilidad, err => console.log(err))
-    }
-  )
+const dirGeoJsons = path.join('data', 'geojson')
+const propiedadIDRegionEnGeoJSON = {
+  AR: 'gid',
+  CL: 'codregion',
+  EC: 'cartodb_id'
 }
 
-const mergeChile = () => {
+const dirCSV = path.join('src', 'data', 'csv')
+const separator = ';'
+
+const archivoGeoJSON = 'regiones.json'
+const archivoCSV = 'movilidad.csv'
+const archivoSalida = 'merge.json'
+
+const mergeMovilidad = codigoPais => {
   let movilidad = []
-  fs.createReadStream('src/data/movilidad_chile_2.csv')
-    .pipe(csv())
+  const regiones = require(path.join('..', dirGeoJsons, codigoPais, archivoGeoJSON))
+  fs.createReadStream(path.join(dirCSV, codigoPais, archivoCSV))
+    .pipe(new bomstrip())
+    .pipe(csv({ separator }))
     .on('data', row => movilidad.push(row))
     .on('end', () => {
-      const regionesConMovilidad = JSON.stringify({
-        ...regionesChile,
-        features: regionesChile.features.map(prov => {
-          const id = prov.properties.codregion
-          const movilidadRegion = movilidad.find(m => Number(m.s) === Number(id))
+      const output = JSON.stringify({
+        ...regiones,
+        features: regiones.features.map(region => {
+          const id = region.properties[propiedadIDRegionEnGeoJSON[codigoPais]]
+          const movilidadRegion = movilidad.find(({ cod }) => Number(cod) === Number(id))
           if (!movilidadRegion) {
             return {}
           }
           const dias = Object.keys(movilidadRegion)
           return {
-            ...prov,
+            ...region,
             properties: {
-              ...prov.properties,
+              ...region.properties,
               ...dias.reduce((prev, dia) => ({
                   ...prev,
                   [`v${dia}`]: Number(movilidadRegion[dia])
@@ -65,43 +46,11 @@ const mergeChile = () => {
           }
         })
       })
-      fs.writeFile(`${dirGeoJsons}/chile/regiones_con_movilidad.json`, regionesConMovilidad, err => console.log(err))
+      fs.writeFile(path.join('src', dirGeoJsons, codigoPais, archivoSalida), output, console.error)
     }
   )
 }
 
-const mergeArgentina = () => {
-  let movilidad = []
-  fs.createReadStream('src/data/movilidad_argentina_provincias.csv')
-    .pipe(csv({ separator: ';' }))
-    .on('data', row => movilidad.push(row))
-    .on('end', () => {
-      const provinciasConMovilidad = JSON.stringify({
-        ...provinciasArgentina,
-        features: provinciasArgentina.features.map(prov => {
-          const id = prov.properties.gid
-          const movilidadRegion = movilidad.find(m => Number(m.codigo_region) === Number(id))
-          if (!movilidadRegion) {
-            return {}
-          }
-          const dias = Object.keys(movilidadRegion)
-          return {
-            ...prov,
-            properties: {
-              ...prov.properties,
-              ...dias.reduce((prev, dia) => ({
-                  ...prev,
-                  [`v${dia}`]: Number(movilidadRegion[dia])
-                }), {})
-            }
-          }
-        })
-      })
-      fs.writeFile(`${dirGeoJsons}/argentina/provincias_con_movilidad.json`, provinciasConMovilidad, err => console.log(err))
-    }
-  )
-}
-
-mergeEcuador()
-mergeChile()
-mergeArgentina()
+mergeMovilidad('AR')
+mergeMovilidad('CL')
+mergeMovilidad('EC')
