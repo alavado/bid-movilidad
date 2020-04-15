@@ -31,8 +31,8 @@ const GraficoComuna = () => {
         ticks: {
           autoSkip: false,
           callback: (val, i) => {
-            const fecha = moment(fechaInicio).add(Number(val) - 3, 'days')
-            return fecha.weekday() === 0 ? fecha.format('D MMM') : ((dia + 2) === Number(val) ? '' : null)
+            const fecha = moment(fechaInicio).add(Number(val), 'days')
+            return fecha.weekday() === 0 ? fecha.format('D MMM') : (dia === Number(val) ? '' : null)
           },
         },
         fontFamily: 'Source Sans Pro'
@@ -46,11 +46,11 @@ const GraficoComuna = () => {
         label: function(tooltipItem, data) {
           const etiqueta = data.datasets[tooltipItem.datasetIndex].label
           const valor = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]
-          return `${etiqueta}: ${Math.round(valor * 100) / 100.0}`
+          return `${etiqueta}: ${valor.toLocaleString('de-DE', { maximumFractionDigits: 2 })}`
         },
-        title: (tooltipItem, data) => {
+        title: tooltipItem => {
           return moment(fechaInicio)
-            .add(Number(tooltipItem[0].label) - 3, 'days')
+            .add(Number(tooltipItem[0].label) - 1, 'days')
             .format('dddd, D [de] MMMM [de] YYYY')
         }
       }
@@ -58,9 +58,9 @@ const GraficoComuna = () => {
   }), [dia])
   
   const [chartData, setChartData] = useState({
-    labels: Object.keys(datos).filter(k => k.match(/v[0-9]+/g)).map(k => {
-      return k.substring(1)//
-    }),
+    labels: Object.keys(datos)
+      .filter(k => k.match(/v[0-9]+/g))
+      .map(k => k.substring(1)),
     datasets: [
       {
         label: 'Índice de movilidad',
@@ -71,7 +71,7 @@ const GraficoComuna = () => {
         pointHighlightFill: '#fff',
         pointHighlightStroke: 'rgba(220,220,220,1)',
         data: Object.keys(datos).filter(k => k.match(/v[0-9]+/g)).map(k => {
-          return datos[k]
+          return datos[k] > 0 ? datos[k] : null
         }),
       }
     ]

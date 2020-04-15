@@ -34,9 +34,11 @@ const mergeMovilidad = pais => {
             return feature
           }
           let dias = Object.keys(datosRegion)
+          let diasExtra = []
           for (let dia = 1; !dias.includes(dia.toString()); dia++) {
-            dias.push(dia.toString())
+            diasExtra.push(dia.toString())
           }
+          dias = [...diasExtra, ...dias]
           return {
             ...feature,
             properties: {
