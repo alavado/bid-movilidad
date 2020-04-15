@@ -12,18 +12,19 @@ import configPaises from '../../config/paises'
 const SeccionIzquierda = () => {
 
   const dispatch = useDispatch()
+  const paises = configPaises.sort((p1, p2) => p1.nombre > p2.nombre ? 1 : -1)
 
   return (
     <aside className="SeccionIzquierda">
       <div className="SeccionIzquierda__contenedor_campo">
-        <label htmlFor="selector-pais" className="SeccionIzquierda__label">País</label>
+        <label htmlFor="selector-pais" className="SeccionIzquierda__label">Seleccione país</label>
         <ReactFlagsSelect
           style={{ outline: 'none' }}
           id="selector-pais"
           className="SeccionIzquierda__selector-pais"
           defaultCountry="CL"
-          countries={configPaises.map(({ codigo }) => codigo)}
-          customLabels={configPaises.reduce((obj, p) => ({ ...obj, [p.codigo]: p.nombre }), {})}
+          countries={paises.map(({ codigo }) => codigo)}
+          customLabels={paises.reduce((obj, p) => ({ ...obj, [p.codigo]: p.nombre }), {})}
           onSelect={codigo => {
             dispatch(fijarPais(codigo))
             dispatch(fijarDestino(codigo))
