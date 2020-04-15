@@ -4,11 +4,7 @@ const path = require('path')
 const bomstrip = require('bomstrip')
 
 const dirGeoJsons = path.join('data', 'geojson')
-const propiedadIDRegionEnGeoJSON = {
-  AR: 'gid',
-  CL: 'codregion',
-  EC: 'cartodb_id'
-}
+const configPaises = require('../config/paises')
 
 const dirCSV = path.join('src', 'data', 'csv')
 const separator = ';'
@@ -19,8 +15,8 @@ const archivoSalida = 'merge.json'
 
 const mergeMovilidad = pais => {
   let datosCSV = []
-  const regiones = require(path.join('..', dirGeoJsons, pais, archivoGeoJSON))
-  fs.createReadStream(path.join(dirCSV, pais, archivoCSV))
+  const regiones = require(path.join('..', dirGeoJsons, pais.codigo, archivoGeoJSON))
+  fs.createReadStream(path.join(dirCSV, pais.codigo, archivoCSV))
     .pipe(new bomstrip())
     .pipe(csv({ separator }))
     .on('data', row => datosCSV.push(row))
@@ -28,7 +24,7 @@ const mergeMovilidad = pais => {
       const salida = JSON.stringify({
         ...regiones,
         features: regiones.features.map(feature => {
-          const id = feature.properties[propiedadIDRegionEnGeoJSON[pais]]
+          const id = feature.properties[pais.geojson.claveIDRegion]
           const datosRegion = datosCSV.find(({ cod }) => Number(cod) === Number(id))
           if (!datosRegion) {
             return feature
@@ -51,12 +47,10 @@ const mergeMovilidad = pais => {
           }
         })
       })
-      const pathSalida = path.join('src', dirGeoJsons, pais, archivoSalida)
+      const pathSalida = path.join('src', dirGeoJsons, pais.codigo, archivoSalida)
       fs.writeFile(pathSalida, salida, console.error)
     }
   )
 }
 
-mergeMovilidad('AR')
-mergeMovilidad('CL')
-mergeMovilidad('EC')
+configPaises.forEach(pais => mergeMovilidad(pais))

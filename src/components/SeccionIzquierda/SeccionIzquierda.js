@@ -3,12 +3,11 @@ import ReactFlagsSelect from 'react-flags-select'
 import 'react-flags-select/css/react-flags-select.css'
 import './SeccionIzquierda.css'
 import { useDispatch } from 'react-redux'
-import { fijarPais, fijarDestino, abrirBandeja } from '../../redux/actions'
+import { fijarPais, fijarDestino } from '../../redux/actions'
 import { NavLink as Link } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import logoIIEP from '../../assets/logo_iiep.png'
 import logoCIAE from '../../assets/logo_ciae_nuevo.png'
+import configPaises from '../../config/paises'
 
 const SeccionIzquierda = () => {
 
@@ -17,13 +16,14 @@ const SeccionIzquierda = () => {
   return (
     <aside className="SeccionIzquierda">
       <div className="SeccionIzquierda__contenedor_campo">
-        <label htmlFor="selector-pais" className="SeccionIzquierda__label">País seleccionado</label>
+        <label htmlFor="selector-pais" className="SeccionIzquierda__label">País</label>
         <ReactFlagsSelect
           style={{ outline: 'none' }}
           id="selector-pais"
           className="SeccionIzquierda__selector-pais"
           defaultCountry="CL"
-          countries={['AR', 'CL', 'EC']}
+          countries={configPaises.map(({ codigo }) => codigo)}
+          customLabels={configPaises.reduce((obj, p) => ({ ...obj, [p.codigo]: p.nombre }), {})}
           onSelect={codigo => {
             dispatch(fijarPais(codigo))
             dispatch(fijarDestino(codigo))
@@ -34,9 +34,9 @@ const SeccionIzquierda = () => {
         <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link>
         <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/about">Acerca de</Link>
         <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/contact">Contacto</Link>
-        <a className="SeccionIzquierda__link" target="_blank" href="https://google.com" rel="noopener noreferrer">
+        {/* <a className="SeccionIzquierda__link" target="_blank" href="https://google.com" rel="noopener noreferrer">
           Blog <FontAwesomeIcon size="sm" className="SeccionIzquierda__icono_link_externo" icon={faExternalLinkAlt} />
-        </a>
+        </a> */}
       </ul>
       <div className="SeccionIzquierda__inferior">
         <div className="SeccionIzquierda__stickers">
