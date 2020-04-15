@@ -17,36 +17,40 @@ const archivoGeoJSON = 'regiones.json'
 const archivoCSV = 'movilidad.csv'
 const archivoSalida = 'merge.json'
 
-const mergeMovilidad = codigoPais => {
-  let movilidad = []
-  const regiones = require(path.join('..', dirGeoJsons, codigoPais, archivoGeoJSON))
-  fs.createReadStream(path.join(dirCSV, codigoPais, archivoCSV))
+const mergeMovilidad = pais => {
+  let datosCSV = []
+  const regiones = require(path.join('..', dirGeoJsons, pais, archivoGeoJSON))
+  fs.createReadStream(path.join(dirCSV, pais, archivoCSV))
     .pipe(new bomstrip())
     .pipe(csv({ separator }))
-    .on('data', row => movilidad.push(row))
+    .on('data', row => datosCSV.push(row))
     .on('end', () => {
-      const output = JSON.stringify({
+      const salida = JSON.stringify({
         ...regiones,
-        features: regiones.features.map(region => {
-          const id = region.properties[propiedadIDRegionEnGeoJSON[codigoPais]]
-          const movilidadRegion = movilidad.find(({ cod }) => Number(cod) === Number(id))
-          if (!movilidadRegion) {
-            return {}
+        features: regiones.features.map(feature => {
+          const id = feature.properties[propiedadIDRegionEnGeoJSON[pais]]
+          const datosRegion = datosCSV.find(({ cod }) => Number(cod) === Number(id))
+          if (!datosRegion) {
+            return feature
           }
-          const dias = Object.keys(movilidadRegion)
+          let dias = Object.keys(datosRegion)
+          for (let dia = 1; !dias.includes(dia.toString()); dia++) {
+            dias.push(dia.toString())
+          }
           return {
-            ...region,
+            ...feature,
             properties: {
-              ...region.properties,
+              ...feature.properties,
               ...dias.reduce((prev, dia) => ({
                   ...prev,
-                  [`v${dia}`]: Number(movilidadRegion[dia])
+                  [`v${dia}`]: datosRegion[dia] ? Number(datosRegion[dia]) : 0
                 }), {})
             }
           }
         })
       })
-      fs.writeFile(path.join('src', dirGeoJsons, codigoPais, archivoSalida), output, console.error)
+      const pathSalida = path.join('src', dirGeoJsons, pais, archivoSalida)
+      fs.writeFile(pathSalida, salida, console.error)
     }
   )
 }

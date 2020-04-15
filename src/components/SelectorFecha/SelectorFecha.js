@@ -7,7 +7,7 @@ import { faPlay as iconoPlay } from '@fortawesome/free-solid-svg-icons'
 import { faPause as iconoPause } from '@fortawesome/free-solid-svg-icons'
 import './SelectorFecha.css'
 import './range.css'
-import { fechaInicio } from '../../config/fecha'
+import { fechaInicio, numeroDias } from '../../config/fecha'
 
 const SelectorFecha = () => {
 
@@ -48,7 +48,7 @@ const SelectorFecha = () => {
         type="range"
         step="1"
         min="1"
-        max="23"
+        max={numeroDias}
         value={dia}
         onChange={e => {
           dispatch(playFecha(false))

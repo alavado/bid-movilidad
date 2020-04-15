@@ -150,7 +150,7 @@ const Mapa = () => {
           type="fill"
           paint={{
             'fill-color': {
-              property: `v${dia + 2}`,
+              property: `v${dia}`,
               stops: [
                 [0, '#B0BEC5'],
                 [.01, '#abdda4'],
