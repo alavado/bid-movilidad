@@ -32,12 +32,14 @@ const SeccionIzquierda = () => {
         />
       </div>
       <ul className="SeccionIzquierda__links">
-        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link>
-        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/about">Acerca de</Link>
+        {/* <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link> */}
+        <a className="SeccionIzquierda__link" target="_blank" href="http://www.iadb.org/document.cfm?id=EZSHARE-1993837609-142" rel="noopener noreferrer">
+          Metodología
+        </a>
         <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/contact">Contacto</Link>
-        {/* <a className="SeccionIzquierda__link" target="_blank" href="https://google.com" rel="noopener noreferrer">
-          Blog <FontAwesomeIcon size="sm" className="SeccionIzquierda__icono_link_externo" icon={faExternalLinkAlt} />
-        </a> */}
+        <a className="SeccionIzquierda__link" target="_blank" href="http://www.iadb.org/document.cfm?id=EZSHARE-1993837609-143" rel="noopener noreferrer">
+          Acerca de 
+        </a>
       </ul>
       <div className="SeccionIzquierda__inferior">
         <div className="SeccionIzquierda__stickers">

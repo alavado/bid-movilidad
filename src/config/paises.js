@@ -88,7 +88,67 @@ const paises = [
         zoom: 8.285971150593195
       }
     }
-  }
+  },
+  // {
+  //   codigo: 'UY',
+  //   nombre: 'Uruguay',
+  //   geojson: {
+  //     claveIDRegion: 'ID_1',
+  //     claveNombreRegion: 'NAME_1'
+  //   },
+  //   mapa: {
+  //     centro: {
+  //       latitude: -32.4086499614701,
+  //       longitude: -56.207602023750475,
+  //       zoom: 5.805316390519547
+  //     }
+  //   }
+  // },
+  // {
+  //   codigo: 'VE',
+  //   nombre: 'Venezuela',
+  //   geojson: {
+  //     claveIDRegion: 'ID_1',
+  //     claveNombreRegion: 'NAME_1'
+  //   },
+  //   mapa: {
+  //     centro: {
+  //       latitude: 7.24424389869859,
+  //       longitude: -66.0281812627724,
+  //       zoom: 5.185152700501135
+  //     }
+  //   }
+  // },
+  // {
+  //   codigo: 'CR',
+  //   nombre: 'Costa Rica',
+  //   geojson: {
+  //     claveIDRegion: 'COD_PROV',
+  //     claveNombreRegion: 'NPROVINCIA'
+  //   },
+  //   mapa: {
+  //     centro: {
+  //       latitude: 9.833096399445433,
+  //       longitude: -84.34696346806206,
+  //       zoom: 7.045643770556371
+  //     }
+  //   }
+  // },
+  // {
+  //   codigo: 'PA',
+  //   nombre: 'Panamá',
+  //   geojson: {
+  //     claveIDRegion: 'ID_1',
+  //     claveNombreRegion: 'NAME_1'
+  //   },
+  //   mapa: {
+  //     centro: {
+  //       latitude: 7.962838342352478,
+  //       longitude: -80.74039050093182,
+  //       zoom: 6.425480080537959
+  //     }
+  //   }
+  // }
 ]
 
 module.exports = paises
