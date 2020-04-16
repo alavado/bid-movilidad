@@ -2,7 +2,7 @@ import React from 'react'
 import ReactFlagsSelect from 'react-flags-select'
 import 'react-flags-select/css/react-flags-select.css'
 import './SeccionIzquierda.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { fijarPais, fijarDestino } from '../../redux/actions'
 import { NavLink as Link } from 'react-router-dom'
 import logoIIEP from '../../assets/logo_iiep.png'
@@ -13,7 +13,7 @@ const SeccionIzquierda = () => {
 
   const dispatch = useDispatch()
   const paises = configPaises.sort((p1, p2) => p1.nombre > p2.nombre ? 1 : -1)
-
+  const { abierta: bandejaAbierta } = useSelector(state => state.bandeja)
   return (
     <aside className="SeccionIzquierda">
       <div className="SeccionIzquierda__contenedor_campo">
@@ -36,10 +36,11 @@ const SeccionIzquierda = () => {
         <a className="SeccionIzquierda__link" target="_blank" href="http://www.iadb.org/document.cfm?id=EZSHARE-1993837609-142" rel="noopener noreferrer">
           Metodología
         </a>
-        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/contact">Contacto</Link>
         <a className="SeccionIzquierda__link" target="_blank" href="http://www.iadb.org/document.cfm?id=EZSHARE-1993837609-143" rel="noopener noreferrer">
           Acerca de 
         </a>
+        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to={bandejaAbierta ? '/' : '/contact'}>Contacto</Link>
+        
       </ul>
       <div className="SeccionIzquierda__inferior">
         <div className="SeccionIzquierda__stickers">
