@@ -41,7 +41,7 @@ const mergeMovilidad = pais => {
               ...feature.properties,
               ...dias.reduce((prev, dia) => ({
                   ...prev,
-                  [`v${dia}`]: datosRegion[dia] ? Number(datosRegion[dia]) : 0
+                  [`v${dia}`]: datosRegion[dia] ? Number(datosRegion[dia]) : -1000
                 }), {})
             }
           }

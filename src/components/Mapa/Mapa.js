@@ -45,6 +45,8 @@ const Mapa = () => {
     features: obtenerFeaturesPais(pais)
   }), [pais])
 
+  useEffect(() => setPopup({ ...popup, mostrando: false }), [pais])
+
   useEffect(() => {
     if (destino) {
       setViewport(v => ({
@@ -71,20 +73,25 @@ const Mapa = () => {
     if (window.location.href.includes('3000')) console.log({viewport})
     if (popup.mostrando) {
       setPopup({...popup, mostrando: false})
-      setPopupChico({...popup, mostrando: true})
+      actualizarPopupChico(e)
       return
     }
     const feats = e.features
     if (!feats || feats.length === 0 || feats[0].source !== 'capa-datos-movilidad') {
       return
     }
-    setPopupChico({...popup, mostrando: false})
+    console.log(feats[0])
+    setPopupChico({...popupChico, mostrando: false})
     setPopup({
       mostrando: true,
       latitude: e.lngLat[1],
       longitude: e.lngLat[0],
       titulo: feats[0].properties[obtenerClaveNombreRegion(pais)]
     })
+    const feature = e.features.find(f => f.source === 'capa-datos-movilidad')
+    if (feature) {
+      dispatch(fijarDatosRegion(feature.properties))
+    }
   }
 
   const actualizarPopupChico = e => {
@@ -153,14 +160,14 @@ const Mapa = () => {
             'fill-color': {
               property: `v${dia}`,
               stops: [
-                [0, '#B0BEC5'],
-                [.01, '#abdda4'],
-                [.3, '#e6f598'],
-                [.45, '#ffffbf'],
-                [.6, '#fee08b'],
-                [.75, '#fdae61'],
-                [.9, '#f46d43'],
-                [1.05, '#d53e4f']
+                [-1010, '#B0BEC5'], // sin datos
+                [-72, '#abdda4'],
+                [-60, '#e6f598'],
+                [-48, '#ffffbf'],
+                [-36, '#fee08b'],
+                [-24, '#fdae61'],
+                [-12, '#f46d43'],
+                [0, '#d53e4f']
               ]
             },
             'fill-opacity': .5,
