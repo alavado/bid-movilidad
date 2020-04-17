@@ -39,11 +39,16 @@ const SeccionIzquierda = () => {
         <a className="SeccionIzquierda__link" target="_blank" href="http://www.iadb.org/document.cfm?id=EZSHARE-1993837609-143" rel="noopener noreferrer">
           Acerca de 
         </a>
-        <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to={bandejaAbierta ? '/' : '/contact'}>Contacto</Link>
-        
+        {/* <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to={bandejaAbierta ? '/' : '/contact'}>Contacto</Link> */}
       </ul>
       <div className="SeccionIzquierda__inferior">
         <div className="SeccionIzquierda__stickers">
+          <div className="SeccionIzquierda__texto_contacto">
+            Contacto
+            <p className="SeccionIzquierda__mail_contacto">
+              <a href="mailto:research@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">research@iadb.org</a>
+            </p>
+          </div>
           <h2 className="SeccionIzquierda__stickers_titulo">Con la colaboración de</h2>
           <div className="SeccionIzquierda__contenedor_stickers">
             <a href="http://ciae.uchile.cl/" target="_blank" rel="noopener noreferrer">

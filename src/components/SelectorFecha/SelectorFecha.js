@@ -47,7 +47,7 @@ const SelectorFecha = () => {
         title="Arrastra para moverte en el tiempo"
         type="range"
         step="1"
-        min="1"
+        min="2"
         max={numeroDias}
         value={dia}
         onChange={e => {

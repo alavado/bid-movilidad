@@ -3,6 +3,7 @@
   box-shadow: .1em 0px .1em rgba(0, 0, 0, .15);
   font-family: 'Source Sans Pro', sans-serif;
   min-width: 13em;
+  max-width: 13em;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -85,7 +86,7 @@
 .SeccionIzquierda__stickers_titulo {
   font-family: 'Source Sans Pro', sans-serif;
   color: rgba(255, 255, 255, .7);
-  font-size: .6em;
+  font-size: .9em;
   margin-bottom: 1.5em;
   text-align: center;
 }
@@ -100,13 +101,13 @@
 }
 
 .SeccionIzquierda__sticker {
-  height: 2em;
+  height: 2.5em;
   filter: invert(100%) sepia() saturate(0);
   opacity: .8;
 }
 
 .SeccionIzquierda__sticker--ciae {
-  height: 2.2em;
+  height: 2.5em;
 }
 
 @media (orientation: portrait) {
@@ -135,4 +136,19 @@
 
 .flag-select__options {
   border-color: #37474F;
+}
+
+.SeccionIzquierda__texto_contacto {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgba(255, 255, 255, .7);
+  font-size: .85em;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom:3em;
+  text-transform: uppercase;
+}
+
+.SeccionIzquierda__mail_contacto {
+  text-transform: none;
 }

@@ -4,7 +4,7 @@ import { numeroDias } from '../config/fecha'
 
 export const fijarDia = dia => ({
   type: FIJAR_DIA,
-  payload: Math.max(1, Math.min(numeroDias, dia))
+  payload: Math.max(2, Math.min(numeroDias, dia))
 })
 
 export const fijarPais = codigo => ({

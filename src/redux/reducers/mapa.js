@@ -1,7 +1,7 @@
 import { FIJAR_DIA, FIJAR_PAIS, FIJAR_DESTINO, FIJAR_DATOS_REGION, PLAY } from "../actionTypes"
 
 const initialState = {
-  dia: 1,
+  dia: 2,
   pais: 'CL',
   destino: null,
   datos: [],
