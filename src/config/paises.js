@@ -104,21 +104,21 @@ const paises = [
       }
     }
   },
-  // {
-  //   codigo: 'PA',
-  //   nombre: 'Panamá',
-  //   geojson: {
-  //     claveIDRegion: 'ID_1',
-  //     claveNombreRegion: 'NAME_1'
-  //   },
-  //   mapa: {
-  //     centro: {
-  //       latitude: 7.962838342352478,
-  //       longitude: -80.74039050093182,
-  //       zoom: 6.425480080537959
-  //     }
-  //   }
-  // },
+  {
+    codigo: 'PA',
+    nombre: 'Panamá',
+    geojson: {
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
+    },
+    mapa: {
+      centro: {
+        latitude: 7.962838342352478,
+        longitude: -80.74039050093182,
+        zoom: 6.425480080537959
+      }
+    }
+  },
   {
     codigo: 'UY',
     nombre: 'Uruguay',
