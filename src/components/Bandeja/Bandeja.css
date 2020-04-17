@@ -8,7 +8,7 @@
 .Bandeja__contenido {
   flex: 1;
   display: flex;
-  min-width: 24.7em;
+  min-width: 15.7em;
 }
 
 .Bandeja__cerrar {

@@ -25,7 +25,7 @@ const Bandeja = () => {
   }, [location.pathname])
 
   return (
-    <div className="Bandeja" style={{ width: abierta ? '26em' : 0 }}>
+    <div className="Bandeja" style={{ width: abierta ? '17em' : 0 }}>
       <div className="Bandeja__contenido">
         <Switch>
           <Route path="/about" component={AcercaDe} />

@@ -4,7 +4,7 @@ import './Contacto.css'
 const Contacto = () => {
   return (
     <div className="Contacto">
-      <h1 className="Contacto__titulo">Contacto</h1>
+      <p className="Contacto__texto">Preguntas sobre este trabajo, escríbenos a <a href="mailto:research@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">research@iadb.org</a></p>
     </div>
   )
 }
