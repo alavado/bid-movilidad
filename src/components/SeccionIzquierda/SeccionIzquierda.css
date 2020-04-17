@@ -113,6 +113,7 @@
 @media (orientation: portrait) {
   .SeccionIzquierda {
     align-items: center;
+    max-width: 100%;
   }
 
   .SeccionIzquierda__contenedor_campo {

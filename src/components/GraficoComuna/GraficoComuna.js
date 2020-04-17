@@ -16,7 +16,8 @@ const GraficoComuna = () => {
         display: true,
         scaleLabel: {
           display: true,
-          labelString: 'Índice de movilidad'
+          labelString: 'Cambio % en movilidad',
+          fontSize: 14
         },
         gridLines: {
           display: false
@@ -25,8 +26,11 @@ const GraficoComuna = () => {
           maxTicksLimit: 6,
           suggestedMin: -60,
           suggestedMax: 0,
-          max: 10,
-        }
+          max: 20,
+          callback: (val, i) => {
+            return val + '%'
+          },
+        },
       }],
       xAxes: [{
         ticks: {
@@ -47,7 +51,7 @@ const GraficoComuna = () => {
         label: function(tooltipItem, data) {
           const etiqueta = data.datasets[tooltipItem.datasetIndex].label
           const valor = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]
-          return `${etiqueta}: ${valor.toLocaleString('de-DE', { maximumFractionDigits: 2 })}`
+          return `${etiqueta}: ${valor.toLocaleString('de-DE', { maximumFractionDigits: 0 }) + '%'}`
         },
         title: tooltipItem => {
           return moment(fechaInicio)
@@ -64,7 +68,7 @@ const GraficoComuna = () => {
       .map(k => k.substring(1)),
     datasets: [
       {
-        label: 'Índice de movilidad',
+        label: 'Cambio % en movilidad',
         data: Object.keys(datos).filter(k => k.match(/v[0-9]+/g)).map(k => {
           return ((datos[k] <= 10) && (datos[k]>-100)) ? datos[k] : null
         }),
@@ -87,7 +91,7 @@ const GraficoComuna = () => {
       .map(k => k.substring(1)),
       datasets: [
         {
-          label: 'Índice de movilidad',
+          label: 'Cambio % en movilidad',
           fillColor: 'rgba(220,220,220,0.2)',
           strokeColor: 'rgba(220,220,220,1)',
           pointColor: 'rgba(220,220,220,1)',

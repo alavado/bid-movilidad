@@ -3,7 +3,7 @@
 }
 
 .PopupComuna {
-  width: 24em;
+  width: 30em;
   transition: opacity .25s ease-in-out;
   animation: aparece-popup .25s ease-in-out both;
 }
@@ -18,7 +18,7 @@
   margin: .5em .5em 1em .5em;
   opacity: .8;
   text-transform: uppercase;
-  font-size: .85em;
+  font-size: 1em;
   letter-spacing: 1px;
 }
 
