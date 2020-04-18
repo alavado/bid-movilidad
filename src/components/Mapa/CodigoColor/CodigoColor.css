@@ -31,8 +31,19 @@
 }
 
 @media (orientation: portrait) {
+
   .CodigoColor {
-    left: 1.5em;
-    bottom: calc(64px + 7.5em);
+    top: 1.5em;
+    bottom: auto;
+    left: auto;
+    justify-items: center;
+    width: 100%;
+  }
+
+  .CodigoColor__contenedor {
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

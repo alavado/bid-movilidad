@@ -31,30 +31,32 @@ const SelectorFecha = () => {
       <div className="SelectorFecha__fecha_cercana">
         {moment(fechaInicio).add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
       </div>
-      <div className="SelectorFecha__acciones">
-        <button
-          className="SelectorFecha__accion"
-          onClick={() => dispatch(playFecha(!playing))}
-          title={playing ? 'Detener avance automático' : 'Avance automático'}
-        >
-          <FontAwesomeIcon
-            className="SelectorFecha__icono_accion"
-            icon={playing ? iconoPause : iconoPlay}
-          />
-        </button>
+      <div className="SelectorFecha__contenedor_inferior">
+        <div className="SelectorFecha__acciones">
+          <button
+            className="SelectorFecha__accion"
+            onClick={() => dispatch(playFecha(!playing))}
+            title={playing ? 'Detener avance automático' : 'Avance automático'}
+          >
+            <FontAwesomeIcon
+              className="SelectorFecha__icono_accion"
+              icon={playing ? iconoPause : iconoPlay}
+            />
+          </button>
+        </div>
+        <input
+          title="Arrastra para moverte en el tiempo"
+          type="range"
+          step="1"
+          min="2"
+          max={numeroDias}
+          value={dia}
+          onChange={e => {
+            dispatch(playFecha(false))
+            dispatch(fijarDia(parseInt(e.target.value)))
+          }}
+        />
       </div>
-      <input
-        title="Arrastra para moverte en el tiempo"
-        type="range"
-        step="1"
-        min="2"
-        max={numeroDias}
-        value={dia}
-        onChange={e => {
-          dispatch(playFecha(false))
-          dispatch(fijarDia(parseInt(e.target.value)))
-        }}
-      />
     </div>
   )
 }

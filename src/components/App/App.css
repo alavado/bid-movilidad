@@ -12,6 +12,8 @@
 
 .App__mapa {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .App__contenedor_central {
@@ -22,5 +24,8 @@
 @media(orientation: portrait) {
   .App__contenedor {
     flex-direction: column;
+  }
+  .App__mapa {
+    flex-direction: column-reverse;
   }
 }

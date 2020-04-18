@@ -1,16 +1,22 @@
 .SelectorFecha {
-  height: 2.5em;
   background: linear-gradient(#37474F, #34424a);
   color: rgba(255, 255, 255, .9);
   display: flex;
   justify-content: center;
   padding-right: 16px;
+  flex-direction: column;
+}
+
+.SelectorFecha__contenedor_inferior {
+  display: flex;
+  width: 100%;
 }
 
 .SelectorFecha__acciones {
   width: 4.5em;
   display: flex;
   margin-right: .75em;
+  height: 2.5em;
 }
 
 .SelectorFecha__accion {
@@ -34,17 +40,24 @@
 
 @media(orientation: portrait) {
 
-  .SelectorFecha {
-    position: fixed;
-    top: 8.9em;
-    width: 100%;
-  }
-
   .SelectorFecha__fecha_cercana {
-    position: absolute;
     display: flex;
-    margin-top: 3.5em;
     font-family: 'Source Sans Pro', sans-serif;
     text-transform: uppercase;
+    padding: .5em 0 .15em 0;
+    align-items: center;
+    justify-content: center;
+    background-color: #263238;
+  }
+
+  .SelectorFecha {
+    background: #263238;
+    padding-right: 0;
+  }
+
+  .SelectorFecha input[type=range] {
+    background-color: #263238;
+    padding-right: 16px;
   }
 }
+  
