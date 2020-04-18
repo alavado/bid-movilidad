@@ -8,9 +8,9 @@
   opacity: .8;
   font-size: .6em;
   display: grid;
+  gap: .3em;
   grid-template-rows: auto auto auto;
   align-items: center;
-  gap: .3em;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -28,4 +28,11 @@
   display: flex;
   justify-content: space-between;
   font-size: .9em;
+}
+
+@media (orientation: portrait) {
+  .CodigoColor {
+    left: 1.5em;
+    bottom: calc(64px + 7.5em);
+  }
 }

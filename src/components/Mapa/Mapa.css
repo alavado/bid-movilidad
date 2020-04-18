@@ -45,6 +45,9 @@
   .PopupComuna {
     max-width: 90vw;
   }
+  .Mapa__controles_navegacion {
+    display: none;
+  }
 }
 
 .mapboxgl-popup-close-button {

@@ -32,7 +32,7 @@ const Header = () => {
       </div>
       <div className="Header__barra">
         <div className="Header__titulo_landscape">
-          Mapa de Distanciamiento Social
+          Mapa de Movilidad de las Personas
         </div>
         <div className="Header__relleno" />
         <ControlFechaSuperior />

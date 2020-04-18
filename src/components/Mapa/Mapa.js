@@ -121,12 +121,13 @@ const Mapa = () => {
       onViewportChange={cambioEnElViewport}
       mapStyle={style}
       className="Mapa"
+      id="mapa"
       getCursor={() => cursor}
       onClick={mostrarPopup}
       onHover={actualizarPopupChico}
       onMouseLeave={() => setPopupChico({...popupChico, mostrando: false})}
     >
-      <div style={{position: 'absolute', right: 16, top: 16}}>
+      <div className="Mapa__controles_navegacion" style={{position: 'absolute', right: 16, top: 16}}>
         <NavigationControl showCompass={false} className="Mapa__controles_navegacion" />
       </div>
       <CodigoColor />
