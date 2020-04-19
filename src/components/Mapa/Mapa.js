@@ -3,7 +3,7 @@ import ReactMapGL, { Source, Layer, NavigationControl, Popup, FlyToInterpolator 
 import { useSelector, useDispatch } from 'react-redux'
 import style from './style.json'
 import './Mapa.css'
-import { obtenerFeaturesPais, obtenerClaveNombreRegion } from './helpers.js'
+import { obtenerFeaturesPais, obtenerClaveNombreRegion, obtenerZoomSegunBreakpoint } from './helpers.js'
 import CodigoColor from './CodigoColor'
 import GraficoComuna from '../GraficoComuna'
 import { fijarDestino, fijarDatosRegion } from '../../redux/actions.js'
@@ -32,7 +32,7 @@ const Mapa = () => {
     height: 'calc(100vh - 5.5em)',
     latitude: -44.24,
     longitude: -70.01,
-    zoom: 4,
+    zoom: obtenerZoomSegunBreakpoint(window.innerWidth),
     bearing: 57.09,
     pitch: 45.61,
     altitude: 1.5
