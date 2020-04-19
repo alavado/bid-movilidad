@@ -7,6 +7,7 @@ import { obtenerFeaturesPais, obtenerClaveNombreRegion, obtenerZoomSegunBreakpoi
 import CodigoColor from './CodigoColor'
 import GraficoComuna from '../GraficoComuna'
 import { fijarDestino, fijarDatosRegion } from '../../redux/actions.js'
+import MultiTouch from 'mapbox-gl-multitouch'
 
 const Mapa = () => {
 
@@ -130,6 +131,8 @@ const Mapa = () => {
       id="mapa"
       getCursor={() => cursor}
       scrollZoom={!movil}
+      dragPan={!movil}
+      onLoad={e => e.target.addControl(new MultiTouch())}
       onClick={mostrarPopup}
       onHover={actualizarPopupChico}
       onMouseLeave={() => setPopupChico({...popupChico, mostrando: false})}
