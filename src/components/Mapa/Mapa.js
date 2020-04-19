@@ -32,7 +32,7 @@ const Mapa = () => {
     height: 'calc(100vh - 5.5em)',
     latitude: -44.24,
     longitude: -70.01,
-    zoom: obtenerZoomSegunBreakpoint(window.innerWidth),
+    zoom: obtenerZoomSegunBreakpoint(),
     bearing: 57.09,
     pitch: 45.61,
     altitude: 1.5
@@ -51,7 +51,7 @@ const Mapa = () => {
     if (destino) {
       setViewport(v => ({
         ...v,
-        zoom: Number(destino.zoom),
+        zoom: Number(destino.zoom) * obtenerZoomSegunBreakpoint() / 4,
         latitude: Number(destino.latitude),
         longitude: Number(destino.longitude),
         transitionInterpolator: new FlyToInterpolator({ speed: 1.5 }),
