@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExpand, faCompress } from '@fortawesome/free-solid-svg-icons'
+import { faExpand, faCompress, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import logoBID from '../../assets/logo_bid.svg'
 import ControlFechaSuperior from './ControlFechaSuperior'
 
@@ -33,6 +33,7 @@ const Header = () => {
       <div className="Header__barra">
         <div className="Header__titulo_landscape">
           Mapa de Movilidad de las Personas
+          <FontAwesomeIcon className="Header__icono_info" icon={faQuestionCircle} />
         </div>
         <div className="Header__relleno" />
         <ControlFechaSuperior />

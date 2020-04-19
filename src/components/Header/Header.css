@@ -89,21 +89,28 @@
   flex: 1;
 }
 
+.Header__icono_info {
+  display: none;
+}
+
 @media (orientation: portrait) {
   .Header__titulo {
     display: none;
     width: 100%;
   }
   .Header__titulo_landscape {
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
-    padding-left: 0;
+    padding: 0 1em;
   }
   .Header__acciones_secundarias {
     display: none;
   }
   .Header__relleno_doble {
     flex: 1;
+  }
+  .Header__icono_info {
+    display: block;
   }
 }
 
