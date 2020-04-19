@@ -3,7 +3,7 @@ import ReactMapGL, { Source, Layer, NavigationControl, Popup, FlyToInterpolator 
 import { useSelector, useDispatch } from 'react-redux'
 import style from './style.json'
 import './Mapa.css'
-import { obtenerFeaturesPais, obtenerClaveNombreRegion, obtenerZoomSegunBreakpoint } from './helpers.js'
+import { obtenerFeaturesPais, obtenerClaveNombreRegion, obtenerZoomSegunBreakpoint, esMovil } from './helpers.js'
 import CodigoColor from './CodigoColor'
 import GraficoComuna from '../GraficoComuna'
 import { fijarDestino, fijarDatosRegion } from '../../redux/actions.js'
@@ -123,6 +123,7 @@ const Mapa = () => {
       className="Mapa"
       id="mapa"
       getCursor={() => cursor}
+      scrollZoom={!esMovil()}
       onClick={mostrarPopup}
       onHover={actualizarPopupChico}
       onMouseLeave={() => setPopupChico({...popupChico, mostrando: false})}
