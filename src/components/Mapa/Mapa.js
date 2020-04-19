@@ -44,6 +44,12 @@ const Mapa = () => {
     type: 'FeatureCollection',
     features: obtenerFeaturesPais(pais)
   }), [pais])
+  const [anchoPantalla, setAnchoPantalla] = useState(window.innerHeight)
+  useEffect(() => {
+    const evento = window.addEventListener('resize', () => setAnchoPantalla(window.innerWidth))
+    return () => window.removeEventListener(evento)
+  }, [])
+  const movil = useMemo(() => esMovil(), [anchoPantalla])
 
   useEffect(() => setPopup({ ...popup, mostrando: false }), [pais])
 
@@ -123,7 +129,7 @@ const Mapa = () => {
       className="Mapa"
       id="mapa"
       getCursor={() => cursor}
-      scrollZoom={!esMovil()}
+      scrollZoom={!movil}
       onClick={mostrarPopup}
       onHover={actualizarPopupChico}
       onMouseLeave={() => setPopupChico({...popupChico, mostrando: false})}
