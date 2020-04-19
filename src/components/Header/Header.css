@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: row;
   height: 3em;
-  z-index: 3;
+  z-index: 4;
 }
 
 .Header__titulo {
@@ -18,18 +18,29 @@
   display: none;
 }
 
+.Header__barra {
+  font-family: 'Source Sans Pro', sans-serif;
+  background: linear-gradient(#37474F, #34424a);
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .Header__titulo_landscape {
-  min-width: 13em;
+  min-width: 17em;
   padding-left: 1em;
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: center;
   user-select: none;
-  font-size: 1.15em;
   letter-spacing: .5px;
   margin-left: .2em;
   flex: 1;
+  font-size: 1.15em;
 }
 
 .Header__logo_bid {
@@ -37,27 +48,11 @@
   margin-right: .4em;
 }
 
-.Header__texto-titulo {
+.Header__texto_titulo {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: .6em;
   letter-spacing: .5px;
   text-align: center;
-}
-
-.Header__texto-titulo-landscape {
-  flex: 1;
-  text-align: center;
-}
-
-.Header__barra {
-  font-family: 'Source Sans Pro', sans-serif;
-  background: linear-gradient(#37474F, #34424a);
-  flex: 1;
-  height: 100%;
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  width: 100%;
 }
 
 .Header__relleno {
@@ -118,9 +113,14 @@
     display: none;
   }
   .Header__icono_info {
-    display: block;
+    display: flex;
+    justify-content: flex-start;
     margin-right: 1em;
     color: #26C6DA;
+  }
+  .Header__texto_titulo_landscape {
+    flex: 1;
+    text-align: center;
   }
 }
 

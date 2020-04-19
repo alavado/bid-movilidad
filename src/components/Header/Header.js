@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import './Header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExpand, faCompress, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faExpand, faCompress, faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import logoBID from '../../assets/logo_bid.svg'
 import ControlFechaSuperior from './ControlFechaSuperior'
+import { useDispatch, useSelector } from 'react-redux'
+import { abrirMenu, cerrarMenu } from '../../redux/actions'
 
 const pantallaCompletaHabilitada = () => {
   const { innerWidth, innerHeight, screen } = window
@@ -13,6 +15,8 @@ const pantallaCompletaHabilitada = () => {
 const Header = () => {
 
   const [pantallaCompleta, setPantallaCompleta] = useState(false)
+  const { activo: menuActivo } = useSelector(state => state.menu)
+  const dispatch = useDispatch()
 
   const fijarPantallaCompleta = () => {
     setPantallaCompleta(prev => !pantallaCompletaHabilitada())
@@ -28,12 +32,15 @@ const Header = () => {
     <header className="Header">
       <div className="Header__titulo">
         <img className="Header__logo_bid" src={logoBID} alt="Logo BID" />
-        <h1 className="Header__texto-titulo">Mapa de<br />Movilidad de las Personas</h1>
+        <h1 className="Header__texto_titulo">Mapa de<br />Movilidad de las Personas</h1>
       </div>
       <div className="Header__barra">
         <div className="Header__titulo_landscape">
-        <h1 className="Header__texto-titulo-landscape">Mapa de Movilidad de las Personas</h1>
-          <FontAwesomeIcon className="Header__icono_info" icon={faBars} />
+          <h1 className="Header__texto_titulo_landscape">Mapa de Movilidad de las Personas</h1>
+          {menuActivo ?
+            <FontAwesomeIcon onClick={() => dispatch(cerrarMenu())} className="Header__icono_info" icon={faTimes} /> :
+            <FontAwesomeIcon onClick={() => dispatch(abrirMenu())} className="Header__icono_info" icon={faBars} />
+          }
         </div>
         <div className="Header__relleno" />
         <ControlFechaSuperior />

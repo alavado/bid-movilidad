@@ -1,3 +1,69 @@
 .MenuOverlay {
-  display: none;
+  position: absolute;
+  background-color: #263238;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 3em);
+  font-family: 'Source Sans Pro', sans-serif;
+  transform: translateY(calc(-100vh));
+  transition: all .45s ease-in-out;
+  opacity: .95;
+}
+
+.MenuOverlay--activo {
+  transform: translateY(0em);
+}
+
+.MenuOverlay__links {
+  margin: 3em 0 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.MenuOverlay__link {
+  text-align: center;
+  color: rgba(255, 255, 255, .9);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  height: 4em;
+  line-height: 1.5;
+}
+
+.MenuOverlay__mail_contacto {
+  text-transform: none;
+}
+
+.MenuOverlay__logos {
+  margin: 1.5em;
+}
+
+.MenuOverlay__logos_titulo {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgba(255, 255, 255, .7);
+  font-size: .9em;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.MenuOverlay__contenedor_logos {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 1.5em;
+  overflow: hidden;
+  align-items: center;
+  justify-items: center;
+}
+
+.MenuOverlay__logo {
+  height: 2.5em;
+  filter: invert(100%) sepia() saturate(0);
+  opacity: .8;
+}
+
+.MenuOverlay__logo--ciae {
+  height: 2.5em;
 }

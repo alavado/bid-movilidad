@@ -8,11 +8,12 @@ import Bandeja from '../Bandeja'
 import MenuOverlay from '../MenuOverlay'
 
 const App = () => {
+
   return (
     <div className="App">
-      <MenuOverlay />
       <Header />
       <main className="App__contenedor">
+        <MenuOverlay />
         <SeccionIzquierda />
         <section className="App__contenedor_central">
           <Bandeja />

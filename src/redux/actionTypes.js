@@ -6,3 +6,5 @@ export const PLAY = 'PLAY'
 
 export const CERRAR_BANDEJA = 'CERRAR_BANDEJA'
 export const ABRIR_BANDEJA = 'ABRIR_BANDEJA'
+export const CERRAR_MENU = 'CERRAR_MENU'
+export const ABRIR_MENU = 'ABRIR_MENU'
