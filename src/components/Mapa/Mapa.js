@@ -123,7 +123,6 @@ const Mapa = () => {
       className="Mapa"
       id="mapa"
       getCursor={() => cursor}
-      onLoad={e => console.log(e.target)}
       onClick={mostrarPopup}
       onHover={actualizarPopupChico}
       onMouseLeave={() => setPopupChico({...popupChico, mostrando: false})}
