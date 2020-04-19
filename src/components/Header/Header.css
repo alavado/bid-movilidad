@@ -22,11 +22,14 @@
   min-width: 13em;
   padding-left: 1em;
   display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
   align-items: center;
   user-select: none;
   font-size: 1.15em;
   letter-spacing: .5px;
   margin-left: .2em;
+  flex: 1;
 }
 
 .Header__logo_bid {
@@ -38,6 +41,12 @@
   font-family: 'Source Sans Pro', sans-serif;
   font-size: .6em;
   letter-spacing: .5px;
+  text-align: center;
+}
+
+.Header__texto-titulo-landscape {
+  flex: 1;
+  text-align: center;
 }
 
 .Header__barra {
@@ -99,18 +108,19 @@
     width: 100%;
   }
   .Header__titulo_landscape {
-    justify-content: space-between;
     width: 100%;
     padding: 0 1em;
   }
   .Header__acciones_secundarias {
     display: none;
   }
-  .Header__relleno_doble {
-    flex: 1;
+  .Header__relleno_doble, .Header__relleno {
+    display: none;
   }
   .Header__icono_info {
     display: block;
+    margin-right: 1em;
+    color: #26C6DA;
   }
 }
 
