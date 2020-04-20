@@ -2,7 +2,7 @@ import { FIJAR_DIA, FIJAR_PAIS, FIJAR_DESTINO, FIJAR_DATOS_REGION, PLAY } from "
 
 const initialState = {
   dia: 2,
-  pais: 'AR',
+  pais: 'CO',
   destino: null,
   datos: [],
   playing: true

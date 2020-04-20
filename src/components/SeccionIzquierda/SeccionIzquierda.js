@@ -22,7 +22,7 @@ const SeccionIzquierda = () => {
           style={{ outline: 'none' }}
           id="selector-pais"
           className="SeccionIzquierda__selector-pais"
-          defaultCountry="AR"
+          defaultCountry="CO"
           countries={paises.map(({ codigo }) => codigo)}
           customLabels={paises.reduce((obj, p) => ({ ...obj, [p.codigo]: p.nombre }), {})}
           onSelect={codigo => {

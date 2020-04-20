@@ -25,7 +25,7 @@ const paises = [
       centro: {
         latitude: -44.27,
         longitude: -66.47,
-        zoom: 5
+        zoom: 3.5
       }
     }
   },

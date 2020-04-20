@@ -117,7 +117,7 @@ const GraficoComuna = () => {
 
   return (
     <div style={{ padding: '.5em' }}>
-      {Object.keys(datos).filter(k => k.match(/v[0-9]+/g) && datos[k] !== 1000).length === 0 ?
+      {Object.keys(datos).filter(k => k.match(/v[0-9]+/g) && datos[k] !== -1000).length === 0 ?
         <div className="GraficoComuna__sin_datos">
           No hay datos para esta región.
         </div> :

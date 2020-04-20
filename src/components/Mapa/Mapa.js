@@ -31,8 +31,8 @@ const Mapa = () => {
   const [viewport, setViewport] = useState({
     width: '100%',
     height: 'calc(100vh - 5.5em)',
-    latitude: -44.24,
-    longitude: -70.01,
+    latitude: 1.7189608250747426,
+    longitude: -74.13029279247739,
     zoom: obtenerZoomSegunBreakpoint(),
     bearing: 57.09,
     pitch: 45.61,
