@@ -1,6 +1,6 @@
 import React from 'react'
 import logoIIEP from '../../assets/logo_iiep.png'
-import logoCIAE from '../../assets/logo_ciae_nuevo.png'
+import logoCIAE from '../../assets/logo_ciae_uchile.png'
 import './MenuOverlay.css'
 import { useSelector } from 'react-redux'
 

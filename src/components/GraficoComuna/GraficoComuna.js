@@ -35,6 +35,8 @@ const GraficoComuna = () => {
       xAxes: [{
         ticks: {
           autoSkip: false,
+          maxRotation: 0,
+          minRotation: 0,
           callback: (val, i) => {
             const fecha = moment(fechaInicio).add(Number(val), 'days')
             return fecha.weekday() === 0 ? fecha.format('D MMM') : (dia === Number(val) ? '' : null)
