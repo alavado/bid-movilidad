@@ -103,7 +103,7 @@
 }
 
 .SeccionIzquierda__sticker {
-  height: 2.5em;
+  height: 2.6em;
   filter: invert(100%) sepia() saturate(0);
   opacity: .8;
 }
