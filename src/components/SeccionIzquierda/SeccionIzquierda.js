@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fijarPais, fijarDestino } from '../../redux/actions'
 import { NavLink as Link } from 'react-router-dom'
 import logoIIEP from '../../assets/logo_iiep.png'
-import logoCIAE from '../../assets/logo_ciae_nuevo.png'
+import logoCIAE from '../../assets/logo_ciae_uchile.png'
 import configPaises from '../../config/paises'
 
 const SeccionIzquierda = () => {
