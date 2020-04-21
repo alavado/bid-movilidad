@@ -79,7 +79,7 @@ const Mapa = () => {
   }
 
   const mostrarPopup = e => {
-    if (window.location.href.includes('3000')) console.log({viewport})
+    if (window.location.href.includes('300')) console.log(e)
     if (popup.mostrando) {
       setPopup({...popup, mostrando: false})
       actualizarPopupChico(e)
@@ -89,7 +89,6 @@ const Mapa = () => {
     if (!feats || feats.length === 0 || feats[0].source !== 'capa-datos-movilidad') {
       return
     }
-    console.log(feats[0])
     setPopupChico({...popupChico, mostrando: false})
     setPopup({
       mostrando: true,
@@ -183,11 +182,27 @@ const Mapa = () => {
                 [0, '#d53e4f']
               ]
             },
-            'fill-opacity': .5,
-            'fill-color-transition': {
-              'duration': 300,
-              'delay': 0
-            }
+            'fill-opacity': .5
+          }}/>
+      </Source>
+      <Source
+        id="parche-malvinas"
+        type="geojson"
+        data={{
+          type: 'FeatureCollection',
+          features:[{
+            type: 'Feature',
+            geometry: {
+              type: 'Polygon',
+              coordinates:[[[-62.61,-48.93],[-62.66,-52.54],[-53.08,-58.27],[-54.53,-50.95]]]
+            }}
+        ]}}>
+        <Layer
+          id="xdsads"
+          type="fill"
+          paint={{
+            'fill-color': '#1B1B1D',
+            'fill-opacity': 1
           }}/>
       </Source>
     </ReactMapGL>
