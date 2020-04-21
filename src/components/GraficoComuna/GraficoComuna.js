@@ -39,7 +39,7 @@ const GraficoComuna = () => {
           minRotation: 0,
           callback: (val, i) => {
             const fecha = moment(fechaInicio).add(Number(val), 'days')
-            return fecha.weekday() === 0 ? fecha.format('D MMM') : (dia === Number(val) ? '' : null)
+            return fecha.weekday() === 0 ? fecha.format('D MMMM') : (dia === Number(val) ? '' : null)
           },
         },
         fontFamily: 'Source Sans Pro'
