@@ -9,6 +9,7 @@ import store from './redux/store'
 import moment from 'moment/min/moment-with-locales'
 import { BrowserRouter as Router } from 'react-router-dom'
 
+moment.locale('es')
 const params = new URLSearchParams(window.location.search)
 if (params.has('idioma')) {
   moment.locale(params.get('idioma'))

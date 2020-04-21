@@ -35,10 +35,10 @@ const SeccionIzquierda = () => {
       </div>
       <ul className="SeccionIzquierda__links">
         {/* <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link> */}
-        <a className="SeccionIzquierda__link" target="_blank" href="http://www.iadb.org/document.cfm?id=EZSHARE-1993837609-142" rel="noopener noreferrer">
+        <a className="SeccionIzquierda__link" target="_blank" href={textos.linkMetodologia} rel="noopener noreferrer">
           {textos.metodologia}
         </a>
-        <a className="SeccionIzquierda__link" target="_blank" href="http://www.iadb.org/document.cfm?id=EZSHARE-1993837609-143" rel="noopener noreferrer">
+        <a className="SeccionIzquierda__link" target="_blank" href={textos.linkAcercaDe} rel="noopener noreferrer">
           {textos.acercaDe}
         </a>
         <a className="SeccionIzquierda__link SeccionIzquierda__link--contacto" href="mailto:research@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">
