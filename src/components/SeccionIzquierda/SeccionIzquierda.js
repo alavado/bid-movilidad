@@ -15,6 +15,7 @@ const SeccionIzquierda = () => {
   const paises = configPaises.sort((p1, p2) => p1.nombre > p2.nombre ? 1 : -1)
   const { abierta: bandejaAbierta } = useSelector(state => state.bandeja)
   const { textos } = useSelector(state => state.idioma)
+
   console.log(textos)
   return (
     <aside className="SeccionIzquierda">
@@ -36,19 +37,19 @@ const SeccionIzquierda = () => {
       <ul className="SeccionIzquierda__links">
         {/* <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link> */}
         <a className="SeccionIzquierda__link" target="_blank" href="http://www.iadb.org/document.cfm?id=EZSHARE-1993837609-142" rel="noopener noreferrer">
-          Metodología
+          {textos.metodologia}
         </a>
         <a className="SeccionIzquierda__link" target="_blank" href="http://www.iadb.org/document.cfm?id=EZSHARE-1993837609-143" rel="noopener noreferrer">
-          Acerca de 
+          {textos.acercaDe}
         </a>
         <a className="SeccionIzquierda__link SeccionIzquierda__link--contacto" href="mailto:research@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">
-          Contacto<br /><span className="SeccionIzquierda__mail_contacto">research@iadb.org</span>
+          {textos.contacto}<br /><span className="SeccionIzquierda__mail_contacto">research@iadb.org</span>
         </a>
         {/* <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to={bandejaAbierta ? '/' : '/contact'}>Contacto</Link> */}
       </ul>
       <div className="SeccionIzquierda__inferior">
         <div className="SeccionIzquierda__stickers">
-          <h2 className="SeccionIzquierda__stickers_titulo">Con la colaboración de</h2>
+          <h2 className="SeccionIzquierda__stickers_titulo">{textos.conLaColaboracionDe}</h2>
           <div className="SeccionIzquierda__contenedor_stickers">
             <a href="http://ciae.uchile.cl/" target="_blank" rel="noopener noreferrer">
               <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--ciae" src={logoCIAE} alt="Logo CIAE" />

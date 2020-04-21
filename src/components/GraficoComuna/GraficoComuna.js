@@ -8,6 +8,7 @@ import { fechaInicio } from '../../config/fecha'
 const GraficoComuna = () => {
 
   const { datos, dia } = useSelector(state => state.mapa)
+  const { textos } = useSelector(state => state.idioma)
   Chart.defaults.global.defaultFontColor = '#263238'
 
   const options = useMemo(() => ({
@@ -16,7 +17,7 @@ const GraficoComuna = () => {
         display: true,
         scaleLabel: {
           display: true,
-          labelString: 'Cambio % en movilidad',
+          labelString: textos.labelY,
           fontSize: 14
         },
         gridLines: {
@@ -39,7 +40,7 @@ const GraficoComuna = () => {
           minRotation: 0,
           callback: (val, i) => {
             const fecha = moment(fechaInicio).add(Number(val - 1), 'days')
-            return fecha.weekday() === 0 ? fecha.format('D MMMM') : (dia === Number(val) ? '' : null)
+            return fecha.weekday() === 0 ? fecha.format(textos.formatoFechaAbreviada) : (dia === Number(val) ? '' : null)
           },
         },
         fontFamily: 'Source Sans Pro'
@@ -58,7 +59,7 @@ const GraficoComuna = () => {
         title: tooltipItem => {
           return moment(fechaInicio)
             .add(Number(tooltipItem[0].label) - 1, 'days')
-            .format('dddd, D [de] MMMM [de] YYYY')
+            .format(textos.formatoFecha)
         }
       }
     }
@@ -70,7 +71,7 @@ const GraficoComuna = () => {
       .map(k => k.substring(1)),
     datasets: [
       {
-        label: 'Cambio % en movilidad',
+        label: textos.labelY,
         data: Object.keys(datos).filter(k => k.match(/v[0-9]+/g)).map(k => {
           return ((datos[k] <= 10) && (datos[k]>-100)) ? datos[k] : null
         }),
@@ -93,7 +94,7 @@ const GraficoComuna = () => {
       .map(k => k.substring(1)),
       datasets: [
         {
-          label: 'Cambio % en movilidad',
+          label: textos.labelY,
           fillColor: 'rgba(220,220,220,0.2)',
           strokeColor: 'rgba(220,220,220,1)',
           pointColor: 'rgba(220,220,220,1)',

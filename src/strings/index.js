@@ -1,5 +1,13 @@
 import lateral from './lateral'
+import superior from './superior'
+import mapa from './mapa'
+import graficos from './graficos'
+import fecha from './fecha'
 
 export default {
-  ...lateral
+  ...lateral,
+  ...superior,
+  ...mapa,
+  ...graficos,
+  ...fecha
 }

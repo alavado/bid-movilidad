@@ -16,6 +16,7 @@ const Header = () => {
 
   const [pantallaCompleta, setPantallaCompleta] = useState(false)
   const { activo: menuActivo } = useSelector(state => state.menu)
+  const { textos } = useSelector(state => state.idioma)
   const dispatch = useDispatch()
 
   const fijarPantallaCompleta = () => {
@@ -32,11 +33,11 @@ const Header = () => {
     <header className="Header">
       <div className="Header__titulo">
         <img className="Header__logo_bid" src={logoBID} alt="Logo BID" />
-        <h1 className="Header__texto_titulo">Mapa de<br />Movilidad de las Personas</h1>
+        <h1 className="Header__texto_titulo">{textos.titulo}</h1>
       </div>
       <div className="Header__barra">
         <div className="Header__titulo_landscape">
-          <h1 className="Header__texto_titulo_landscape">Mapa de Movilidad de las Personas</h1>
+          <h1 className="Header__texto_titulo_landscape">{textos.titulo}</h1>
           {menuActivo ?
             <FontAwesomeIcon onClick={() => dispatch(cerrarMenu())} className="Header__icono_info" icon={faTimes} /> :
             <FontAwesomeIcon onClick={() => dispatch(abrirMenu())} className="Header__icono_info" icon={faBars} />
@@ -47,7 +48,7 @@ const Header = () => {
         <div className="Header__relleno_doble" />
         <div className="Header__acciones_secundarias">
           <button
-            title={pantallaCompleta ? 'Salir de pantalla completa' : 'Pantalla completa'}
+            title={pantallaCompleta ? textos.salirDePantallaCompleta : textos.pantallaCompleta}
             className="Header__accion"
             onClick={fijarPantallaCompleta}
           >

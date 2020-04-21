@@ -13,7 +13,8 @@ import './ControlFechaSuperior.css'
 const ControlFechaSuperior = () => {
   
   const dispatch = useDispatch()
-  const { dia: diaRedux, playing } = useSelector(state => state.mapa)
+  const { dia: diaRedux } = useSelector(state => state.mapa)
+  const { textos } = useSelector(state => state.idioma)
   const [dia, setDia] = useState(diaRedux)
   const [movimientoDia, setMovimientoDia] = useState(0)
   const [vecesFechaAnimada, setVecesFechaAnimada] = useState(0)
@@ -36,7 +37,7 @@ const ControlFechaSuperior = () => {
           dispatch(playFecha(false))
           dispatch(fijarDia(dia - 1))
         }}
-        title="Día anterior"
+        title={textos.diaAnterior}
       >
         <FontAwesomeIcon
           className="ControlFechaSuperior__icono_accion"
@@ -46,7 +47,7 @@ const ControlFechaSuperior = () => {
       <div
         className={`ControlFechaSuperior__fecha${` ControlFechaSuperior__fecha--${movimientoDia > 0 ? 'avanza' : 'retrocede'}${vecesFechaAnimada % 2 + 1}`}`}
       >
-        {moment(fechaInicio).add(dia - 1, 'days').format('dddd, D [de] MMMM [de] YYYY')}
+        {moment(fechaInicio).add(dia - 1, 'days').format(textos.formatoFecha)}
       </div>
       <button
         className="ControlFechaSuperior__accion"
@@ -54,7 +55,7 @@ const ControlFechaSuperior = () => {
           dispatch(fijarDia(dia + 1))
           dispatch(playFecha(false))
         }}
-        title="Día siguiente"
+        title={textos.diaSiguiente}
       >
         <FontAwesomeIcon
           className="ControlFechaSuperior__icono_accion"

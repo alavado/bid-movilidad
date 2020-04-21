@@ -14,7 +14,10 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(seleccionarIdioma('es'))
+    const params = new URLSearchParams(window.location.search)
+    if (params.has('idioma')) {
+      dispatch(seleccionarIdioma(params.get('idioma')))
+    }
   }, [])
 
   return (

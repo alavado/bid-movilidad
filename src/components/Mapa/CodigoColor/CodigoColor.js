@@ -1,11 +1,15 @@
 import React from 'react'
 import './CodigoColor.css'
+import { useSelector } from 'react-redux'
 
 const CodigoColor = () => {
+
+  const { textos } = useSelector(state => state.idioma)
+
   return (
     <div className="CodigoColor">
       <div className="CodigoColor__contenedor">
-        <div>Movilidad</div>
+        <div>{textos.movilidad}</div>
         <div className="CodigoColor__espectro" />
         <div className="CodigoColor__limites">
           <div>-75%</div>
