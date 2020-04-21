@@ -38,7 +38,7 @@ const GraficoComuna = () => {
           maxRotation: 0,
           minRotation: 0,
           callback: (val, i) => {
-            const fecha = moment(fechaInicio).add(Number(val), 'days')
+            const fecha = moment(fechaInicio).add(Number(val - 1), 'days')
             return fecha.weekday() === 0 ? fecha.format('D MMMM') : (dia === Number(val) ? '' : null)
           },
         },
