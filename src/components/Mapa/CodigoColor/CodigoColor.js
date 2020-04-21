@@ -1,10 +1,11 @@
 import React from 'react'
 import './CodigoColor.css'
 import { useSelector } from 'react-redux'
+import useTextos from '../../../hooks/useTextos'
 
 const CodigoColor = () => {
 
-  const { textos } = useSelector(state => state.idioma)
+  const textos = useTextos()
 
   return (
     <div className="CodigoColor">

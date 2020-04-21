@@ -6,6 +6,7 @@ import logoBID from '../../assets/logo_bid.svg'
 import ControlFechaSuperior from './ControlFechaSuperior'
 import { useDispatch, useSelector } from 'react-redux'
 import { abrirMenu, cerrarMenu } from '../../redux/actions'
+import useTextos from '../../hooks/useTextos'
 
 const pantallaCompletaHabilitada = () => {
   const { innerWidth, innerHeight, screen } = window
@@ -16,7 +17,7 @@ const Header = () => {
 
   const [pantallaCompleta, setPantallaCompleta] = useState(false)
   const { activo: menuActivo } = useSelector(state => state.menu)
-  const { textos } = useSelector(state => state.idioma)
+  const textos = useTextos()
   const dispatch = useDispatch()
 
   const fijarPantallaCompleta = () => {

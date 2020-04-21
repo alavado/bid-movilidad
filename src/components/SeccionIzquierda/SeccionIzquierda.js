@@ -8,15 +8,14 @@ import { NavLink as Link } from 'react-router-dom'
 import logoIIEP from '../../assets/logo_iiep.png'
 import logoCIAE from '../../assets/logo_ciae_uchile.png'
 import configPaises from '../../config/paises'
+import useTextos from '../../hooks/useTextos'
 
 const SeccionIzquierda = () => {
 
   const dispatch = useDispatch()
   const paises = configPaises.sort((p1, p2) => p1.nombre > p2.nombre ? 1 : -1)
-  const { abierta: bandejaAbierta } = useSelector(state => state.bandeja)
-  const { textos } = useSelector(state => state.idioma)
-
-  console.log(textos)
+  const textos = useTextos()
+  
   return (
     <aside className="SeccionIzquierda">
       <div className="SeccionIzquierda__contenedor_campo">

@@ -9,12 +9,13 @@ import {
 import { fijarDia, playFecha } from '../../../redux/actions'
 import { fechaInicio } from '../../../config/fecha'
 import './ControlFechaSuperior.css'
+import useTextos from '../../../hooks/useTextos'
 
 const ControlFechaSuperior = () => {
   
   const dispatch = useDispatch()
   const { dia: diaRedux } = useSelector(state => state.mapa)
-  const { textos } = useSelector(state => state.idioma)
+  const textos = useTextos()
   const [dia, setDia] = useState(diaRedux)
   const [movimientoDia, setMovimientoDia] = useState(0)
   const [vecesFechaAnimada, setVecesFechaAnimada] = useState(0)

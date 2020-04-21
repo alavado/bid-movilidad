@@ -4,11 +4,12 @@ import { useSelector } from 'react-redux'
 import moment from 'moment/min/moment-with-locales'
 import './GraficoComuna.css'
 import { fechaInicio } from '../../config/fecha'
+import useTextos from '../../hooks/useTextos'
 
 const GraficoComuna = () => {
 
   const { datos, dia } = useSelector(state => state.mapa)
-  const { textos } = useSelector(state => state.idioma)
+  const textos = useTextos()
   Chart.defaults.global.defaultFontColor = '#263238'
 
   const options = useMemo(() => ({
