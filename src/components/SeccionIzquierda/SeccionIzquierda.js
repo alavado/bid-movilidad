@@ -7,6 +7,7 @@ import { fijarPais, fijarDestino } from '../../redux/actions'
 import { NavLink as Link } from 'react-router-dom'
 import logoIIEP from '../../assets/logo_iiep.png'
 import logoCIAE from '../../assets/logo_ciae_uchile.png'
+import logoVeraset from '../../assets/logo_veraset.png'
 import configPaises from '../../config/paises'
 import useTextos from '../../hooks/useTextos'
 
@@ -55,6 +56,9 @@ const SeccionIzquierda = () => {
             </a>
             <a href="http://iiep-baires.econ.uba.ar/" target="_blank" rel="noopener noreferrer">
               <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--iiep" src={logoIIEP} alt="Logo IIEP" />
+            </a>
+            <a href="https://veraset.com/" target="_blank" rel="noopener noreferrer">
+              <img className="SeccionIzquierda__sticker SeccionIzquierda__sticker--veraset" src={logoVeraset} alt="Logo Veraset" />
             </a>
           </div>
         </div>
