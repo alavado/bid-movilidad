@@ -14,10 +14,12 @@ const SeccionIzquierda = () => {
   const dispatch = useDispatch()
   const paises = configPaises.sort((p1, p2) => p1.nombre > p2.nombre ? 1 : -1)
   const { abierta: bandejaAbierta } = useSelector(state => state.bandeja)
+  const { textos } = useSelector(state => state.idioma)
+  console.log(textos)
   return (
     <aside className="SeccionIzquierda">
       <div className="SeccionIzquierda__contenedor_campo">
-        <label htmlFor="selector-pais" className="SeccionIzquierda__label">Seleccione país</label>
+        <label htmlFor="selector-pais" className="SeccionIzquierda__label">{textos.seleccionePais}</label>
         <ReactFlagsSelect
           style={{ outline: 'none' }}
           id="selector-pais"

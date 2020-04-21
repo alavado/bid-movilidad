@@ -1,5 +1,5 @@
 import { FIJAR_DIA, FIJAR_PAIS, FIJAR_DESTINO,
-  FIJAR_DATOS_REGION, ABRIR_BANDEJA, CERRAR_BANDEJA, ABRIR_MENU, CERRAR_MENU, PLAY } from './actionTypes'
+  FIJAR_DATOS_REGION, ABRIR_BANDEJA, CERRAR_BANDEJA, ABRIR_MENU, CERRAR_MENU, PLAY, SELECCIONAR_IDIOMA } from './actionTypes'
 import { obtenerCentroPais } from '../components/Mapa/helpers'
 import { numeroDias } from '../config/fecha'
 
@@ -44,3 +44,7 @@ export const playFecha = estado => ({
   payload: estado
 })
 
+export const seleccionarIdioma = iso => ({
+  type: SELECCIONAR_IDIOMA,
+  payload: iso
+})

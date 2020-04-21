@@ -50,7 +50,7 @@ const Mapa = () => {
   const [anchoPantalla, setAnchoPantalla] = useState(window.innerHeight)
   useEffect(() => {
     const evento = window.addEventListener('resize', () => setAnchoPantalla(window.innerWidth))
-    return () => window.removeEventListener(evento)
+    return () => window.removeEventListener('resize', evento)
   }, [])
   const movil = useMemo(() => esMovil(), [anchoPantalla])
 
