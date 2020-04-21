@@ -8,6 +8,7 @@ import CodigoColor from './CodigoColor'
 import GraficoComuna from '../GraficoComuna'
 import { fijarDestino, fijarDatosRegion } from '../../redux/actions.js'
 import MultiTouch from 'mapbox-gl-multitouch'
+import paises from '../../config/paises'
 
 const Mapa = () => {
 
@@ -28,12 +29,13 @@ const Mapa = () => {
     titulo: ''
   })
 
+  const centroPais = paises.find(p => p.codigo === pais).mapa.centro
+
   const [viewport, setViewport] = useState({
     width: '100%',
     height: 'calc(100vh - 5.5em)',
-    latitude: -44.24,
-    longitude: -70.01,
-    zoom: obtenerZoomSegunBreakpoint(),
+    ...centroPais,
+    zoom: centroPais.zoom * obtenerZoomSegunBreakpoint() / 4,
     bearing: 57.09,
     pitch: 45.61,
     altitude: 1.5

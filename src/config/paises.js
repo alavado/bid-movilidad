@@ -25,7 +25,7 @@ const paises = [
       centro: {
         latitude: -44.27,
         longitude: -66.47,
-        zoom: 4
+        zoom: 3.5
       }
     }
   },
@@ -100,7 +100,7 @@ const paises = [
       centro: {
         latitude: 9.833096399445433,
         longitude: -84.34696346806206,
-        zoom: 7.045643770556371
+        zoom: 6.845643770556371
       }
     }
   },
@@ -146,6 +146,21 @@ const paises = [
         latitude: 7.24424389869859,
         longitude: -66.0281812627724,
         zoom: 5.185152700501135
+      }
+    }
+  },
+  {
+    codigo: 'CO',
+    nombre: 'Colombia',
+    geojson: {
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
+    },
+    mapa: {
+      centro: {
+        latitude: 1.7189608250747426,
+        longitude: -74.13029279247739,
+        zoom: 4.833296788063777
       }
     }
   }
