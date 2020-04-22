@@ -208,6 +208,21 @@ const paises = [
         zoom: 7.291828415279124
       }
     }
+  },
+  {
+    codigo: 'HN',
+    nombre: 'Honduras',
+    geojson: {
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
+    },
+    mapa: {
+      centro: {
+        latitude: 14.617731084727945,
+        longitude: -87.3,
+        zoom: 6.2
+      }
+    }
   }
 ]
 
