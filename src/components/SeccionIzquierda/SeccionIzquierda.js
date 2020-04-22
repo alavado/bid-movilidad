@@ -11,11 +11,44 @@ import logoVeraset from '../../assets/logo_veraset.png'
 import configPaises from '../../config/paises'
 import useTextos from '../../hooks/useTextos'
 
+const SHEET_ID = '1o03EJBiDLBYQ6n6laNJaOvEVe_gr9NYU18Fm9hkXoYo'
+const ACCESS_TOKEN = 'ya29.a0Ae4lvC1lbitxBfZftqLJTPzeY5I_Vv-SqSOdJqskVXxUYMcZ9XWtKHv8QWhUPQ4yPUGFfntS1-0iBaY00d01oblEQUEOQ31J9Cu0kzulw9QTJU0vsIGnRWh_kxdu3sMiiDR6crG36P145EjOE_Jlz_ep9xPeyLwVS3k'
+
 const SeccionIzquierda = () => {
 
   const dispatch = useDispatch()
   const paises = configPaises.sort((p1, p2) => p1.nombre > p2.nombre ? 1 : -1)
   const textos = useTextos()
+
+  const updateSheetValues = () => {
+    fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}:batchUpdate`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${ACCESS_TOKEN}`,
+      },
+      body: JSON.stringify({
+        requests: [{
+          repeatCell: {
+            range: {
+              startColumnIndex: 0,
+              endColumnIndex: 1,
+              startRowIndex: 0,
+              endRowIndex: 1,
+              sheetId: 0
+            },
+            cell: {
+              userEnteredValue: {
+                "numberValue": 10
+              },
+            },
+            fields: "*"
+          }
+        }]
+
+      })
+    })
+  }
   
   return (
     <aside className="SeccionIzquierda">
@@ -35,7 +68,6 @@ const SeccionIzquierda = () => {
         />
       </div>
       <ul className="SeccionIzquierda__links">
-        {/* <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to="/methodology">Metodología</Link> */}
         <a className="SeccionIzquierda__link" target="_blank" href={textos.linkMetodologia} rel="noopener noreferrer">
           {textos.metodologia}
         </a>
@@ -45,7 +77,7 @@ const SeccionIzquierda = () => {
         <a className="SeccionIzquierda__link SeccionIzquierda__link--contacto" href="mailto:research@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">
           {textos.contacto}<br /><span className="SeccionIzquierda__mail_contacto"></span>
         </a>
-        {/* <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to={bandejaAbierta ? '/' : '/contact'}>Contacto</Link> */}
+        <button onClick={updateSheetValues}>update</button>
       </ul>
       <div className="SeccionIzquierda__inferior">
         <div className="SeccionIzquierda__stickers">
