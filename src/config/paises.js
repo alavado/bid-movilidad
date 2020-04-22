@@ -238,6 +238,21 @@ const paises = [
         zoom: 6.4
       }
     }
+  },
+  {
+    codigo: 'DO',
+    nombre: 'Rep. Dominicana',
+    geojson: {
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
+    },
+    mapa: {
+      centro: {
+        latitude: 18.645266154195166,
+        longitude: -71,
+        zoom: 6.82
+      }
+    }
   }
 ]
 

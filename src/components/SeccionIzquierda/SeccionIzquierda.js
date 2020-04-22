@@ -43,7 +43,7 @@ const SeccionIzquierda = () => {
           {textos.acercaDe}
         </a>
         <a className="SeccionIzquierda__link SeccionIzquierda__link--contacto" href="mailto:research@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">
-          {textos.contacto}<br /><span className="SeccionIzquierda__mail_contacto">research@iadb.org</span>
+          {textos.contacto}<br /><span className="SeccionIzquierda__mail_contacto"></span>
         </a>
         {/* <Link className="SeccionIzquierda__link" activeClassName="SeccionIzquierda__link--activo" to={bandejaAbierta ? '/' : '/contact'}>Contacto</Link> */}
       </ul>
