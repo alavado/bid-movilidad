@@ -19,6 +19,7 @@ const SeccionIzquierda = () => {
   const dispatch = useDispatch()
   const paises = configPaises.sort((p1, p2) => p1.nombre > p2.nombre ? 1 : -1)
   const textos = useTextos()
+  console.log({paises})
 
   const updateSheetValues = () => {
     fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}:batchUpdate`, {

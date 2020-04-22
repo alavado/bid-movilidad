@@ -283,6 +283,21 @@ const paises = [
         zoom: 5.7
       }
     }
+  },
+  {
+    codigo: 'GY',
+    nombre: 'Guyana',
+    geojson: {
+      claveIDRegion: 'ID_0',
+      claveNombreRegion: 'NAME_0'
+    },
+    mapa: {
+      centro: {
+        latitude: -23.647844011159386,
+        longitude: -58.87215796358683,
+        zoom: 5.7
+      }
+    }
   }
 ]
 
