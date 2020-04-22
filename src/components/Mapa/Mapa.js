@@ -79,7 +79,7 @@ const Mapa = () => {
   }
 
   const mostrarPopup = e => {
-    if (window.location.href.includes('300')) console.log(e)
+    if (window.location.href.includes('300')) console.log(viewport)
     if (popup.mostrando) {
       setPopup({...popup, mostrando: false})
       actualizarPopupChico(e)

@@ -163,6 +163,51 @@ const paises = [
         zoom: 4.833296788063777
       }
     }
+  },
+  {
+    codigo: 'SV',
+    nombre: 'El Salvador',
+    geojson: {
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
+    },
+    mapa: {
+      centro: {
+        latitude: 13.613404065473569,
+        longitude: -88.92286494134157,
+        zoom: 6.944231573171742
+      }
+    }
+  },
+  {
+    codigo: 'BZ',
+    nombre: 'Belize',
+    geojson: {
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
+    },
+    mapa: {
+      centro: {
+        latitude: 17.00610895218776,
+        longitude: -88.61162222109712,
+        zoom: 7.580774736859062
+      }
+    }
+  },
+  {
+    codigo: 'JM',
+    nombre: 'Jamaica',
+    geojson: {
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
+    },
+    mapa: {
+      centro: {
+        latitude: 18.053252271269844,
+        longitude: -77.37862994696084,
+        zoom: 7.291828415279124
+      }
+    }
   }
 ]
 
