@@ -253,6 +253,21 @@ const paises = [
         zoom: 6.82
       }
     }
+  },
+  {
+    codigo: 'NI',
+    nombre: 'Nicaragua',
+    geojson: {
+      claveIDRegion: 'ID_0',
+      claveNombreRegion: 'NAME_0'
+    },
+    mapa: {
+      centro: {
+        latitude: 12.494930284560935,
+        longitude: -85.37858211227365,
+        zoom: 6
+      }
+    }
   }
 ]
 
