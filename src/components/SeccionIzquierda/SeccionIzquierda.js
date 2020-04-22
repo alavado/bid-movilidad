@@ -77,7 +77,7 @@ const SeccionIzquierda = () => {
         <a className="SeccionIzquierda__link SeccionIzquierda__link--contacto" href="mailto:research@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">
           {textos.contacto}<br /><span className="SeccionIzquierda__mail_contacto"></span>
         </a>
-        <button onClick={updateSheetValues}>update</button>
+        {/* <button onClick={updateSheetValues}>update</button> */}
       </ul>
       <div className="SeccionIzquierda__inferior">
         <div className="SeccionIzquierda__stickers">
