@@ -223,6 +223,21 @@ const paises = [
         zoom: 6.2
       }
     }
+  },
+  {
+    codigo: 'GT',
+    nombre: 'Guatemala',
+    geojson: {
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
+    },
+    mapa: {
+      centro: {
+        latitude: 15.026581097384627,
+        longitude: -90.64665989452234,
+        zoom: 6.4
+      }
+    }
   }
 ]
 
