@@ -273,8 +273,8 @@ const paises = [
     codigo: 'PY',
     nombre: 'Paraguay',
     geojson: {
-      claveIDRegion: 'ID_0',
-      claveNombreRegion: 'NAME_0'
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
     },
     mapa: {
       centro: {
