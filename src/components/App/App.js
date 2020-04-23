@@ -8,6 +8,8 @@ import Bandeja from '../Bandeja'
 import MenuOverlay from '../MenuOverlay'
 import { useDispatch } from 'react-redux'
 import { seleccionarIdioma } from '../../redux/actions'
+import FormularioSuscripcion from '../FormularioSuscripcion'
+import { Route } from 'react-router-dom'
 
 const App = () => {
 
@@ -27,7 +29,8 @@ const App = () => {
         <MenuOverlay />
         <SeccionIzquierda />
         <section className="App__contenedor_central">
-          <Bandeja />
+          {/* <Bandeja /> */}
+          <Route path="/suscripcion" component={FormularioSuscripcion} />
           <section className="App__mapa">
             <Mapa />
             <SelectorFecha />

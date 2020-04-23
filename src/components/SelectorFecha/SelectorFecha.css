@@ -3,8 +3,9 @@
   color: rgba(255, 255, 255, .9);
   display: flex;
   justify-content: center;
-  padding-right: 16px;
+  padding-right: 1em;
   flex-direction: column;
+  height: 2.5em;
 }
 
 .SelectorFecha__contenedor_inferior {
