@@ -41,9 +41,9 @@ const SeccionIzquierda = () => {
         <a className="SeccionIzquierda__link" target="_blank" href={textos.linkAcercaDe} rel="noopener noreferrer">
           {textos.acercaDe}
         </a>
-        <Link to="/suscripcion" className="SeccionIzquierda__link">
+        {/* <Link to="/suscripcion" className="SeccionIzquierda__link">
           Suscripción
-        </Link>
+        </Link> */}
         <a className="SeccionIzquierda__link SeccionIzquierda__link--contacto" href="mailto:research@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">
           {textos.contacto}<br /><span className="SeccionIzquierda__mail_contacto"></span>
         </a>
