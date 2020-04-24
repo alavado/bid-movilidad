@@ -44,7 +44,7 @@ const SeccionIzquierda = () => {
         {/* <Link to="/suscripcion" className="SeccionIzquierda__link">
           Suscripción
         </Link> */}
-        <a className="SeccionIzquierda__link SeccionIzquierda__link--contacto" href="mailto:research@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">
+        <a className="SeccionIzquierda__link SeccionIzquierda__link--contacto" href="mailto:movilidad@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">
           {textos.contacto}<br /><span className="SeccionIzquierda__mail_contacto"></span>
         </a>
         <a className="SeccionIzquierda__link SeccionIzquierda__link--blog" href={textos.linkBlog} target="_top">
