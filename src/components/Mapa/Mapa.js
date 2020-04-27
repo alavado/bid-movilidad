@@ -9,6 +9,7 @@ import GraficoComuna from '../GraficoComuna'
 import { fijarDestino, fijarDatosRegion } from '../../redux/actions.js'
 import MultiTouch from 'mapbox-gl-multitouch'
 import paises from '../../config/paises'
+import SelectorPais from './SelectorPais'
 
 const Mapa = () => {
 
@@ -138,6 +139,7 @@ const Mapa = () => {
       onHover={actualizarPopupChico}
       onMouseLeave={() => setPopupChico({...popupChico, mostrando: false})}
     >
+      <SelectorPais />
       <div className="Mapa__controles_navegacion" style={{position: 'absolute', right: 16, top: 16}}>
         <NavigationControl showCompass={false} className="Mapa__controles_navegacion" />
       </div>
