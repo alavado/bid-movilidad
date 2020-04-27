@@ -44,14 +44,14 @@ const SeccionIzquierda = () => {
         {/* <Link to="/suscripcion" className="SeccionIzquierda__link">
           Suscripción
         </Link> */}
-        <a className="SeccionIzquierda__link SeccionIzquierda__link--contacto" href="mailto:research@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">
-          {textos.contacto}<br /><span className="SeccionIzquierda__mail_contacto"></span>
+        <a className="SeccionIzquierda__link" href="mailto:research@iadb.org?Subject=Mapa%20de%20distanciamiento%20social" target="_top">
+          {textos.contacto}
         </a>
-        <a className="SeccionIzquierda__link SeccionIzquierda__link--blog" href={textos.linkBlog} target="_top">
-          {textos.blog}<br /><span className="SeccionIzquierda__mail_contacto"></span>
+        <a className="SeccionIzquierda__link" href={textos.linkBlog} target="_top">
+          {textos.blog}
         </a>
-        <a className="SeccionIzquierda__link SeccionIzquierda__link--blog" href={textos.linkDashboard} target="_top">
-          {textos.dashboard}<br /><span className="SeccionIzquierda__mail_contacto"></span>
+        <a className="SeccionIzquierda__link" href={textos.linkDashboard} target="_top">
+          {textos.dashboard}
         </a>
         {/* <button onClick={updateSheetValues}>update</button> */}
       </ul>

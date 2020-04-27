@@ -10,7 +10,7 @@
   justify-content: space-between;
   color: rgba(255, 255, 255, .9);
   user-select: none;
-  padding-top: 1em;
+  padding-top: 1.5em;
 }
 
 .SeccionIzquierda__contenedor_campo {
@@ -144,10 +144,4 @@
 
 .flag-select__options {
   border-color: #37474F;
-}
-
-
-
-.SeccionIzquierda__mail_contacto {
-  text-transform: none;
 }

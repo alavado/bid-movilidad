@@ -4,6 +4,8 @@
   align-items: flex-start;
   padding: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
+  position: absolute;
+  top: 0;
 }
 
 .flag-select__btn:after {
@@ -37,10 +39,20 @@
   border-color: #90A4AE;
 }
 
+.SelectorPais .flag-select__option.has-label:hover {
+  background-color: #616161;
+}
+
 .SelectorPais .flag-select__option:hover {
   background-color: #455A64;
 }
 
 .SelectorPais__icono_link_externo {
   margin-left: .25em;
+}
+
+@media (orientation: portrait) {
+  .SelectorPais {
+    display: none;
+  }
 }
