@@ -9,7 +9,7 @@ const FormularioSuscripcion = () => {
     <div className="FormularioSuscripcion">
       <div className="FormularioSuscripcion__contenedor">
         <h1>Prueba suscripcion</h1>
-        <form name="contact" data-netlify="true">
+        <form name="contact" method="post">
           <input type="hidden" name="form-name" value="contact" />
           <p>
             <label>Name <input type="text" name="name" /></label>
