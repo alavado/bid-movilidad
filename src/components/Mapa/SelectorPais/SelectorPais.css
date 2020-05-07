@@ -5,7 +5,8 @@
   padding: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
   position: absolute;
-  top: 0;
+  top: 2.5em;
+  z-index: 3;
 }
 
 .flag-select__btn:after {

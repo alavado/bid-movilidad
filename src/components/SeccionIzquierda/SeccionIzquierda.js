@@ -3,7 +3,7 @@ import ReactFlagsSelect from 'react-flags-select'
 import 'react-flags-select/css/react-flags-select.css'
 import './SeccionIzquierda.css'
 import { useDispatch } from 'react-redux'
-import { fijarPais, fijarDestino } from '../../redux/actions'
+import { fijarPais } from '../../redux/actions'
 import logoIIEP from '../../assets/logo_iiep.png'
 import logoCIAE from '../../assets/logo_ciae_uchile.png'
 import logoVeraset from '../../assets/logo_veraset.png'
@@ -28,10 +28,7 @@ const SeccionIzquierda = () => {
           defaultCountry="CO"
           countries={paises.map(({ codigo }) => codigo)}
           customLabels={paises.reduce((obj, p) => ({ ...obj, [p.codigo]: p.nombre }), {})}
-          onSelect={codigo => {
-            dispatch(fijarPais(codigo))
-            dispatch(fijarDestino(codigo))
-          }}
+          onSelect={codigo => dispatch(fijarPais(codigo))}
         />
       </div>
       <ul className="SeccionIzquierda__links">

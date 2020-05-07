@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactFlagsSelect from 'react-flags-select'
-import { fijarPais, fijarDestino } from '../../../redux/actions'
+import { fijarPais } from '../../../redux/actions'
 import { useDispatch } from 'react-redux'
 import configPaises from '../../../config/paises'
 import useTextos from '../../../hooks/useTextos'
@@ -24,8 +24,8 @@ const SelectorPais = () => {
         customLabels={paises.reduce((obj, p) => ({ ...obj, [p.codigo]: p.nombre }), {})}
         onSelect={codigo => {
           dispatch(fijarPais(codigo))
-          dispatch(fijarDestino(codigo))
         }}
+        onScroll={e => e.stopPropagation()}
       />
     </div>
   )

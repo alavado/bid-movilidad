@@ -13,11 +13,6 @@ export const fijarPais = codigo => ({
   payload: codigo
 })
 
-export const fijarDestino = codigoPais => ({
-  type: FIJAR_DESTINO,
-  payload: obtenerCentroPais(codigoPais)
-})
-
 export const fijarDatosRegion = datos => ({
   type: FIJAR_DATOS_REGION,
   payload: datos

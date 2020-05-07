@@ -27,7 +27,7 @@ const GraficoComuna = () => {
         ticks: {
           maxTicksLimit: 6,
           suggestedMin: -60,
-          suggestedMax: 0,
+          suggestedMax: 20,
           max: 20,
           callback: (val, i) => {
             return val + '%'
@@ -74,7 +74,7 @@ const GraficoComuna = () => {
       {
         label: textos.labelY,
         data: Object.keys(datos).filter(k => k.match(/v[0-9]+/g)).map(k => {
-          return ((datos[k] <= 10) && (datos[k]>-100)) ? datos[k] : null
+          return (datos[k] <= 100 && datos[k] > -100) ? datos[k] : null
         }),
       }
     ]
@@ -103,7 +103,7 @@ const GraficoComuna = () => {
           pointHighlightFill: '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
           data: Object.keys(datos).filter(k => k.match(/v[0-9]+/g)).map(k => {
-            return ((datos[k] <= 10) && (datos[k]>-100)) ? datos[k] : null
+            return (datos[k] <= 100 && datos[k] > -100) ? datos[k] : null
           }),
           fill: false,
           borderColor: gradientStroke,
@@ -113,11 +113,14 @@ const GraficoComuna = () => {
           pointBackgroundColor: gradientStroke,
           pointHoverBackgroundColor: gradientStroke,
           pointHoverBorderColor: gradientStroke,
-          pointBorderWidth: 1
+          pointBorderWidth: 1,
+          pointRadius: 1.5
         }
       ]
     })
   }, [datos.v20])
+
+  console.log({chartData})
 
   return (
     <div style={{ padding: '.5em' }}>
