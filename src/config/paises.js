@@ -288,14 +288,44 @@ const paises = [
     codigo: 'GY',
     nombre: 'Guyana',
     geojson: {
-      claveIDRegion: 'ID_0',
-      claveNombreRegion: 'NAME_0'
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
     },
     mapa: {
       centro: {
         latitude: -23.647844011159386,
         longitude: -58.87215796358683,
         zoom: 5.7
+      }
+    }
+  },
+  {
+    codigo: 'BR',
+    nombre: 'Brasil',
+    geojson: {
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
+    },
+    mapa: {
+      centro: {
+        latitude: -13.790029866285815,
+        longitude: -51.92599709491803,
+        zoom: 3.3116
+      }
+    }
+  },
+  {
+    codigo: 'MX',
+    nombre: 'México',
+    geojson: {
+      claveIDRegion: 'ID_1',
+      claveNombreRegion: 'NAME_1'
+    },
+    mapa: {
+      centro: {
+        latitude: 24.28345931187278,
+        longitude: -104.59285649676,
+        zoom: 4.265877380036823
       }
     }
   }
