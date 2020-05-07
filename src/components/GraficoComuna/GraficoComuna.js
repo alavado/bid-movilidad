@@ -37,7 +37,7 @@ const GraficoComuna = () => {
       xAxes: [{
         ticks: {
           autoSkip: false,
-          maxRotation: 0,
+          maxRotation: 45,
           minRotation: 0,
           callback: (val, i) => {
             const fecha = moment(fechaInicio).add(Number(val - 1), 'days')
