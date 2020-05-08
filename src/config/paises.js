@@ -221,6 +221,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: 10.40374,
+      pitch: 17.77583,
       centro: {
         latitude: 18.053252271269844,
         longitude: -77.37862994696084,
@@ -347,9 +349,11 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: 0,
+      pitch: 35.777284,
       centro: {
-        latitude: 24.28345931187278,
-        longitude: -104.59285649676,
+        latitude: 23.842692427566256,
+        longitude: -101.410224651078,
         zoom: 4.265877380036823
       }
     }
