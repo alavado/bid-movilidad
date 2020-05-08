@@ -7,6 +7,9 @@ const paises = [
       claveNombreRegion: 'Region'
     },
     mapa: {
+      bearing: 57.09,
+      pitch: 45.61,
+      altitude: 1.5,
       centro: {
         latitude: -44.24,
         longitude: -70.01,
@@ -22,10 +25,12 @@ const paises = [
       claveNombreRegion: 'nam'
     },
     mapa: {
+      bearing: 44.59666,
+      pitch: 22.0295,
       centro: {
-        latitude: -44.27,
-        longitude: -66.47,
-        zoom: 3.5
+        latitude: -36.80306527732947,
+        longitude: -66.11787896539462,
+        zoom: 3.8
       }
     }
   },
@@ -37,9 +42,11 @@ const paises = [
       claveNombreRegion: 'dpa_despro'
     },
     mapa: {
+      bearing: 43.95427821522309,
+      pitch: 37.917773930917924,
       centro: {
-        latitude: -2.06,
-        longitude: -79.18,
+        latitude: -2.01,
+        longitude: -79.15,
         zoom: 6.06
       }
     }
@@ -52,6 +59,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: -5.236339667357148,
+      pitch: 34.25251978408554,
       centro: {
         latitude: -17.94106013645256,
         longitude: -66.39180523850452,
@@ -67,12 +76,12 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
-      bearing: 9.518571428571423,
-      pitch: 31.435488801806425,
+      bearing: -5.236339667357148,
+      pitch: 34.25251978408554,
       centro: {
-        latitude: -10.19699262666076,
-        longitude: -73.15741565744399,
-        zoom: 5.123282245777578
+        latitude: -10.892314177331723,
+        longitude: -73.18322900613863,
+        zoom: 4.723282245777578
       }
     }
   },
@@ -99,6 +108,8 @@ const paises = [
       claveNombreRegion: 'NPROVINCIA'
     },
     mapa: {
+      bearing: 17.870944881889763,
+      pitch: 25.4090,
       centro: {
         latitude: 9.833096399445433,
         longitude: -84.34696346806206,
@@ -159,6 +170,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: -12.07,
+      pitch: 32.69782,
       centro: {
         latitude: 1.7189608250747426,
         longitude: -74.13029279247739,
@@ -174,6 +187,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: -13.79572,
+      pitch: 24.188965,
       centro: {
         latitude: 13.56872874144053,
         longitude: -89.09715699847943,
@@ -189,9 +204,11 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: 0,
+      pitch: 12.7710,
       centro: {
-        latitude: 16.888202942704673,
-        longitude: -88.78736571859409,
+        latitude: 17.071663274577915,
+        longitude: -88.63410766229106,
         zoom: 7.228371578966444
       }
     }
@@ -219,6 +236,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: 0,
+      pitch: 12.7710,
       centro: {
         latitude: 14.617731084727945,
         longitude: -87.3,
@@ -234,6 +253,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: 0,
+      pitch: 12.7710,
       centro: {
         latitude: 15.026581097384627,
         longitude: -90.64665989452234,
@@ -309,6 +330,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: 17.870944881889763,
+      pitch: 25.4090,
       centro: {
         latitude: -13.790029866285815,
         longitude: -51.92599709491803,

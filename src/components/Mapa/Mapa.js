@@ -38,8 +38,8 @@ const Mapa = () => {
     height: 'calc(100vh - 5.5em)',
     ...centroPais,
     zoom: centroPais.zoom * obtenerZoomSegunBreakpoint() / 4,
-    bearing: 57.09,
-    pitch: 45.61,
+    bearing: -12.07,
+    pitch: 32.69782,
     altitude: 1.5
   })
 
@@ -79,7 +79,7 @@ const Mapa = () => {
   }
 
   const mostrarPopup = e => {
-    if (window.location.href.includes('300')) console.log(viewport)
+    console.log({viewport});
     if (popup.mostrando) {
       setPopup({...popup, mostrando: false})
       actualizarPopupChico(e)
