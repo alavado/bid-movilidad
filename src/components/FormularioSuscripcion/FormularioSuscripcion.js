@@ -12,7 +12,7 @@ const FormularioSuscripcion = () => {
     <div className="FormularioSuscripcion">
       <div className="FormularioSuscripcion__contenedor">
         <h1>Prueba suscripcion</h1>
-        <form className="FormularioSuscripcion__formulario" name="contact" method="post">
+        <form className="FormularioSuscripcion__formulario" name="suscripciones" method="post">
           <p>Quiero recibir notificaciones sobre:</p>
           <label><input type="radio" name="pais" />México</label>
           <label><input type="radio" name="pais" />Todos los países</label>
