@@ -93,6 +93,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: -10,
+      pitch: 35.777284,
       centro: {
         latitude: 10.341232912152451,
         longitude: -61.33951272277002,
@@ -125,6 +127,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: -10,
+      pitch: 35.777284,
       centro: {
         latitude: 7.962838342352478,
         longitude: -80.74039050093182,
@@ -140,9 +144,11 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: -3.3497,
+      pitch: 27.91024,
       centro: {
-        latitude: -32.4086499614701,
-        longitude: -56.207602023750475,
+        latitude: -33.342309570924684,
+        longitude: -56.21962349237928,
         zoom: 5.805316390519547
       }
     }
@@ -155,6 +161,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: 1.926062,
+      pitch: 14.18166,
       centro: {
         latitude: 7.24424389869859,
         longitude: -66.0281812627724,
@@ -170,10 +178,10 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
-      bearing: -12.07,
-      pitch: 32.69782,
+      bearing: 5.834,
+      pitch: 33.3052,
       centro: {
-        latitude: 1.7189608250747426,
+        latitude: 3.7189608250747426,
         longitude: -74.13029279247739,
         zoom: 4.833296788063777
       }
@@ -272,6 +280,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: -10,
+      pitch: 35.777284,
       centro: {
         latitude: 18.645266154195166,
         longitude: -71,
@@ -287,6 +297,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: 0,
+      pitch: 35.777284,
       centro: {
         latitude: 12.494930284560935,
         longitude: -85.37858211227365,
@@ -302,6 +314,8 @@ const paises = [
       claveNombreRegion: 'NAME_1'
     },
     mapa: {
+      bearing: -10,
+      pitch: 35.777284,
       centro: {
         latitude: -23.647844011159386,
         longitude: -58.87215796358683,
