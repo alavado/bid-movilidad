@@ -38,8 +38,8 @@ const Mapa = () => {
     height: 'calc(100vh - 5.5em)',
     ...centroPais,
     zoom: centroPais.zoom * obtenerZoomSegunBreakpoint() / 4,
-    bearing: 25.00086,
-    pitch: 14.18166,
+    bearing: 0,
+    pitch: 35.777284,
     altitude: 1.5
   })
 
