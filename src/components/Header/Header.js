@@ -7,6 +7,7 @@ import ControlFechaSuperior from './ControlFechaSuperior'
 import { useDispatch, useSelector } from 'react-redux'
 import { abrirMenu, cerrarMenu } from '../../redux/actions'
 import useTextos from '../../hooks/useTextos'
+import { Link } from 'react-router-dom'
 
 const pantallaCompletaHabilitada = () => {
   const { innerWidth, innerHeight, screen } = window
@@ -48,13 +49,18 @@ const Header = () => {
         <ControlFechaSuperior />
         <div className="Header__relleno_doble" />
         <div className="Header__acciones_secundarias">
-          <button
+          {/* <button
             title={pantallaCompleta ? textos.salirDePantallaCompleta : textos.pantallaCompleta}
             className="Header__accion"
             onClick={fijarPantallaCompleta}
           >
             <FontAwesomeIcon icon={pantallaCompleta ? faCompress : faExpand} />
-          </button>
+          </button> */}
+          <Link to="/suscripcion">
+            <button className="Header__boton_suscripcion">
+              {textos.suscripcion}
+            </button>
+          </Link>
         </div>
       </div>
     </header>

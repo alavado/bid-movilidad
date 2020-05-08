@@ -2,24 +2,22 @@ import React, { useState } from 'react'
 import './FormularioSuscripcion.css'
 import { useSelector } from 'react-redux'
 import moment from 'moment'
+import useTextos from '../../hooks/useTextos'
 
 const FormularioSuscripcion = () => {
+
+  const textos = useTextos()
 
   return (
     <div className="FormularioSuscripcion">
       <div className="FormularioSuscripcion__contenedor">
         <h1>Prueba suscripcion</h1>
-        <form name="contact" method="post">
-          <input type="hidden" name="form-name" value="contact" />
-          <p>
-            <label>Name <input type="text" name="name" /></label>
-          </p>
-          <p>
-            <label>Email <input type="email" name="email" /></label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
+        <form className="FormularioSuscripcion__formulario" name="contact" method="post">
+          <p>Quiero recibir notificaciones sobre:</p>
+          <label><input type="radio" name="pais" />México</label>
+          <label><input type="radio" name="pais" />Todos los países</label>
+          <label>Email <input type="email" name="email" /></label>
+          <button type="submit">{textos.suscripcion}</button>
         </form>
       </div>
     </div>
