@@ -2,11 +2,109 @@
   position: absolute;
   z-index: 4;
   display: flex;
-  background-color: rgba(0, 0, 0, .5);
   justify-content: center;
+  right: .5em;
+  top: .5em;
+  animation: aparece-formulario-suscripcion .35s ease-in-out both;
+  max-width: 20em;
 }
 
 .FormularioSuscripcion__contenedor {
   flex: 1;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: #263238;
+  border-radius: .25em;
+  box-shadow: 0 .1em 1em rgba(0, 0, 0, 0.25);
+}
+
+.FormularioSuscripcion__titulo {
+  line-height: 1.15;
+}
+
+.FormularioSuscripcion__boton_cerrar {
+  border: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, .9);
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: .25em;
+  margin-right: .25em;
+}
+
+.FormularioSuscripcion__formulario {
+  display: grid;
+  gap: 1em;
+  color: rgba(255, 255, 255, .9);
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 0 1em 1em 1em;
+  font-size: .9em;
+}
+
+.FormularioSuscripcion__radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.FormularioSuscripcion__selector_organizacion {
+  border-radius: .25em;
+  border: none;
+  outline: none;
+  padding: .5em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.FormularioSuscripcion__label {
+  display: grid;
+  gap: .35em;
+  font-size: .95em;
+}
+
+.FormularioSuscripcion__email {
+  border-radius: .25em;
+  border: none;
+  outline: none;
+  padding: .5em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.FormularioSuscripcion__boton_suscripcion {
+  margin-top: .5em;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 1.5em;
+  padding: 1em 0;
+  color: #26C6DA;
+  text-transform: uppercase;
+  font-size: .9em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  transition: all .25s ease-in-out;
+  box-shadow: 0 .1em .25em rgba(0, 0, 0, 0);
+  filter: saturate(100%);
+}
+
+.FormularioSuscripcion__boton_suscripcion:disabled {
+  filter: saturate(0);
+  cursor: not-allowed;
+}
+
+.FormularioSuscripcion__boton_suscripcion:hover {
+  background-color: rgba(255, 255, 255, .2);
+  box-shadow: 0 .21em .25em rgba(0, 0, 0, 0.5);
+}
+
+@keyframes aparece-formulario-suscripcion {
+  0% {
+    opacity: 0;
+    top: .25em;
+  }
+  100% {
+    opacity: 1;
+    top: .5em;
+  }
 }

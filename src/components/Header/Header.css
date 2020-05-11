@@ -97,6 +97,27 @@
   display: none;
 }
 
+.Header__boton_suscripcion {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 1.15em;
+  height: 2.3em;
+  color: #26C6DA;
+  text-transform: uppercase;
+  font-size: .7em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-right: 1em;
+  padding: 0 1em;
+  cursor: pointer;
+  outline: none;
+  transition: all .25s ease-in-out;
+}
+
+.Header__boton_suscripcion:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 @media (orientation: portrait) {
   .Header__titulo {
     display: none;
@@ -121,6 +142,9 @@
   .Header__texto_titulo_landscape {
     flex: 1;
     text-align: center;
+  }
+  .Header__boton_suscripcion {
+    display: none;
   }
 }
 

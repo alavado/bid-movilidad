@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux"
 
 function useTextos() {
   const { textos } = useSelector(state => state.idioma)
