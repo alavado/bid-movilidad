@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './FormularioSuscripcion.css'
 import { useSelector } from 'react-redux'
 import useTextos from '../../hooks/useTextos'
@@ -16,7 +16,15 @@ const FormularioSuscripcion = () => {
     email: '',
     paises: ''
   })
+  const otroRef = useRef()
   const history = useHistory()
+  console.log({variables})
+
+  useEffect(() => {
+    if (variables.organizacion === 'otro') {
+      otroRef.current.focus()
+    }
+  }, [variables])
 
   return (
     <div className="FormularioSuscripcion">
@@ -43,8 +51,20 @@ const FormularioSuscripcion = () => {
               <option value="organismo internacional">{textos.organismoInternacional}</option>
               <option value="privado">{textos.organizacionPrivada}</option>
               <option value="universidad">{textos.universidad}</option>
+              <option value="otro">{textos.otro}</option>
             </select>
           </label>
+          {variables.organizacion === "otro" && 
+            <label className="FormularioSuscripcion__label">
+              <input
+                ref={otroRef}
+                type="text"
+                name="otra_organizacion"
+                className="FormularioSuscripcion__selector_organizacion"
+                onChange={e => setVariables({ ...variables, otro: e.target.value })}
+              />
+            </label>
+          }
           <label
             className="FormularioSuscripcion__label"
             value={variables.email}

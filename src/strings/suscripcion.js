@@ -11,7 +11,8 @@ const strings = {
   universidad: { es: 'Universidad', en: 'University' },
   recibirActualizacionesDe: { es: 'Recibir actualizaciones de:', en: 'Subscribe to updates about:' },
   todosLosPaises: { es: 'Todos los países', en: 'Every country' },
-  subscribe: { es: 'Suscribir', en: 'Subscribe' }
+  subscribe: { es: 'Suscribir', en: 'Subscribe' },
+  otro: { es: 'Otro', en: 'Other' },
 }
 
 export default strings
