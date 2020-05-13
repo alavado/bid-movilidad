@@ -79,7 +79,7 @@ const Mapa = () => {
   }
 
   const mostrarPopup = e => {
-    console.log({viewport});
+    console.log({viewport})
     if (popup.mostrando) {
       setPopup({...popup, mostrando: false})
       actualizarPopupChico(e)
