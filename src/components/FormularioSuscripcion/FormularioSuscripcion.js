@@ -18,7 +18,6 @@ const FormularioSuscripcion = () => {
   })
   const otroRef = useRef()
   const history = useHistory()
-  console.log({variables})
 
   useEffect(() => {
     if (variables.organizacion === 'otro') {
