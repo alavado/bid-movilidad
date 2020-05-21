@@ -24,3 +24,7 @@ yarn-error.log*
 
 .vscode
 .VSCodeCounter
+
+# archivos originales
+src/data/geojson/AR/regiones_original.json
+src/data/geojson/EC/regiones_original.json
