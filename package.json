@@ -10,7 +10,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bomstrip": "^0.1.4",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "csv-parser": "^2.3.2",
     "d3-ease": "^1.0.6",
     "mapbox-gl-multitouch": "^1.0.3",
